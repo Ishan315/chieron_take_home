@@ -1,3 +1,5 @@
+import pytest
+from pydantic import ValidationError
 from app.models.schemas import (
     QueryRequest, QueryResponse, VisualizationSpec, VisualizationType,
     EncodingSpec, AxisEncoding, MetadataSpec, DeepCitation
@@ -8,6 +10,20 @@ def test_query_request_defaults():
     assert req.query == "How many trials for Melanoma?"
     assert req.max_trials_to_analyze == 200
     assert req.drug_name is None
+
+@pytest.mark.parametrize("start_year,end_year", [
+    (3000, None),   # beyond the ClinicalTrials.gov API's own date-parser range (confirmed via live testing)
+    (-100, None),   # negative years are rejected by the upstream API's date parser
+    (2024, 2015),   # inverted range
+])
+def test_query_request_rejects_invalid_year_ranges(start_year, end_year):
+    with pytest.raises(ValidationError):
+        QueryRequest(query="Pembrolizumab trials", start_year=start_year, end_year=end_year)
+
+def test_query_request_accepts_valid_year_range():
+    req = QueryRequest(query="Pembrolizumab trials", start_year=2015, end_year=2024)
+    assert req.start_year == 2015
+    assert req.end_year == 2024
 
 def test_visualization_spec_bar_chart():
     spec = VisualizationSpec(

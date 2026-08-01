@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import List, Dict, Any, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 class VisualizationType(str, Enum):
     BAR_CHART = "bar_chart"
@@ -26,11 +26,17 @@ class QueryRequest(BaseModel):
     drug_name_b: Optional[str] = Field(None, description="Second drug / intervention name, for A-vs-B comparison queries")
     condition_b: Optional[str] = Field(None, description="Second condition / disease, for A-vs-B comparison queries")
     sponsor_b: Optional[str] = Field(None, description="Second sponsor, for A-vs-B comparison queries")
-    start_year: Optional[int] = Field(None, description="Filter studies starting in or after this year")
-    end_year: Optional[int] = Field(None, description="Filter studies starting in or before this year")
+    start_year: Optional[int] = Field(None, ge=1900, le=2100, description="Filter studies starting in or after this year")
+    end_year: Optional[int] = Field(None, ge=1900, le=2100, description="Filter studies starting in or before this year")
     overall_status: Optional[str] = Field(None, description="Filter status (e.g., RECRUITING, COMPLETED)")
     visualization_override: Optional[VisualizationType] = Field(None, description="Force a specific visualization format")
     max_trials_to_analyze: int = Field(200, ge=10, le=500, description="Max trial records to retrieve and analyze")
+
+    @model_validator(mode="after")
+    def _validate_year_range(self):
+        if self.start_year is not None and self.end_year is not None and self.start_year > self.end_year:
+            raise ValueError("start_year must be less than or equal to end_year")
+        return self
 
 class AxisEncoding(BaseModel):
     field: str
