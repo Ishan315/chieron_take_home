@@ -22,7 +22,7 @@ KNOWN_DRUGS = [
 class QueryIntentAnalysis(BaseModel):
     intent: str = Field(
         ...,
-        description="Analytical goal: time_trend, phase_distribution, geographic_distribution, network_sponsors_drugs, network_drug_drug, network_condition_sponsor, scatter_enrollment_duration, status_breakdown, sponsor_breakdown, general"
+        description="Analytical goal: time_trend, phase_distribution, geographic_distribution, network_sponsors_drugs, network_drug_drug, network_condition_sponsor, scatter_enrollment_duration, enrollment_histogram, status_breakdown, sponsor_breakdown, comparison, general"
     )
     recommended_visualization: VisualizationType = Field(..., description="Suggested chart type")
     search_term: Optional[str] = Field(None, description="Term for ClinicalTrials query.term")
