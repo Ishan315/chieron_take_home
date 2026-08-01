@@ -1,0 +1,345 @@
+{
+  "request_input": {
+    "query": "How are Melanoma trials distributed across phases?",
+    "drug_name": null,
+    "condition": "Melanoma",
+    "trial_phase": null,
+    "sponsor": null,
+    "country": null,
+    "start_year": null,
+    "end_year": null,
+    "overall_status": null,
+    "visualization_override": null,
+    "max_trials_to_analyze": 100
+  },
+  "visualization": {
+    "type": "bar_chart",
+    "title": "Trial Distribution Across Phases for Melanoma",
+    "subtitle": "Distribution of clinical trials across phases",
+    "encoding": {
+      "x": {
+        "field": "phase",
+        "label": "Trial Phase",
+        "type": "nominal",
+        "unit": null
+      },
+      "y": {
+        "field": "trial_count",
+        "label": "Number of Trials",
+        "type": "quantitative",
+        "unit": "trials"
+      },
+      "group": null,
+      "color": null,
+      "size": null,
+      "network": null
+    },
+    "data": [
+      {
+        "phase": "Early Phase 1",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT05961111",
+            "title": "A Clinical Study on Oncolytic Virus Injection (R130 OV) for the Treatment of Advanced Solid Tumors",
+            "excerpt": "Early Phase 1 study: 'A Clinical Study on Oncolytic Virus Injection (R130 OV) for the Treatment of Advanced Solid Tumors' (Sponsor: Shanghai Yunying Medical Technology)",
+            "url": "https://clinicaltrials.gov/study/NCT05961111",
+            "field_name": "designModule.phases",
+            "data_bucket": "Early Phase 1"
+          }
+        ]
+      },
+      {
+        "phase": "Phase 1",
+        "trial_count": 33,
+        "citations": [
+          {
+            "nct_id": "NCT00204607",
+            "title": "Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients",
+            "excerpt": "Phase 1 study: 'Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients' (Sponsor: University Hospital Tuebingen)",
+            "url": "https://clinicaltrials.gov/study/NCT00204607",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 1"
+          },
+          {
+            "nct_id": "NCT00379132",
+            "title": "131-I-TM-601 Study in Adults With Solid Tumors",
+            "excerpt": "Phase 1 study: '131-I-TM-601 Study in Adults With Solid Tumors' (Sponsor: TransMolecular)",
+            "url": "https://clinicaltrials.gov/study/NCT00379132",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 1"
+          },
+          {
+            "nct_id": "NCT01005472",
+            "title": "Temozolomide and Sunitinib Malate in Treating Patients With Stage III or Stage IV Malignant Melanoma",
+            "excerpt": "Phase 1 study: 'Temozolomide and Sunitinib Malate in Treating Patients With Stage III or Stage IV Malignant Melanoma' (Sponsor: Jonsson Comprehensive Cancer Center)",
+            "url": "https://clinicaltrials.gov/study/NCT01005472",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 1"
+          }
+        ]
+      },
+      {
+        "phase": "Phase 2",
+        "trial_count": 42,
+        "citations": [
+          {
+            "nct_id": "NCT00082875",
+            "title": "Cilengitide in Treating Patients With Unresectable or Metastatic Melanoma",
+            "excerpt": "Phase 2 study: 'Cilengitide in Treating Patients With Unresectable or Metastatic Melanoma' (Sponsor: National Cancer Institute (NCI))",
+            "url": "https://clinicaltrials.gov/study/NCT00082875",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 2"
+          },
+          {
+            "nct_id": "NCT00204607",
+            "title": "Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients",
+            "excerpt": "Phase 2 study: 'Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients' (Sponsor: University Hospital Tuebingen)",
+            "url": "https://clinicaltrials.gov/study/NCT00204607",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 2"
+          },
+          {
+            "nct_id": "NCT00024011",
+            "title": "PS-341 in Treating Patients With Metastatic Malignant Melanoma",
+            "excerpt": "Phase 2 study: 'PS-341 in Treating Patients With Metastatic Malignant Melanoma' (Sponsor: National Cancer Institute (NCI))",
+            "url": "https://clinicaltrials.gov/study/NCT00024011",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 2"
+          }
+        ]
+      },
+      {
+        "phase": "Phase 3",
+        "trial_count": 10,
+        "citations": [
+          {
+            "nct_id": "NCT02460068",
+            "title": "A Study of Fotemustine(FTM) Vs FTM and Ipilimumab (IPI) or IPI and Nivolumab in Melanoma Brain Metastasis",
+            "excerpt": "Phase 3 study: 'A Study of Fotemustine(FTM) Vs FTM and Ipilimumab (IPI) or IPI and Nivolumab in Melanoma Brain Metastasis' (Sponsor: Italian Network for Tumor Biotherapy Foundation)",
+            "url": "https://clinicaltrials.gov/study/NCT02460068",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 3"
+          },
+          {
+            "nct_id": "NCT01682083",
+            "title": "Dabrafenib With Trametinib in the Adjuvant Treatment of High-risk BRAF V600 Mutation-positive Melanoma (COMBI-AD).",
+            "excerpt": "Phase 3 study: 'Dabrafenib With Trametinib in the Adjuvant Treatment of High-risk BRAF V600 Mutation-positive Melanoma (COMBI-AD).' (Sponsor: Novartis Pharmaceuticals)",
+            "url": "https://clinicaltrials.gov/study/NCT01682083",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 3"
+          },
+          {
+            "nct_id": "NCT06519266",
+            "title": "PHP in Combination With IPI1/NIVO3 Compared to IPI3/NIVO1 Only in Patients With Uveal Melanoma Liver Metastases",
+            "excerpt": "Phase 3 study: 'PHP in Combination With IPI1/NIVO3 Compared to IPI3/NIVO1 Only in Patients With Uveal Melanoma Liver Metastases' (Sponsor: Vastra Gotaland Region)",
+            "url": "https://clinicaltrials.gov/study/NCT06519266",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 3"
+          }
+        ]
+      },
+      {
+        "phase": "Phase 4",
+        "trial_count": 3,
+        "citations": [
+          {
+            "nct_id": "NCT06785974",
+            "title": "Statins to Prevent Immune Checkpoint Inhibitor-induced PRogression of AtherosLerosis",
+            "excerpt": "Phase 4 study: 'Statins to Prevent Immune Checkpoint Inhibitor-induced PRogression of AtherosLerosis' (Sponsor: Erasmus Medical Center)",
+            "url": "https://clinicaltrials.gov/study/NCT06785974",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 4"
+          },
+          {
+            "nct_id": "NCT01683188",
+            "title": "HD IL-2 + Vemurafenib in Patients With BRAF Mutation Positive Metastatic Melanoma",
+            "excerpt": "Phase 4 study: 'HD IL-2 + Vemurafenib in Patients With BRAF Mutation Positive Metastatic Melanoma' (Sponsor: Clinigen, Inc.)",
+            "url": "https://clinicaltrials.gov/study/NCT01683188",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 4"
+          },
+          {
+            "nct_id": "NCT00075166",
+            "title": "Surgery Versus Radiosurgery to Treat Metastatic Brain Tumors",
+            "excerpt": "Phase 4 study: 'Surgery Versus Radiosurgery to Treat Metastatic Brain Tumors' (Sponsor: National Institute of Neurological Disorders and Stroke (NINDS))",
+            "url": "https://clinicaltrials.gov/study/NCT00075166",
+            "field_name": "designModule.phases",
+            "data_bucket": "Phase 4"
+          }
+        ]
+      },
+      {
+        "phase": "Not Applicable",
+        "trial_count": 22,
+        "citations": [
+          {
+            "nct_id": "NCT03906253",
+            "title": "Effectiveness of Fractionated Laser Resurfacing to Protect Geriatric Skin From Actinic Neoplasia",
+            "excerpt": "Not Applicable study: 'Effectiveness of Fractionated Laser Resurfacing to Protect Geriatric Skin From Actinic Neoplasia' (Sponsor: Wright State University)",
+            "url": "https://clinicaltrials.gov/study/NCT03906253",
+            "field_name": "designModule.phases",
+            "data_bucket": "Not Applicable"
+          },
+          {
+            "nct_id": "NCT05740501",
+            "title": "Pharmacokinetic Profiling of Pembrolizumab and Nivolumab in Patients With Melanoma and/or Non-Small Cell Lung Cancer",
+            "excerpt": "Not Applicable study: 'Pharmacokinetic Profiling of Pembrolizumab and Nivolumab in Patients With Melanoma and/or Non-Small Cell Lung Cancer' (Sponsor: Mayo Clinic)",
+            "url": "https://clinicaltrials.gov/study/NCT05740501",
+            "field_name": "designModule.phases",
+            "data_bucket": "Not Applicable"
+          },
+          {
+            "nct_id": "NCT05059444",
+            "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+            "excerpt": "Not Applicable study: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (Sponsor: Guardant Health, Inc.)",
+            "url": "https://clinicaltrials.gov/study/NCT05059444",
+            "field_name": "designModule.phases",
+            "data_bucket": "Not Applicable"
+          }
+        ]
+      }
+    ],
+    "nodes": null,
+    "edges": null
+  },
+  "meta": {
+    "filters_applied": {
+      "condition": "Melanoma",
+      "term": "Melanoma"
+    },
+    "source": "clinicaltrials.gov",
+    "total_trials_analyzed": 100,
+    "query_interpretation": "Parsed query as 'phase_distribution' intent focusing on 'Melanoma'. Recommended visualization: bar_chart.",
+    "time_granularity": "none",
+    "units": {
+      "y": "trial_count"
+    },
+    "notes": [
+      "Aggregated 100 clinical trial records from ClinicalTrials.gov API v2.",
+      "Generated 16 deep source citations linking back to individual study NCT IDs."
+    ]
+  },
+  "citations": [
+    {
+      "nct_id": "NCT05961111",
+      "title": "A Clinical Study on Oncolytic Virus Injection (R130 OV) for the Treatment of Advanced Solid Tumors",
+      "excerpt": "Early Phase 1 study: 'A Clinical Study on Oncolytic Virus Injection (R130 OV) for the Treatment of Advanced Solid Tumors' (Sponsor: Shanghai Yunying Medical Technology)",
+      "url": "https://clinicaltrials.gov/study/NCT05961111",
+      "field_name": "designModule.phases",
+      "data_bucket": "Early Phase 1"
+    },
+    {
+      "nct_id": "NCT00204607",
+      "title": "Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients",
+      "excerpt": "Phase 1 study: 'Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients' (Sponsor: University Hospital Tuebingen)",
+      "url": "https://clinicaltrials.gov/study/NCT00204607",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 1"
+    },
+    {
+      "nct_id": "NCT00379132",
+      "title": "131-I-TM-601 Study in Adults With Solid Tumors",
+      "excerpt": "Phase 1 study: '131-I-TM-601 Study in Adults With Solid Tumors' (Sponsor: TransMolecular)",
+      "url": "https://clinicaltrials.gov/study/NCT00379132",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 1"
+    },
+    {
+      "nct_id": "NCT01005472",
+      "title": "Temozolomide and Sunitinib Malate in Treating Patients With Stage III or Stage IV Malignant Melanoma",
+      "excerpt": "Phase 1 study: 'Temozolomide and Sunitinib Malate in Treating Patients With Stage III or Stage IV Malignant Melanoma' (Sponsor: Jonsson Comprehensive Cancer Center)",
+      "url": "https://clinicaltrials.gov/study/NCT01005472",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 1"
+    },
+    {
+      "nct_id": "NCT00082875",
+      "title": "Cilengitide in Treating Patients With Unresectable or Metastatic Melanoma",
+      "excerpt": "Phase 2 study: 'Cilengitide in Treating Patients With Unresectable or Metastatic Melanoma' (Sponsor: National Cancer Institute (NCI))",
+      "url": "https://clinicaltrials.gov/study/NCT00082875",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 2"
+    },
+    {
+      "nct_id": "NCT00204607",
+      "title": "Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients",
+      "excerpt": "Phase 2 study: 'Intradermal Vaccination With Stabilized Tumor mRNA - a Clinical Phase I/II Trial in Melanoma Patients' (Sponsor: University Hospital Tuebingen)",
+      "url": "https://clinicaltrials.gov/study/NCT00204607",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 2"
+    },
+    {
+      "nct_id": "NCT00024011",
+      "title": "PS-341 in Treating Patients With Metastatic Malignant Melanoma",
+      "excerpt": "Phase 2 study: 'PS-341 in Treating Patients With Metastatic Malignant Melanoma' (Sponsor: National Cancer Institute (NCI))",
+      "url": "https://clinicaltrials.gov/study/NCT00024011",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 2"
+    },
+    {
+      "nct_id": "NCT02460068",
+      "title": "A Study of Fotemustine(FTM) Vs FTM and Ipilimumab (IPI) or IPI and Nivolumab in Melanoma Brain Metastasis",
+      "excerpt": "Phase 3 study: 'A Study of Fotemustine(FTM) Vs FTM and Ipilimumab (IPI) or IPI and Nivolumab in Melanoma Brain Metastasis' (Sponsor: Italian Network for Tumor Biotherapy Foundation)",
+      "url": "https://clinicaltrials.gov/study/NCT02460068",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 3"
+    },
+    {
+      "nct_id": "NCT01682083",
+      "title": "Dabrafenib With Trametinib in the Adjuvant Treatment of High-risk BRAF V600 Mutation-positive Melanoma (COMBI-AD).",
+      "excerpt": "Phase 3 study: 'Dabrafenib With Trametinib in the Adjuvant Treatment of High-risk BRAF V600 Mutation-positive Melanoma (COMBI-AD).' (Sponsor: Novartis Pharmaceuticals)",
+      "url": "https://clinicaltrials.gov/study/NCT01682083",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 3"
+    },
+    {
+      "nct_id": "NCT06519266",
+      "title": "PHP in Combination With IPI1/NIVO3 Compared to IPI3/NIVO1 Only in Patients With Uveal Melanoma Liver Metastases",
+      "excerpt": "Phase 3 study: 'PHP in Combination With IPI1/NIVO3 Compared to IPI3/NIVO1 Only in Patients With Uveal Melanoma Liver Metastases' (Sponsor: Vastra Gotaland Region)",
+      "url": "https://clinicaltrials.gov/study/NCT06519266",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 3"
+    },
+    {
+      "nct_id": "NCT06785974",
+      "title": "Statins to Prevent Immune Checkpoint Inhibitor-induced PRogression of AtherosLerosis",
+      "excerpt": "Phase 4 study: 'Statins to Prevent Immune Checkpoint Inhibitor-induced PRogression of AtherosLerosis' (Sponsor: Erasmus Medical Center)",
+      "url": "https://clinicaltrials.gov/study/NCT06785974",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 4"
+    },
+    {
+      "nct_id": "NCT01683188",
+      "title": "HD IL-2 + Vemurafenib in Patients With BRAF Mutation Positive Metastatic Melanoma",
+      "excerpt": "Phase 4 study: 'HD IL-2 + Vemurafenib in Patients With BRAF Mutation Positive Metastatic Melanoma' (Sponsor: Clinigen, Inc.)",
+      "url": "https://clinicaltrials.gov/study/NCT01683188",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 4"
+    },
+    {
+      "nct_id": "NCT00075166",
+      "title": "Surgery Versus Radiosurgery to Treat Metastatic Brain Tumors",
+      "excerpt": "Phase 4 study: 'Surgery Versus Radiosurgery to Treat Metastatic Brain Tumors' (Sponsor: National Institute of Neurological Disorders and Stroke (NINDS))",
+      "url": "https://clinicaltrials.gov/study/NCT00075166",
+      "field_name": "designModule.phases",
+      "data_bucket": "Phase 4"
+    },
+    {
+      "nct_id": "NCT03906253",
+      "title": "Effectiveness of Fractionated Laser Resurfacing to Protect Geriatric Skin From Actinic Neoplasia",
+      "excerpt": "Not Applicable study: 'Effectiveness of Fractionated Laser Resurfacing to Protect Geriatric Skin From Actinic Neoplasia' (Sponsor: Wright State University)",
+      "url": "https://clinicaltrials.gov/study/NCT03906253",
+      "field_name": "designModule.phases",
+      "data_bucket": "Not Applicable"
+    },
+    {
+      "nct_id": "NCT05740501",
+      "title": "Pharmacokinetic Profiling of Pembrolizumab and Nivolumab in Patients With Melanoma and/or Non-Small Cell Lung Cancer",
+      "excerpt": "Not Applicable study: 'Pharmacokinetic Profiling of Pembrolizumab and Nivolumab in Patients With Melanoma and/or Non-Small Cell Lung Cancer' (Sponsor: Mayo Clinic)",
+      "url": "https://clinicaltrials.gov/study/NCT05740501",
+      "field_name": "designModule.phases",
+      "data_bucket": "Not Applicable"
+    }
+  ]
+}

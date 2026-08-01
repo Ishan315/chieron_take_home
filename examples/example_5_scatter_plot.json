@@ -1,0 +1,1864 @@
+{
+  "request_input": {
+    "query": "What is the relationship between trial enrollment count and study duration for Immunotherapy trials?",
+    "drug_name": null,
+    "condition": "Immunotherapy",
+    "trial_phase": null,
+    "sponsor": null,
+    "country": null,
+    "start_year": null,
+    "end_year": null,
+    "overall_status": null,
+    "visualization_override": "scatter_plot",
+    "max_trials_to_analyze": 100
+  },
+  "visualization": {
+    "type": "scatter_plot",
+    "title": "Sponsor to Drug Network for Immunotherapy Trials",
+    "subtitle": "Study enrollment size versus estimated duration in months",
+    "encoding": {
+      "x": {
+        "field": "duration_months",
+        "label": "Estimated Duration (Months)",
+        "type": "quantitative",
+        "unit": "months"
+      },
+      "y": {
+        "field": "enrollment",
+        "label": "Enrollment Count (Patients)",
+        "type": "quantitative",
+        "unit": "patients"
+      },
+      "group": null,
+      "color": {
+        "field": "phase",
+        "label": "Phase",
+        "type": "nominal",
+        "unit": null
+      },
+      "size": {
+        "field": "enrollment",
+        "label": "Enrollment Size",
+        "type": "quantitative",
+        "unit": null
+      },
+      "network": null
+    },
+    "data": [
+      {
+        "nct_id": "NCT03816657",
+        "title": "The Predictive Role of Programmed Death Ligand 1 (PD-L1) and Neutrophil to Lymphocyte Ratio (NLR) in Non-Small Cell Lung Cancer (NSCLC)",
+        "enrollment": 93,
+        "duration_months": 48,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Fondazione Ricerca Traslazionale",
+        "citations": [
+          {
+            "nct_id": "NCT03816657",
+            "title": "The Predictive Role of Programmed Death Ligand 1 (PD-L1) and Neutrophil to Lymphocyte Ratio (NLR) in Non-Small Cell Lung Cancer (NSCLC)",
+            "excerpt": "Enrollment: 93 patients, Duration: ~48 months for study 'The Predictive Role of Programmed Death Ligand 1 (PD-L1) and Neutrophil to Lymphocyte Ratio (NLR) in Non-Small Cell Lung Cancer (NSCLC)'",
+            "url": "https://clinicaltrials.gov/study/NCT03816657",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03816657"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07245901",
+        "title": "Safety and Tolerability of a mRNA Vaccine Encoding Tumor-Specific Circular RNA Antigens in Combination With Anti-PD-1 Monoclonal Antibody in Patients With Advanced Solid Tumors",
+        "enrollment": 60,
+        "duration_months": 60,
+        "phase": "Phase 1",
+        "lead_sponsor": "Sun Yat-Sen Memorial Hospital of Sun Yat-Sen University",
+        "citations": [
+          {
+            "nct_id": "NCT07245901",
+            "title": "Safety and Tolerability of a mRNA Vaccine Encoding Tumor-Specific Circular RNA Antigens in Combination With Anti-PD-1 Monoclonal Antibody in Patients With Advanced Solid Tumors",
+            "excerpt": "Enrollment: 60 patients, Duration: ~60 months for study 'Safety and Tolerability of a mRNA Vaccine Encoding Tumor-Specific Circular RNA Antigens in Combination With Anti-PD-1 Monoclonal Antibody in Patients With Advanced Solid Tumors'",
+            "url": "https://clinicaltrials.gov/study/NCT07245901",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07245901"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03041012",
+        "title": "Early Administration of Romidepsin and 3BNC117 in Treatment-na\u00efve HIV Patients Starting ART",
+        "enrollment": 60,
+        "duration_months": 60,
+        "phase": "Phase 2",
+        "lead_sponsor": "Aarhus University Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT03041012",
+            "title": "Early Administration of Romidepsin and 3BNC117 in Treatment-na\u00efve HIV Patients Starting ART",
+            "excerpt": "Enrollment: 60 patients, Duration: ~60 months for study 'Early Administration of Romidepsin and 3BNC117 in Treatment-na\u00efve HIV Patients Starting ART'",
+            "url": "https://clinicaltrials.gov/study/NCT03041012",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03041012"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04977375",
+        "title": "Trial of Anti-PD-1 Immunotherapy and Stereotactic Radiation in Patients With Recurrent Glioblastoma",
+        "enrollment": 10,
+        "duration_months": 60,
+        "phase": "Phase 1",
+        "lead_sponsor": "Chirag G. Patil",
+        "citations": [
+          {
+            "nct_id": "NCT04977375",
+            "title": "Trial of Anti-PD-1 Immunotherapy and Stereotactic Radiation in Patients With Recurrent Glioblastoma",
+            "excerpt": "Enrollment: 10 patients, Duration: ~60 months for study 'Trial of Anti-PD-1 Immunotherapy and Stereotactic Radiation in Patients With Recurrent Glioblastoma'",
+            "url": "https://clinicaltrials.gov/study/NCT04977375",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04977375"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06834165",
+        "title": "Study Evaluating the Safety and Efficacy of Neffy or Intramuscular Adrenalin in Patients With Allergic Reactions After Oral Food Challenge or Allergen Immunotherapy",
+        "enrollment": 600,
+        "duration_months": 24,
+        "phase": "Phase 4",
+        "lead_sponsor": "ARS Pharmaceuticals, Inc.",
+        "citations": [
+          {
+            "nct_id": "NCT06834165",
+            "title": "Study Evaluating the Safety and Efficacy of Neffy or Intramuscular Adrenalin in Patients With Allergic Reactions After Oral Food Challenge or Allergen Immunotherapy",
+            "excerpt": "Enrollment: 600 patients, Duration: ~24 months for study 'Study Evaluating the Safety and Efficacy of Neffy or Intramuscular Adrenalin in Patients With Allergic Reactions After Oral Food Challenge or Allergen Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT06834165",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06834165"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00779792",
+        "title": "Efficacy of Glycerol, Two Topical Steroids, and a Topical Immune Modulator Against Skin Irritation",
+        "enrollment": 36,
+        "duration_months": 1,
+        "phase": "Phase 4",
+        "lead_sponsor": "Odense University Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT00779792",
+            "title": "Efficacy of Glycerol, Two Topical Steroids, and a Topical Immune Modulator Against Skin Irritation",
+            "excerpt": "Enrollment: 36 patients, Duration: ~1 months for study 'Efficacy of Glycerol, Two Topical Steroids, and a Topical Immune Modulator Against Skin Irritation'",
+            "url": "https://clinicaltrials.gov/study/NCT00779792",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00779792"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06180499",
+        "title": "Allogeneic Immunotherapy of Hematological Malignancies Using Regulatory T-cell Selective Depletion",
+        "enrollment": 27,
+        "duration_months": 60,
+        "phase": "Phase 1",
+        "lead_sponsor": "Assistance Publique - H\u00f4pitaux de Paris",
+        "citations": [
+          {
+            "nct_id": "NCT06180499",
+            "title": "Allogeneic Immunotherapy of Hematological Malignancies Using Regulatory T-cell Selective Depletion",
+            "excerpt": "Enrollment: 27 patients, Duration: ~60 months for study 'Allogeneic Immunotherapy of Hematological Malignancies Using Regulatory T-cell Selective Depletion'",
+            "url": "https://clinicaltrials.gov/study/NCT06180499",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06180499"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05477095",
+        "title": "A Phase 1 Study to Evaluate the Safety, Tolerability, and Immunogenicity of UB-313 in Healthy Participants",
+        "enrollment": 40,
+        "duration_months": 12,
+        "phase": "Phase 1",
+        "lead_sponsor": "Vaxxinity, Inc.",
+        "citations": [
+          {
+            "nct_id": "NCT05477095",
+            "title": "A Phase 1 Study to Evaluate the Safety, Tolerability, and Immunogenicity of UB-313 in Healthy Participants",
+            "excerpt": "Enrollment: 40 patients, Duration: ~12 months for study 'A Phase 1 Study to Evaluate the Safety, Tolerability, and Immunogenicity of UB-313 in Healthy Participants'",
+            "url": "https://clinicaltrials.gov/study/NCT05477095",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05477095"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01959672",
+        "title": "Chemotherapy, Stereotactic Body Radiation Therapy & Nelfinavir Mesylate in Locally Advanced Pancreatic Cancer",
+        "enrollment": 11,
+        "duration_months": 60,
+        "phase": "Phase 2",
+        "lead_sponsor": "University of Nebraska",
+        "citations": [
+          {
+            "nct_id": "NCT01959672",
+            "title": "Chemotherapy, Stereotactic Body Radiation Therapy & Nelfinavir Mesylate in Locally Advanced Pancreatic Cancer",
+            "excerpt": "Enrollment: 11 patients, Duration: ~60 months for study 'Chemotherapy, Stereotactic Body Radiation Therapy & Nelfinavir Mesylate in Locally Advanced Pancreatic Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT01959672",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01959672"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05641012",
+        "title": "Association Between Helioderma and Response to Immunotherapy in Patients With Metastatic Melanoma",
+        "enrollment": 100,
+        "duration_months": 36,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Institut Jean-Godinot",
+        "citations": [
+          {
+            "nct_id": "NCT05641012",
+            "title": "Association Between Helioderma and Response to Immunotherapy in Patients With Metastatic Melanoma",
+            "excerpt": "Enrollment: 100 patients, Duration: ~36 months for study 'Association Between Helioderma and Response to Immunotherapy in Patients With Metastatic Melanoma'",
+            "url": "https://clinicaltrials.gov/study/NCT05641012",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05641012"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06089967",
+        "title": "Immune-Related Adverse Events and Associated Biomarkers in Patients Receiving Cancer Immunotherapy",
+        "enrollment": 30,
+        "duration_months": 24,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Duke University",
+        "citations": [
+          {
+            "nct_id": "NCT06089967",
+            "title": "Immune-Related Adverse Events and Associated Biomarkers in Patients Receiving Cancer Immunotherapy",
+            "excerpt": "Enrollment: 30 patients, Duration: ~24 months for study 'Immune-Related Adverse Events and Associated Biomarkers in Patients Receiving Cancer Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT06089967",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06089967"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00001830",
+        "title": "Donor Th2 Cells to Prevent Graft-Versus-Host Disease in Bone Marrow Transplants",
+        "enrollment": 110,
+        "duration_months": 192,
+        "phase": "Phase 1",
+        "lead_sponsor": "National Cancer Institute (NCI)",
+        "citations": [
+          {
+            "nct_id": "NCT00001830",
+            "title": "Donor Th2 Cells to Prevent Graft-Versus-Host Disease in Bone Marrow Transplants",
+            "excerpt": "Enrollment: 110 patients, Duration: ~192 months for study 'Donor Th2 Cells to Prevent Graft-Versus-Host Disease in Bone Marrow Transplants'",
+            "url": "https://clinicaltrials.gov/study/NCT00001830",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00001830"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05672147",
+        "title": "CD33-CAR T Cell Therapy for the Treatment of Recurrent or Refractory Acute Myeloid Leukemia",
+        "enrollment": 27,
+        "duration_months": 60,
+        "phase": "Phase 1",
+        "lead_sponsor": "City of Hope Medical Center",
+        "citations": [
+          {
+            "nct_id": "NCT05672147",
+            "title": "CD33-CAR T Cell Therapy for the Treatment of Recurrent or Refractory Acute Myeloid Leukemia",
+            "excerpt": "Enrollment: 27 patients, Duration: ~60 months for study 'CD33-CAR T Cell Therapy for the Treatment of Recurrent or Refractory Acute Myeloid Leukemia'",
+            "url": "https://clinicaltrials.gov/study/NCT05672147",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05672147"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07694947",
+        "title": "Changes in Eosinophil Cationic Protein and Sputum Eosinophils Following Allergen Immunotherapy",
+        "enrollment": 100,
+        "duration_months": 12,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Mansoura University Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT07694947",
+            "title": "Changes in Eosinophil Cationic Protein and Sputum Eosinophils Following Allergen Immunotherapy",
+            "excerpt": "Enrollment: 100 patients, Duration: ~12 months for study 'Changes in Eosinophil Cationic Protein and Sputum Eosinophils Following Allergen Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT07694947",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07694947"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07258147",
+        "title": "Safety and Efficacy of Radiotherapy Combined With Immunochemotherapy in Pre-treated SCLC Patients With Liver Metastases",
+        "enrollment": 30,
+        "duration_months": 24,
+        "phase": "Phase 2",
+        "lead_sponsor": "Sichuan University",
+        "citations": [
+          {
+            "nct_id": "NCT07258147",
+            "title": "Safety and Efficacy of Radiotherapy Combined With Immunochemotherapy in Pre-treated SCLC Patients With Liver Metastases",
+            "excerpt": "Enrollment: 30 patients, Duration: ~24 months for study 'Safety and Efficacy of Radiotherapy Combined With Immunochemotherapy in Pre-treated SCLC Patients With Liver Metastases'",
+            "url": "https://clinicaltrials.gov/study/NCT07258147",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07258147"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05622071",
+        "title": "Testing Immunotherapy for Patients With Liver Cancer and Moderately Altered Liver Functions",
+        "enrollment": 50,
+        "duration_months": 24,
+        "phase": "Phase 2",
+        "lead_sponsor": "UNICANCER",
+        "citations": [
+          {
+            "nct_id": "NCT05622071",
+            "title": "Testing Immunotherapy for Patients With Liver Cancer and Moderately Altered Liver Functions",
+            "excerpt": "Enrollment: 50 patients, Duration: ~24 months for study 'Testing Immunotherapy for Patients With Liver Cancer and Moderately Altered Liver Functions'",
+            "url": "https://clinicaltrials.gov/study/NCT05622071",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05622071"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06385730",
+        "title": "Neoadjuvant PD-1 Blockade for Elderly Esophageal Squamous Cell Carcinoma (BLESS)",
+        "enrollment": 60,
+        "duration_months": 36,
+        "phase": "Phase 2",
+        "lead_sponsor": "Shanghai Chest Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT06385730",
+            "title": "Neoadjuvant PD-1 Blockade for Elderly Esophageal Squamous Cell Carcinoma (BLESS)",
+            "excerpt": "Enrollment: 60 patients, Duration: ~36 months for study 'Neoadjuvant PD-1 Blockade for Elderly Esophageal Squamous Cell Carcinoma (BLESS)'",
+            "url": "https://clinicaltrials.gov/study/NCT06385730",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06385730"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06607809",
+        "title": "Inflammatory Markers (ICC, MCVL) and Nivolumab Response: Predicting Immunotherapy Success in Metastatic RCC",
+        "enrollment": 99,
+        "duration_months": 24,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Dr. Lutfi Kirdar Kartal Training and Research Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT06607809",
+            "title": "Inflammatory Markers (ICC, MCVL) and Nivolumab Response: Predicting Immunotherapy Success in Metastatic RCC",
+            "excerpt": "Enrollment: 99 patients, Duration: ~24 months for study 'Inflammatory Markers (ICC, MCVL) and Nivolumab Response: Predicting Immunotherapy Success in Metastatic RCC'",
+            "url": "https://clinicaltrials.gov/study/NCT06607809",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06607809"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02336165",
+        "title": "Phase 2 Study of Durvalumab (MEDI4736) in Patients With Glioblastoma",
+        "enrollment": 159,
+        "duration_months": 72,
+        "phase": "Phase 2",
+        "lead_sponsor": "Ludwig Institute for Cancer Research",
+        "citations": [
+          {
+            "nct_id": "NCT02336165",
+            "title": "Phase 2 Study of Durvalumab (MEDI4736) in Patients With Glioblastoma",
+            "excerpt": "Enrollment: 159 patients, Duration: ~72 months for study 'Phase 2 Study of Durvalumab (MEDI4736) in Patients With Glioblastoma'",
+            "url": "https://clinicaltrials.gov/study/NCT02336165",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02336165"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07602907",
+        "title": "Metronomic Oral Paclitaxel Monotherapy and Combined Immunotherapy for Advanced HER2-Negative Breast Cancer: A Two-Stage Dose Exploration and Expansion Trial",
+        "enrollment": 44,
+        "duration_months": 36,
+        "phase": "Phase 2",
+        "lead_sponsor": "Zhejiang Cancer Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT07602907",
+            "title": "Metronomic Oral Paclitaxel Monotherapy and Combined Immunotherapy for Advanced HER2-Negative Breast Cancer: A Two-Stage Dose Exploration and Expansion Trial",
+            "excerpt": "Enrollment: 44 patients, Duration: ~36 months for study 'Metronomic Oral Paclitaxel Monotherapy and Combined Immunotherapy for Advanced HER2-Negative Breast Cancer: A Two-Stage Dose Exploration and Expansion Trial'",
+            "url": "https://clinicaltrials.gov/study/NCT07602907",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07602907"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03570892",
+        "title": "Tisagenlecleucel in Adult Patients With Aggressive B-cell Non-Hodgkin Lymphoma",
+        "enrollment": 330,
+        "duration_months": 84,
+        "phase": "Phase 3",
+        "lead_sponsor": "Novartis Pharmaceuticals",
+        "citations": [
+          {
+            "nct_id": "NCT03570892",
+            "title": "Tisagenlecleucel in Adult Patients With Aggressive B-cell Non-Hodgkin Lymphoma",
+            "excerpt": "Enrollment: 330 patients, Duration: ~84 months for study 'Tisagenlecleucel in Adult Patients With Aggressive B-cell Non-Hodgkin Lymphoma'",
+            "url": "https://clinicaltrials.gov/study/NCT03570892",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03570892"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04776447",
+        "title": "Atezolizumab Plus Induction Chemotherapy Plus CT-radiotherapy. (APOLO)",
+        "enrollment": 38,
+        "duration_months": 48,
+        "phase": "Phase 2",
+        "lead_sponsor": "Fundaci\u00f3n GECP",
+        "citations": [
+          {
+            "nct_id": "NCT04776447",
+            "title": "Atezolizumab Plus Induction Chemotherapy Plus CT-radiotherapy. (APOLO)",
+            "excerpt": "Enrollment: 38 patients, Duration: ~48 months for study 'Atezolizumab Plus Induction Chemotherapy Plus CT-radiotherapy. (APOLO)'",
+            "url": "https://clinicaltrials.gov/study/NCT04776447",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04776447"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06739226",
+        "title": "Combination Immunotherapy Targeting Melanoma",
+        "enrollment": 30,
+        "duration_months": 48,
+        "phase": "Phase 1",
+        "lead_sponsor": "Shenzhen Geno-Immune Medical Institute",
+        "citations": [
+          {
+            "nct_id": "NCT06739226",
+            "title": "Combination Immunotherapy Targeting Melanoma",
+            "excerpt": "Enrollment: 30 patients, Duration: ~48 months for study 'Combination Immunotherapy Targeting Melanoma'",
+            "url": "https://clinicaltrials.gov/study/NCT06739226",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06739226"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00722098",
+        "title": "Comparison Study of Dendritic Cell Vaccine With and Without Cyclophosphamide to Treat Stage IV Melanoma Patients",
+        "enrollment": 9,
+        "duration_months": 48,
+        "phase": "Phase 2",
+        "lead_sponsor": "Baylor Research Institute",
+        "citations": [
+          {
+            "nct_id": "NCT00722098",
+            "title": "Comparison Study of Dendritic Cell Vaccine With and Without Cyclophosphamide to Treat Stage IV Melanoma Patients",
+            "excerpt": "Enrollment: 9 patients, Duration: ~48 months for study 'Comparison Study of Dendritic Cell Vaccine With and Without Cyclophosphamide to Treat Stage IV Melanoma Patients'",
+            "url": "https://clinicaltrials.gov/study/NCT00722098",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00722098"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02993107",
+        "title": "PALISADE Follow-on Study (ARC004)",
+        "enrollment": 388,
+        "duration_months": 36,
+        "phase": "Phase 3",
+        "lead_sponsor": "Aimmune Therapeutics, Inc.",
+        "citations": [
+          {
+            "nct_id": "NCT02993107",
+            "title": "PALISADE Follow-on Study (ARC004)",
+            "excerpt": "Enrollment: 388 patients, Duration: ~36 months for study 'PALISADE Follow-on Study (ARC004)'",
+            "url": "https://clinicaltrials.gov/study/NCT02993107",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02993107"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07403136",
+        "title": "Becotatug Vedotin \u00b1 Anti-PD-1 in Pretreated Advanced ESCC",
+        "enrollment": 104,
+        "duration_months": 36,
+        "phase": "Phase 2",
+        "lead_sponsor": "Fudan University",
+        "citations": [
+          {
+            "nct_id": "NCT07403136",
+            "title": "Becotatug Vedotin \u00b1 Anti-PD-1 in Pretreated Advanced ESCC",
+            "excerpt": "Enrollment: 104 patients, Duration: ~36 months for study 'Becotatug Vedotin \u00b1 Anti-PD-1 in Pretreated Advanced ESCC'",
+            "url": "https://clinicaltrials.gov/study/NCT07403136",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07403136"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02831933",
+        "title": "Trial of Radiation and Gene Therapy Before Nivolumab for Metastatic Non-Small Cell Lung Carcinoma and Uveal Melanoma",
+        "enrollment": 11,
+        "duration_months": 36,
+        "phase": "Phase 2",
+        "lead_sponsor": "Eric Bernicker, MD",
+        "citations": [
+          {
+            "nct_id": "NCT02831933",
+            "title": "Trial of Radiation and Gene Therapy Before Nivolumab for Metastatic Non-Small Cell Lung Carcinoma and Uveal Melanoma",
+            "excerpt": "Enrollment: 11 patients, Duration: ~36 months for study 'Trial of Radiation and Gene Therapy Before Nivolumab for Metastatic Non-Small Cell Lung Carcinoma and Uveal Melanoma'",
+            "url": "https://clinicaltrials.gov/study/NCT02831933",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02831933"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07106762",
+        "title": "Phase 2/3 Trial of Izalontamab Brengitecan vs Platinum-based Chemotherapy for Metastatic Urothelial Cancer With Disease Progression on or After Immunotherapy",
+        "enrollment": 470,
+        "duration_months": 96,
+        "phase": "Phase 2",
+        "lead_sponsor": "Bristol-Myers Squibb",
+        "citations": [
+          {
+            "nct_id": "NCT07106762",
+            "title": "Phase 2/3 Trial of Izalontamab Brengitecan vs Platinum-based Chemotherapy for Metastatic Urothelial Cancer With Disease Progression on or After Immunotherapy",
+            "excerpt": "Enrollment: 470 patients, Duration: ~96 months for study 'Phase 2/3 Trial of Izalontamab Brengitecan vs Platinum-based Chemotherapy for Metastatic Urothelial Cancer With Disease Progression on or After Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT07106762",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07106762"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06951646",
+        "title": "ctDNA-MRD Guided Escalation of Ivonescimab and Docetaxel in Advanced NSCLC With Long-Term Responses to First-line Immunotherapy (CR1STAL-Adaptive)",
+        "enrollment": 70,
+        "duration_months": 48,
+        "phase": "Phase 2",
+        "lead_sponsor": "Second Xiangya Hospital of Central South University",
+        "citations": [
+          {
+            "nct_id": "NCT06951646",
+            "title": "ctDNA-MRD Guided Escalation of Ivonescimab and Docetaxel in Advanced NSCLC With Long-Term Responses to First-line Immunotherapy (CR1STAL-Adaptive)",
+            "excerpt": "Enrollment: 70 patients, Duration: ~48 months for study 'ctDNA-MRD Guided Escalation of Ivonescimab and Docetaxel in Advanced NSCLC With Long-Term Responses to First-line Immunotherapy (CR1STAL-Adaptive)'",
+            "url": "https://clinicaltrials.gov/study/NCT06951646",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06951646"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06908070",
+        "title": "Chemoradiotherapy With Surgery Followed by Consolidation Durvalumab",
+        "enrollment": 38,
+        "duration_months": 48,
+        "phase": "Phase 4",
+        "lead_sponsor": "Idris Bahce",
+        "citations": [
+          {
+            "nct_id": "NCT06908070",
+            "title": "Chemoradiotherapy With Surgery Followed by Consolidation Durvalumab",
+            "excerpt": "Enrollment: 38 patients, Duration: ~48 months for study 'Chemoradiotherapy With Surgery Followed by Consolidation Durvalumab'",
+            "url": "https://clinicaltrials.gov/study/NCT06908070",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06908070"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07670273",
+        "title": "Phase II Study of Trastuzumab Rezetecan Combined With Adebrelimab and Lenvatinib as First-Line Therapy for Advanced HER2-Positive/HER2-Low Biliary Tract Cancer",
+        "enrollment": 70,
+        "duration_months": 24,
+        "phase": "Phase 2",
+        "lead_sponsor": "Peking Union Medical College Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT07670273",
+            "title": "Phase II Study of Trastuzumab Rezetecan Combined With Adebrelimab and Lenvatinib as First-Line Therapy for Advanced HER2-Positive/HER2-Low Biliary Tract Cancer",
+            "excerpt": "Enrollment: 70 patients, Duration: ~24 months for study 'Phase II Study of Trastuzumab Rezetecan Combined With Adebrelimab and Lenvatinib as First-Line Therapy for Advanced HER2-Positive/HER2-Low Biliary Tract Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT07670273",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07670273"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03348033",
+        "title": "Safety and Feasibility of the Use of Natural Killer Cells in Patients With Chronic Myeloid Leukemia",
+        "enrollment": 5,
+        "duration_months": 48,
+        "phase": "Phase 1",
+        "lead_sponsor": "Hospital de Clinicas de Porto Alegre",
+        "citations": [
+          {
+            "nct_id": "NCT03348033",
+            "title": "Safety and Feasibility of the Use of Natural Killer Cells in Patients With Chronic Myeloid Leukemia",
+            "excerpt": "Enrollment: 5 patients, Duration: ~48 months for study 'Safety and Feasibility of the Use of Natural Killer Cells in Patients With Chronic Myeloid Leukemia'",
+            "url": "https://clinicaltrials.gov/study/NCT03348033",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03348033"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02519348",
+        "title": "A Study of Durvalumab or Tremelimumab Monotherapy, or Durvalumab in Combination With Tremelimumab or Bevacizumab in Advanced Hepatocellular Carcinoma",
+        "enrollment": 433,
+        "duration_months": 132,
+        "phase": "Phase 2",
+        "lead_sponsor": "MedImmune LLC",
+        "citations": [
+          {
+            "nct_id": "NCT02519348",
+            "title": "A Study of Durvalumab or Tremelimumab Monotherapy, or Durvalumab in Combination With Tremelimumab or Bevacizumab in Advanced Hepatocellular Carcinoma",
+            "excerpt": "Enrollment: 433 patients, Duration: ~132 months for study 'A Study of Durvalumab or Tremelimumab Monotherapy, or Durvalumab in Combination With Tremelimumab or Bevacizumab in Advanced Hepatocellular Carcinoma'",
+            "url": "https://clinicaltrials.gov/study/NCT02519348",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02519348"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01929499",
+        "title": "Efficacy of Adjuvant Cytokine-induced Killer Cells in Colon Cancer",
+        "enrollment": 210,
+        "duration_months": 72,
+        "phase": "Phase 2",
+        "lead_sponsor": "Yanjuan Zhu",
+        "citations": [
+          {
+            "nct_id": "NCT01929499",
+            "title": "Efficacy of Adjuvant Cytokine-induced Killer Cells in Colon Cancer",
+            "excerpt": "Enrollment: 210 patients, Duration: ~72 months for study 'Efficacy of Adjuvant Cytokine-induced Killer Cells in Colon Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT01929499",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01929499"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02609984",
+        "title": "Study to Compare the Safety and Efficacy of CMB305 With Atezolizumab to Atezolizumab Alone in Participants With Sarcoma (IMDZ-C232/V943A-002)",
+        "enrollment": 89,
+        "duration_months": 48,
+        "phase": "Phase 2",
+        "lead_sponsor": "Immune Design, a subsidiary of Merck & Co., Inc. (Rahway, New Jersey USA)",
+        "citations": [
+          {
+            "nct_id": "NCT02609984",
+            "title": "Study to Compare the Safety and Efficacy of CMB305 With Atezolizumab to Atezolizumab Alone in Participants With Sarcoma (IMDZ-C232/V943A-002)",
+            "excerpt": "Enrollment: 89 patients, Duration: ~48 months for study 'Study to Compare the Safety and Efficacy of CMB305 With Atezolizumab to Atezolizumab Alone in Participants With Sarcoma (IMDZ-C232/V943A-002)'",
+            "url": "https://clinicaltrials.gov/study/NCT02609984",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02609984"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02988258",
+        "title": "Study of Adoptive Immunotherapy With Donor-derived CMV-specific T Cells for Recipients of Allo-HSCT",
+        "enrollment": 10,
+        "duration_months": 72,
+        "phase": "Phase 1",
+        "lead_sponsor": "University College, London",
+        "citations": [
+          {
+            "nct_id": "NCT02988258",
+            "title": "Study of Adoptive Immunotherapy With Donor-derived CMV-specific T Cells for Recipients of Allo-HSCT",
+            "excerpt": "Enrollment: 10 patients, Duration: ~72 months for study 'Study of Adoptive Immunotherapy With Donor-derived CMV-specific T Cells for Recipients of Allo-HSCT'",
+            "url": "https://clinicaltrials.gov/study/NCT02988258",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02988258"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03689699",
+        "title": "Nivolumab and BMS-986253 for Hormone-Sensitive Prostate Cancer (MAGIC-8)",
+        "enrollment": 59,
+        "duration_months": 96,
+        "phase": "Phase 1",
+        "lead_sponsor": "Mark Stein",
+        "citations": [
+          {
+            "nct_id": "NCT03689699",
+            "title": "Nivolumab and BMS-986253 for Hormone-Sensitive Prostate Cancer (MAGIC-8)",
+            "excerpt": "Enrollment: 59 patients, Duration: ~96 months for study 'Nivolumab and BMS-986253 for Hormone-Sensitive Prostate Cancer (MAGIC-8)'",
+            "url": "https://clinicaltrials.gov/study/NCT03689699",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03689699"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02511132",
+        "title": "A Two-part Phase IIb Trial of Vigil (Bi-shRNAfurin and GMCSF Augmented Autologous Tumor Cell Immunotherapy) in Ewing's Sarcoma",
+        "enrollment": 22,
+        "duration_months": 48,
+        "phase": "Phase 2",
+        "lead_sponsor": "Gradalis, Inc.",
+        "citations": [
+          {
+            "nct_id": "NCT02511132",
+            "title": "A Two-part Phase IIb Trial of Vigil (Bi-shRNAfurin and GMCSF Augmented Autologous Tumor Cell Immunotherapy) in Ewing's Sarcoma",
+            "excerpt": "Enrollment: 22 patients, Duration: ~48 months for study 'A Two-part Phase IIb Trial of Vigil (Bi-shRNAfurin and GMCSF Augmented Autologous Tumor Cell Immunotherapy) in Ewing's Sarcoma'",
+            "url": "https://clinicaltrials.gov/study/NCT02511132",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02511132"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02193347",
+        "title": "IDH1 Peptide Vaccine for Recurrent Grade II Glioma",
+        "enrollment": 24,
+        "duration_months": 48,
+        "phase": "Phase 1",
+        "lead_sponsor": "Katy Peters, MD, PhD",
+        "citations": [
+          {
+            "nct_id": "NCT02193347",
+            "title": "IDH1 Peptide Vaccine for Recurrent Grade II Glioma",
+            "excerpt": "Enrollment: 24 patients, Duration: ~48 months for study 'IDH1 Peptide Vaccine for Recurrent Grade II Glioma'",
+            "url": "https://clinicaltrials.gov/study/NCT02193347",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02193347"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04821843",
+        "title": "Neoadjuvant Treatment Modalities in Esophageal Cancer",
+        "enrollment": 2000,
+        "duration_months": 336,
+        "phase": "Phase 3",
+        "lead_sponsor": "Cancer Institute and Hospital, Chinese Academy of Medical Sciences",
+        "citations": [
+          {
+            "nct_id": "NCT04821843",
+            "title": "Neoadjuvant Treatment Modalities in Esophageal Cancer",
+            "excerpt": "Enrollment: 2000 patients, Duration: ~336 months for study 'Neoadjuvant Treatment Modalities in Esophageal Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT04821843",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04821843"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07174947",
+        "title": "SSRI Antidepressant Fluoxetine Improving Immunotherapy Efficacy in Advanced Hepatobiliary Malignancy Patients With Depression and Anxiety",
+        "enrollment": 240,
+        "duration_months": 24,
+        "phase": "Phase 2",
+        "lead_sponsor": "First Affiliated Hospital of Wenzhou Medical University",
+        "citations": [
+          {
+            "nct_id": "NCT07174947",
+            "title": "SSRI Antidepressant Fluoxetine Improving Immunotherapy Efficacy in Advanced Hepatobiliary Malignancy Patients With Depression and Anxiety",
+            "excerpt": "Enrollment: 240 patients, Duration: ~24 months for study 'SSRI Antidepressant Fluoxetine Improving Immunotherapy Efficacy in Advanced Hepatobiliary Malignancy Patients With Depression and Anxiety'",
+            "url": "https://clinicaltrials.gov/study/NCT07174947",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07174947"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05544240",
+        "title": "Phase 1 Trial of SYNC-T - Immunotherapy for Patients With Advanced/Metastatic Solid Tumors",
+        "enrollment": 20,
+        "duration_months": 24,
+        "phase": "Phase 1",
+        "lead_sponsor": "Williams Cancer Foundation",
+        "citations": [
+          {
+            "nct_id": "NCT05544240",
+            "title": "Phase 1 Trial of SYNC-T - Immunotherapy for Patients With Advanced/Metastatic Solid Tumors",
+            "excerpt": "Enrollment: 20 patients, Duration: ~24 months for study 'Phase 1 Trial of SYNC-T - Immunotherapy for Patients With Advanced/Metastatic Solid Tumors'",
+            "url": "https://clinicaltrials.gov/study/NCT05544240",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05544240"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07630168",
+        "title": "Effects of Infusion Timing on Treatment Response in Solid Tumors",
+        "enrollment": 238,
+        "duration_months": 84,
+        "phase": "Phase 2",
+        "lead_sponsor": "UNC Lineberger Comprehensive Cancer Center",
+        "citations": [
+          {
+            "nct_id": "NCT07630168",
+            "title": "Effects of Infusion Timing on Treatment Response in Solid Tumors",
+            "excerpt": "Enrollment: 238 patients, Duration: ~84 months for study 'Effects of Infusion Timing on Treatment Response in Solid Tumors'",
+            "url": "https://clinicaltrials.gov/study/NCT07630168",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07630168"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00116597",
+        "title": "Active Specific Intranodal Immunotherapy of Recombinant Vaccinia Virus in Locally Advanced to Metastatic Melanoma",
+        "enrollment": 15,
+        "duration_months": 72,
+        "phase": "Phase 1",
+        "lead_sponsor": "University Hospital, Basel, Switzerland",
+        "citations": [
+          {
+            "nct_id": "NCT00116597",
+            "title": "Active Specific Intranodal Immunotherapy of Recombinant Vaccinia Virus in Locally Advanced to Metastatic Melanoma",
+            "excerpt": "Enrollment: 15 patients, Duration: ~72 months for study 'Active Specific Intranodal Immunotherapy of Recombinant Vaccinia Virus in Locally Advanced to Metastatic Melanoma'",
+            "url": "https://clinicaltrials.gov/study/NCT00116597",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00116597"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04638582",
+        "title": "Pembrolizumab as Neoadjuvant Therapy for Resectable Stage IA3 to IIA Non-Small Cell Lung Cancer (NSCLC)",
+        "enrollment": 6,
+        "duration_months": 48,
+        "phase": "Phase 2",
+        "lead_sponsor": "McGill University Health Centre/Research Institute of the McGill University Health Centre",
+        "citations": [
+          {
+            "nct_id": "NCT04638582",
+            "title": "Pembrolizumab as Neoadjuvant Therapy for Resectable Stage IA3 to IIA Non-Small Cell Lung Cancer (NSCLC)",
+            "excerpt": "Enrollment: 6 patients, Duration: ~48 months for study 'Pembrolizumab as Neoadjuvant Therapy for Resectable Stage IA3 to IIA Non-Small Cell Lung Cancer (NSCLC)'",
+            "url": "https://clinicaltrials.gov/study/NCT04638582",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04638582"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06751940",
+        "title": "Neoantigen-loaded DC Vaccine and Conventional Second-line Therapy for CRC Progressed After First-line Treatment",
+        "enrollment": 10,
+        "duration_months": 36,
+        "phase": "Not Applicable",
+        "lead_sponsor": "The First Affiliated Hospital of Nanchang University",
+        "citations": [
+          {
+            "nct_id": "NCT06751940",
+            "title": "Neoantigen-loaded DC Vaccine and Conventional Second-line Therapy for CRC Progressed After First-line Treatment",
+            "excerpt": "Enrollment: 10 patients, Duration: ~36 months for study 'Neoantigen-loaded DC Vaccine and Conventional Second-line Therapy for CRC Progressed After First-line Treatment'",
+            "url": "https://clinicaltrials.gov/study/NCT06751940",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06751940"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05577091",
+        "title": "Tris-CAR-T Cell Therapy for Recurrent Glioblastoma",
+        "enrollment": 10,
+        "duration_months": 108,
+        "phase": "Phase 1",
+        "lead_sponsor": "Beijing Tiantan Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT05577091",
+            "title": "Tris-CAR-T Cell Therapy for Recurrent Glioblastoma",
+            "excerpt": "Enrollment: 10 patients, Duration: ~108 months for study 'Tris-CAR-T Cell Therapy for Recurrent Glioblastoma'",
+            "url": "https://clinicaltrials.gov/study/NCT05577091",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05577091"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06771791",
+        "title": "Evaluation of the Efficacy of Oral Immunotherapy With Raw Apple in Patients Allergic to Birch Pollen and Apple: Prospective, Multicenter, Comparative Phase III Study",
+        "enrollment": 110,
+        "duration_months": 24,
+        "phase": "Phase 3",
+        "lead_sponsor": "University Hospital, Strasbourg, France",
+        "citations": [
+          {
+            "nct_id": "NCT06771791",
+            "title": "Evaluation of the Efficacy of Oral Immunotherapy With Raw Apple in Patients Allergic to Birch Pollen and Apple: Prospective, Multicenter, Comparative Phase III Study",
+            "excerpt": "Enrollment: 110 patients, Duration: ~24 months for study 'Evaluation of the Efficacy of Oral Immunotherapy With Raw Apple in Patients Allergic to Birch Pollen and Apple: Prospective, Multicenter, Comparative Phase III Study'",
+            "url": "https://clinicaltrials.gov/study/NCT06771791",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06771791"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07278674",
+        "title": "Clinical Study of Eflornithine After Immunotherapy for High-risk Neuroblastoma\uff08CSHEIN\uff09",
+        "enrollment": 20,
+        "duration_months": 48,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Shanghai Children's Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT07278674",
+            "title": "Clinical Study of Eflornithine After Immunotherapy for High-risk Neuroblastoma\uff08CSHEIN\uff09",
+            "excerpt": "Enrollment: 20 patients, Duration: ~48 months for study 'Clinical Study of Eflornithine After Immunotherapy for High-risk Neuroblastoma\uff08CSHEIN\uff09'",
+            "url": "https://clinicaltrials.gov/study/NCT07278674",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07278674"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01890213",
+        "title": "Immunotherapy With CEA(6D) VRP Vaccine (AVX701) in Patients With Stage III Colorectal Cancer",
+        "enrollment": 12,
+        "duration_months": 72,
+        "phase": "Phase 1",
+        "lead_sponsor": "Duke University",
+        "citations": [
+          {
+            "nct_id": "NCT01890213",
+            "title": "Immunotherapy With CEA(6D) VRP Vaccine (AVX701) in Patients With Stage III Colorectal Cancer",
+            "excerpt": "Enrollment: 12 patients, Duration: ~72 months for study 'Immunotherapy With CEA(6D) VRP Vaccine (AVX701) in Patients With Stage III Colorectal Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT01890213",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01890213"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01462903",
+        "title": "A Study of Adoptive Immunotherapy With Autologous Tumor Infiltrating Lymphocytes in Solid Tumors",
+        "enrollment": 20,
+        "duration_months": 36,
+        "phase": "Phase 1",
+        "lead_sponsor": "Sun Yat-sen University",
+        "citations": [
+          {
+            "nct_id": "NCT01462903",
+            "title": "A Study of Adoptive Immunotherapy With Autologous Tumor Infiltrating Lymphocytes in Solid Tumors",
+            "excerpt": "Enrollment: 20 patients, Duration: ~36 months for study 'A Study of Adoptive Immunotherapy With Autologous Tumor Infiltrating Lymphocytes in Solid Tumors'",
+            "url": "https://clinicaltrials.gov/study/NCT01462903",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01462903"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07327489",
+        "title": "Predicting Response to Immunotherapy From Analysis of Live Tumor Biopsies (ELEPHAS-05)",
+        "enrollment": 2000,
+        "duration_months": 156,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Elephas",
+        "citations": [
+          {
+            "nct_id": "NCT07327489",
+            "title": "Predicting Response to Immunotherapy From Analysis of Live Tumor Biopsies (ELEPHAS-05)",
+            "excerpt": "Enrollment: 2000 patients, Duration: ~156 months for study 'Predicting Response to Immunotherapy From Analysis of Live Tumor Biopsies (ELEPHAS-05)'",
+            "url": "https://clinicaltrials.gov/study/NCT07327489",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07327489"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07592780",
+        "title": "Pathway to Peanut Tolerance",
+        "enrollment": 125,
+        "duration_months": 48,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Chinese University of Hong Kong",
+        "citations": [
+          {
+            "nct_id": "NCT07592780",
+            "title": "Pathway to Peanut Tolerance",
+            "excerpt": "Enrollment: 125 patients, Duration: ~48 months for study 'Pathway to Peanut Tolerance'",
+            "url": "https://clinicaltrials.gov/study/NCT07592780",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07592780"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01827579",
+        "title": "Infusion of Depleted T Cells Following Unrelated Donor Stem Cell Transplant (ICAT)",
+        "enrollment": 37,
+        "duration_months": 72,
+        "phase": "Phase 1",
+        "lead_sponsor": "University College, London",
+        "citations": [
+          {
+            "nct_id": "NCT01827579",
+            "title": "Infusion of Depleted T Cells Following Unrelated Donor Stem Cell Transplant (ICAT)",
+            "excerpt": "Enrollment: 37 patients, Duration: ~72 months for study 'Infusion of Depleted T Cells Following Unrelated Donor Stem Cell Transplant (ICAT)'",
+            "url": "https://clinicaltrials.gov/study/NCT01827579",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01827579"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06935890",
+        "title": "Jack Jumper Ant Venom Immunotherapy Long-term Effectiveness Investigation",
+        "enrollment": 100,
+        "duration_months": 48,
+        "phase": "Phase 4",
+        "lead_sponsor": "Murdoch Childrens Research Institute",
+        "citations": [
+          {
+            "nct_id": "NCT06935890",
+            "title": "Jack Jumper Ant Venom Immunotherapy Long-term Effectiveness Investigation",
+            "excerpt": "Enrollment: 100 patients, Duration: ~48 months for study 'Jack Jumper Ant Venom Immunotherapy Long-term Effectiveness Investigation'",
+            "url": "https://clinicaltrials.gov/study/NCT06935890",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06935890"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00052520",
+        "title": "Biological Therapy in Treating Patients With Advanced Myelodysplastic Syndrome, Acute or Chronic Myeloid Leukemia, or Acute Lymphoblastic Leukemia Who Are Undergoing Stem Cell Transplantation",
+        "enrollment": 37,
+        "duration_months": 132,
+        "phase": "Phase 1",
+        "lead_sponsor": "Fred Hutchinson Cancer Center",
+        "citations": [
+          {
+            "nct_id": "NCT00052520",
+            "title": "Biological Therapy in Treating Patients With Advanced Myelodysplastic Syndrome, Acute or Chronic Myeloid Leukemia, or Acute Lymphoblastic Leukemia Who Are Undergoing Stem Cell Transplantation",
+            "excerpt": "Enrollment: 37 patients, Duration: ~132 months for study 'Biological Therapy in Treating Patients With Advanced Myelodysplastic Syndrome, Acute or Chronic Myeloid Leukemia, or Acute Lymphoblastic Leukemia Who Are Undergoing Stem Cell Transplantation'",
+            "url": "https://clinicaltrials.gov/study/NCT00052520",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00052520"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03904108",
+        "title": "Platinum-Based Chemotherapy Plus Ramucirumab in Patients With Advanced NSCLC Who Have Progressed on First Line Anti-PD-1 Immunotherapy",
+        "enrollment": 3,
+        "duration_months": 12,
+        "phase": "Phase 2",
+        "lead_sponsor": "ROGER S KERESZTES MD",
+        "citations": [
+          {
+            "nct_id": "NCT03904108",
+            "title": "Platinum-Based Chemotherapy Plus Ramucirumab in Patients With Advanced NSCLC Who Have Progressed on First Line Anti-PD-1 Immunotherapy",
+            "excerpt": "Enrollment: 3 patients, Duration: ~12 months for study 'Platinum-Based Chemotherapy Plus Ramucirumab in Patients With Advanced NSCLC Who Have Progressed on First Line Anti-PD-1 Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT03904108",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03904108"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03162224",
+        "title": "Safety and Efficacy of MEDI0457 and Durvalumab in Participants With Human Papilloma Virus (HPV) Associated Recurrent/Metastatic Head and Neck Cancer",
+        "enrollment": 35,
+        "duration_months": 48,
+        "phase": "Phase 1",
+        "lead_sponsor": "MedImmune LLC",
+        "citations": [
+          {
+            "nct_id": "NCT03162224",
+            "title": "Safety and Efficacy of MEDI0457 and Durvalumab in Participants With Human Papilloma Virus (HPV) Associated Recurrent/Metastatic Head and Neck Cancer",
+            "excerpt": "Enrollment: 35 patients, Duration: ~48 months for study 'Safety and Efficacy of MEDI0457 and Durvalumab in Participants With Human Papilloma Virus (HPV) Associated Recurrent/Metastatic Head and Neck Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT03162224",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03162224"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01481259",
+        "title": "Maintenance Therapy With Autologous Cytokine-induced Killer Cells for Nonsquamous Non-small Cell Lung Cancer",
+        "enrollment": 120,
+        "duration_months": 36,
+        "phase": "Phase 2",
+        "lead_sponsor": "People's Hospital of Guangxi Zhuang Autonomous Region",
+        "citations": [
+          {
+            "nct_id": "NCT01481259",
+            "title": "Maintenance Therapy With Autologous Cytokine-induced Killer Cells for Nonsquamous Non-small Cell Lung Cancer",
+            "excerpt": "Enrollment: 120 patients, Duration: ~36 months for study 'Maintenance Therapy With Autologous Cytokine-induced Killer Cells for Nonsquamous Non-small Cell Lung Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT01481259",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01481259"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03088059",
+        "title": "Biomarker-based Study in R/M SCCHN",
+        "enrollment": 340,
+        "duration_months": 96,
+        "phase": "Phase 2",
+        "lead_sponsor": "European Organisation for Research and Treatment of Cancer - EORTC",
+        "citations": [
+          {
+            "nct_id": "NCT03088059",
+            "title": "Biomarker-based Study in R/M SCCHN",
+            "excerpt": "Enrollment: 340 patients, Duration: ~96 months for study 'Biomarker-based Study in R/M SCCHN'",
+            "url": "https://clinicaltrials.gov/study/NCT03088059",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03088059"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04683679",
+        "title": "A Study of Radiation Therapy With Pembrolizumab and Olaparib or Other Radiosensitizers in Women Who Have Triple-Negative or Hormone-Receptor Positive/Her2 Negative Breast Cancer",
+        "enrollment": 34,
+        "duration_months": 72,
+        "phase": "Phase 2",
+        "lead_sponsor": "Memorial Sloan Kettering Cancer Center",
+        "citations": [
+          {
+            "nct_id": "NCT04683679",
+            "title": "A Study of Radiation Therapy With Pembrolizumab and Olaparib or Other Radiosensitizers in Women Who Have Triple-Negative or Hormone-Receptor Positive/Her2 Negative Breast Cancer",
+            "excerpt": "Enrollment: 34 patients, Duration: ~72 months for study 'A Study of Radiation Therapy With Pembrolizumab and Olaparib or Other Radiosensitizers in Women Who Have Triple-Negative or Hormone-Receptor Positive/Her2 Negative Breast Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT04683679",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04683679"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05332925",
+        "title": "Using Ex Vivo Tumoroids To Predict Immunotherapy Response In NSCLC",
+        "enrollment": 25,
+        "duration_months": 60,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Jun Zhang, MD, PhD",
+        "citations": [
+          {
+            "nct_id": "NCT05332925",
+            "title": "Using Ex Vivo Tumoroids To Predict Immunotherapy Response In NSCLC",
+            "excerpt": "Enrollment: 25 patients, Duration: ~60 months for study 'Using Ex Vivo Tumoroids To Predict Immunotherapy Response In NSCLC'",
+            "url": "https://clinicaltrials.gov/study/NCT05332925",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05332925"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04412174",
+        "title": "A Study of GC022F CAR-T Cell Immunotherapy for Relapsed or Refractory B- NHL",
+        "enrollment": 18,
+        "duration_months": 24,
+        "phase": "Early Phase 1",
+        "lead_sponsor": "Hebei Yanda Ludaopei Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT04412174",
+            "title": "A Study of GC022F CAR-T Cell Immunotherapy for Relapsed or Refractory B- NHL",
+            "excerpt": "Enrollment: 18 patients, Duration: ~24 months for study 'A Study of GC022F CAR-T Cell Immunotherapy for Relapsed or Refractory B- NHL'",
+            "url": "https://clinicaltrials.gov/study/NCT04412174",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04412174"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07686640",
+        "title": "Short-Course Radiotherapy Followed by CAPOX With or Without Iparomlimab and Tuvonralimab in pMMR/MSS Locally Advanced Rectal Cancer",
+        "enrollment": 180,
+        "duration_months": 48,
+        "phase": "Phase 3",
+        "lead_sponsor": "Shandong Cancer Hospital and Institute",
+        "citations": [
+          {
+            "nct_id": "NCT07686640",
+            "title": "Short-Course Radiotherapy Followed by CAPOX With or Without Iparomlimab and Tuvonralimab in pMMR/MSS Locally Advanced Rectal Cancer",
+            "excerpt": "Enrollment: 180 patients, Duration: ~48 months for study 'Short-Course Radiotherapy Followed by CAPOX With or Without Iparomlimab and Tuvonralimab in pMMR/MSS Locally Advanced Rectal Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT07686640",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07686640"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04648046",
+        "title": "CAR-T Cells for HIV Infection",
+        "enrollment": 18,
+        "duration_months": 96,
+        "phase": "Phase 1",
+        "lead_sponsor": "Steven Deeks",
+        "citations": [
+          {
+            "nct_id": "NCT04648046",
+            "title": "CAR-T Cells for HIV Infection",
+            "excerpt": "Enrollment: 18 patients, Duration: ~96 months for study 'CAR-T Cells for HIV Infection'",
+            "url": "https://clinicaltrials.gov/study/NCT04648046",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04648046"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02734290",
+        "title": "Standard of Care Chemotherapy Plus Pembrolizumab for Breast Cancer",
+        "enrollment": 29,
+        "duration_months": 120,
+        "phase": "Phase 1",
+        "lead_sponsor": "Providence Health & Services",
+        "citations": [
+          {
+            "nct_id": "NCT02734290",
+            "title": "Standard of Care Chemotherapy Plus Pembrolizumab for Breast Cancer",
+            "excerpt": "Enrollment: 29 patients, Duration: ~120 months for study 'Standard of Care Chemotherapy Plus Pembrolizumab for Breast Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT02734290",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02734290"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07230080",
+        "title": "Sequential TACE-SBRT Combined With Targeted Immunotherapy for Patients With Intermediate to Advanced Liver Cancer",
+        "enrollment": 17,
+        "duration_months": 12,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Nanfang Hospital, Southern Medical University",
+        "citations": [
+          {
+            "nct_id": "NCT07230080",
+            "title": "Sequential TACE-SBRT Combined With Targeted Immunotherapy for Patients With Intermediate to Advanced Liver Cancer",
+            "excerpt": "Enrollment: 17 patients, Duration: ~12 months for study 'Sequential TACE-SBRT Combined With Targeted Immunotherapy for Patients With Intermediate to Advanced Liver Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT07230080",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07230080"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02862561",
+        "title": "Precision Cell Immunotherapy Combined With Chemotherapy in Advanced Gastric Cancer",
+        "enrollment": 40,
+        "duration_months": 24,
+        "phase": "Phase 1",
+        "lead_sponsor": "Shanghai International Medical Center",
+        "citations": [
+          {
+            "nct_id": "NCT02862561",
+            "title": "Precision Cell Immunotherapy Combined With Chemotherapy in Advanced Gastric Cancer",
+            "excerpt": "Enrollment: 40 patients, Duration: ~24 months for study 'Precision Cell Immunotherapy Combined With Chemotherapy in Advanced Gastric Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT02862561",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02862561"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01422850",
+        "title": "Safety Study of Repeated Dosing of a Cytotoxic Lymphocytes (CTL) Based Prostate Cancer Therapy",
+        "enrollment": 21,
+        "duration_months": 12,
+        "phase": "Phase 1",
+        "lead_sponsor": "CytoVac A/S",
+        "citations": [
+          {
+            "nct_id": "NCT01422850",
+            "title": "Safety Study of Repeated Dosing of a Cytotoxic Lymphocytes (CTL) Based Prostate Cancer Therapy",
+            "excerpt": "Enrollment: 21 patients, Duration: ~12 months for study 'Safety Study of Repeated Dosing of a Cytotoxic Lymphocytes (CTL) Based Prostate Cancer Therapy'",
+            "url": "https://clinicaltrials.gov/study/NCT01422850",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01422850"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04682327",
+        "title": "Gut Microbiota and Cancer Immunotherapy Response",
+        "enrollment": 50,
+        "duration_months": 12,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Shanghai Zhongshan Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT04682327",
+            "title": "Gut Microbiota and Cancer Immunotherapy Response",
+            "excerpt": "Enrollment: 50 patients, Duration: ~12 months for study 'Gut Microbiota and Cancer Immunotherapy Response'",
+            "url": "https://clinicaltrials.gov/study/NCT04682327",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04682327"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06519266",
+        "title": "PHP in Combination With IPI1/NIVO3 Compared to IPI3/NIVO1 Only in Patients With Uveal Melanoma Liver Metastases",
+        "enrollment": 40,
+        "duration_months": 72,
+        "phase": "Phase 3",
+        "lead_sponsor": "Vastra Gotaland Region",
+        "citations": [
+          {
+            "nct_id": "NCT06519266",
+            "title": "PHP in Combination With IPI1/NIVO3 Compared to IPI3/NIVO1 Only in Patients With Uveal Melanoma Liver Metastases",
+            "excerpt": "Enrollment: 40 patients, Duration: ~72 months for study 'PHP in Combination With IPI1/NIVO3 Compared to IPI3/NIVO1 Only in Patients With Uveal Melanoma Liver Metastases'",
+            "url": "https://clinicaltrials.gov/study/NCT06519266",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06519266"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06514651",
+        "title": "MAQ-001 in Patients With Advanced Solid Tumors",
+        "enrollment": 30,
+        "duration_months": 48,
+        "phase": "Phase 1",
+        "lead_sponsor": "MabQuest SA",
+        "citations": [
+          {
+            "nct_id": "NCT06514651",
+            "title": "MAQ-001 in Patients With Advanced Solid Tumors",
+            "excerpt": "Enrollment: 30 patients, Duration: ~48 months for study 'MAQ-001 in Patients With Advanced Solid Tumors'",
+            "url": "https://clinicaltrials.gov/study/NCT06514651",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06514651"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00540631",
+        "title": "Multicenter Trial of Immunotherapy With House Dust Mite Allergoid",
+        "enrollment": 108,
+        "duration_months": 48,
+        "phase": "Phase 3",
+        "lead_sponsor": "Allergopharma GmbH & Co. KG",
+        "citations": [
+          {
+            "nct_id": "NCT00540631",
+            "title": "Multicenter Trial of Immunotherapy With House Dust Mite Allergoid",
+            "excerpt": "Enrollment: 108 patients, Duration: ~48 months for study 'Multicenter Trial of Immunotherapy With House Dust Mite Allergoid'",
+            "url": "https://clinicaltrials.gov/study/NCT00540631",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00540631"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04006262",
+        "title": "Pre-operative Nivolumab and Ipilimumab, Followed by Post-operative Nivolumab, for MSI/dMMR Oeso-gastric Adenocarcinoma.",
+        "enrollment": 32,
+        "duration_months": 72,
+        "phase": "Phase 2",
+        "lead_sponsor": "GERCOR - Multidisciplinary Oncology Cooperative Group",
+        "citations": [
+          {
+            "nct_id": "NCT04006262",
+            "title": "Pre-operative Nivolumab and Ipilimumab, Followed by Post-operative Nivolumab, for MSI/dMMR Oeso-gastric Adenocarcinoma.",
+            "excerpt": "Enrollment: 32 patients, Duration: ~72 months for study 'Pre-operative Nivolumab and Ipilimumab, Followed by Post-operative Nivolumab, for MSI/dMMR Oeso-gastric Adenocarcinoma.'",
+            "url": "https://clinicaltrials.gov/study/NCT04006262",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04006262"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00210470",
+        "title": "A Phase 2 Clinical Trial of the Safety and Effects of IRX-2 in Treating Patients With Operable Head and Neck Cancer",
+        "enrollment": 27,
+        "duration_months": 84,
+        "phase": "Phase 2",
+        "lead_sponsor": "Brooklyn ImmunoTherapeutics, LLC",
+        "citations": [
+          {
+            "nct_id": "NCT00210470",
+            "title": "A Phase 2 Clinical Trial of the Safety and Effects of IRX-2 in Treating Patients With Operable Head and Neck Cancer",
+            "excerpt": "Enrollment: 27 patients, Duration: ~84 months for study 'A Phase 2 Clinical Trial of the Safety and Effects of IRX-2 in Treating Patients With Operable Head and Neck Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT00210470",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00210470"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01018641",
+        "title": "An Evaluation Of Three Dose Levels Of 3-Antigen Staphylococcus Aureus Vaccine (SA3Ag) In Healthy Adults",
+        "enrollment": 449,
+        "duration_months": 12,
+        "phase": "Phase 1",
+        "lead_sponsor": "Pfizer",
+        "citations": [
+          {
+            "nct_id": "NCT01018641",
+            "title": "An Evaluation Of Three Dose Levels Of 3-Antigen Staphylococcus Aureus Vaccine (SA3Ag) In Healthy Adults",
+            "excerpt": "Enrollment: 449 patients, Duration: ~12 months for study 'An Evaluation Of Three Dose Levels Of 3-Antigen Staphylococcus Aureus Vaccine (SA3Ag) In Healthy Adults'",
+            "url": "https://clinicaltrials.gov/study/NCT01018641",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01018641"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03382977",
+        "title": "Study to Evaluate Safety, Tolerability, and Optimal Dose of Candidate GBM Vaccine VBI-1901 in Recurrent GBM Subjects",
+        "enrollment": 70,
+        "duration_months": 96,
+        "phase": "Phase 1",
+        "lead_sponsor": "VBI Vaccines Inc.",
+        "citations": [
+          {
+            "nct_id": "NCT03382977",
+            "title": "Study to Evaluate Safety, Tolerability, and Optimal Dose of Candidate GBM Vaccine VBI-1901 in Recurrent GBM Subjects",
+            "excerpt": "Enrollment: 70 patients, Duration: ~96 months for study 'Study to Evaluate Safety, Tolerability, and Optimal Dose of Candidate GBM Vaccine VBI-1901 in Recurrent GBM Subjects'",
+            "url": "https://clinicaltrials.gov/study/NCT03382977",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03382977"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07256002",
+        "title": "Survival Analysis and Prognostic Biomarker Exploration of Postoperative Adjuvant Therapy Patterns in Patients With Non-small Cell Lung Cancer After Neoadjuvant Immunotherapy",
+        "enrollment": 10000,
+        "duration_months": 84,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Cancer Institute and Hospital, Chinese Academy of Medical Sciences",
+        "citations": [
+          {
+            "nct_id": "NCT07256002",
+            "title": "Survival Analysis and Prognostic Biomarker Exploration of Postoperative Adjuvant Therapy Patterns in Patients With Non-small Cell Lung Cancer After Neoadjuvant Immunotherapy",
+            "excerpt": "Enrollment: 10000 patients, Duration: ~84 months for study 'Survival Analysis and Prognostic Biomarker Exploration of Postoperative Adjuvant Therapy Patterns in Patients With Non-small Cell Lung Cancer After Neoadjuvant Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT07256002",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07256002"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02710253",
+        "title": "Salvage Radiation Therapy in Treating Patients With Metastatic Cancer That Has Progressed After Systemic Immunotherapy",
+        "enrollment": 214,
+        "duration_months": 120,
+        "phase": "Phase 2",
+        "lead_sponsor": "M.D. Anderson Cancer Center",
+        "citations": [
+          {
+            "nct_id": "NCT02710253",
+            "title": "Salvage Radiation Therapy in Treating Patients With Metastatic Cancer That Has Progressed After Systemic Immunotherapy",
+            "excerpt": "Enrollment: 214 patients, Duration: ~120 months for study 'Salvage Radiation Therapy in Treating Patients With Metastatic Cancer That Has Progressed After Systemic Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT02710253",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02710253"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT06621095",
+        "title": "Anlotinib Plus Benmelstobart and AG in First-line Treatment of Advanced Metastatic Pancreatic Cancer (ALTER-PA-001)",
+        "enrollment": 104,
+        "duration_months": 24,
+        "phase": "Phase 2",
+        "lead_sponsor": "RenJi Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT06621095",
+            "title": "Anlotinib Plus Benmelstobart and AG in First-line Treatment of Advanced Metastatic Pancreatic Cancer (ALTER-PA-001)",
+            "excerpt": "Enrollment: 104 patients, Duration: ~24 months for study 'Anlotinib Plus Benmelstobart and AG in First-line Treatment of Advanced Metastatic Pancreatic Cancer (ALTER-PA-001)'",
+            "url": "https://clinicaltrials.gov/study/NCT06621095",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT06621095"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05136937",
+        "title": "A Clinical Study of Intratumoral Administration of RT-01 in Patients With Advanced Solid Tumors",
+        "enrollment": 18,
+        "duration_months": 24,
+        "phase": "Phase 1",
+        "lead_sponsor": "Wuxi People's Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT05136937",
+            "title": "A Clinical Study of Intratumoral Administration of RT-01 in Patients With Advanced Solid Tumors",
+            "excerpt": "Enrollment: 18 patients, Duration: ~24 months for study 'A Clinical Study of Intratumoral Administration of RT-01 in Patients With Advanced Solid Tumors'",
+            "url": "https://clinicaltrials.gov/study/NCT05136937",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05136937"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07422337",
+        "title": "A Multi-site Study to Evaluate the Persistence of Protective Immunity to Routine Childhood Vaccinations in Participants With B-ALL/Ly Who Have Received Blinatumomab",
+        "enrollment": 300,
+        "duration_months": 36,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Arkansas Children's Hospital Research Institute",
+        "citations": [
+          {
+            "nct_id": "NCT07422337",
+            "title": "A Multi-site Study to Evaluate the Persistence of Protective Immunity to Routine Childhood Vaccinations in Participants With B-ALL/Ly Who Have Received Blinatumomab",
+            "excerpt": "Enrollment: 300 patients, Duration: ~36 months for study 'A Multi-site Study to Evaluate the Persistence of Protective Immunity to Routine Childhood Vaccinations in Participants With B-ALL/Ly Who Have Received Blinatumomab'",
+            "url": "https://clinicaltrials.gov/study/NCT07422337",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07422337"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02581982",
+        "title": "Paclitaxel and Pembrolizumab in Treating Patients With Refractory Metastatic Urothelial Cancer",
+        "enrollment": 27,
+        "duration_months": 72,
+        "phase": "Phase 2",
+        "lead_sponsor": "Wake Forest University Health Sciences",
+        "citations": [
+          {
+            "nct_id": "NCT02581982",
+            "title": "Paclitaxel and Pembrolizumab in Treating Patients With Refractory Metastatic Urothelial Cancer",
+            "excerpt": "Enrollment: 27 patients, Duration: ~72 months for study 'Paclitaxel and Pembrolizumab in Treating Patients With Refractory Metastatic Urothelial Cancer'",
+            "url": "https://clinicaltrials.gov/study/NCT02581982",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02581982"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01914029",
+        "title": "Immunological Mechanisms of Allergy Immunotherapy",
+        "enrollment": 70,
+        "duration_months": 36,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Rambam Health Care Campus",
+        "citations": [
+          {
+            "nct_id": "NCT01914029",
+            "title": "Immunological Mechanisms of Allergy Immunotherapy",
+            "excerpt": "Enrollment: 70 patients, Duration: ~36 months for study 'Immunological Mechanisms of Allergy Immunotherapy'",
+            "url": "https://clinicaltrials.gov/study/NCT01914029",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01914029"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05906329",
+        "title": "Low-dose Radiotherapy Combined With Conventional Fractionated Radiotherapy in Lung Cancer After Immunotherapy Resistance",
+        "enrollment": 20,
+        "duration_months": 24,
+        "phase": "Not Applicable",
+        "lead_sponsor": "Qianfoshan Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT05906329",
+            "title": "Low-dose Radiotherapy Combined With Conventional Fractionated Radiotherapy in Lung Cancer After Immunotherapy Resistance",
+            "excerpt": "Enrollment: 20 patients, Duration: ~24 months for study 'Low-dose Radiotherapy Combined With Conventional Fractionated Radiotherapy in Lung Cancer After Immunotherapy Resistance'",
+            "url": "https://clinicaltrials.gov/study/NCT05906329",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05906329"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03093688",
+        "title": "Clinical Safty and Efficacy Study of Infusion of iNKT Cells and CD8+T Cells in Patients With Advanced Solid Tumor",
+        "enrollment": 40,
+        "duration_months": 156,
+        "phase": "Phase 1",
+        "lead_sponsor": "Shanghai Public Health Clinical Center",
+        "citations": [
+          {
+            "nct_id": "NCT03093688",
+            "title": "Clinical Safty and Efficacy Study of Infusion of iNKT Cells and CD8+T Cells in Patients With Advanced Solid Tumor",
+            "excerpt": "Enrollment: 40 patients, Duration: ~156 months for study 'Clinical Safty and Efficacy Study of Infusion of iNKT Cells and CD8+T Cells in Patients With Advanced Solid Tumor'",
+            "url": "https://clinicaltrials.gov/study/NCT03093688",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03093688"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT00779402",
+        "title": "PROvenge Treatment and Early Cancer Treatment",
+        "enrollment": 176,
+        "duration_months": 168,
+        "phase": "Phase 3",
+        "lead_sponsor": "Dendreon",
+        "citations": [
+          {
+            "nct_id": "NCT00779402",
+            "title": "PROvenge Treatment and Early Cancer Treatment",
+            "excerpt": "Enrollment: 176 patients, Duration: ~168 months for study 'PROvenge Treatment and Early Cancer Treatment'",
+            "url": "https://clinicaltrials.gov/study/NCT00779402",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT00779402"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT02609386",
+        "title": "IRX-2 Regimen in Patients With Newly Diagnosed Stage II, III, or IVA Squamous Cell Carcinoma of the Oral Cavity",
+        "enrollment": 105,
+        "duration_months": 72,
+        "phase": "Phase 2",
+        "lead_sponsor": "Brooklyn ImmunoTherapeutics, LLC",
+        "citations": [
+          {
+            "nct_id": "NCT02609386",
+            "title": "IRX-2 Regimen in Patients With Newly Diagnosed Stage II, III, or IVA Squamous Cell Carcinoma of the Oral Cavity",
+            "excerpt": "Enrollment: 105 patients, Duration: ~72 months for study 'IRX-2 Regimen in Patients With Newly Diagnosed Stage II, III, or IVA Squamous Cell Carcinoma of the Oral Cavity'",
+            "url": "https://clinicaltrials.gov/study/NCT02609386",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT02609386"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT04396860",
+        "title": "Testing the Use of the Immunotherapy Drugs Ipilimumab and Nivolumab Plus Radiation Therapy Compared to the Usual Treatment (Temozolomide and Radiation Therapy) for Newly Diagnosed MGMT Unmethylated Glioblastoma",
+        "enrollment": 159,
+        "duration_months": 60,
+        "phase": "Phase 2",
+        "lead_sponsor": "National Cancer Institute (NCI)",
+        "citations": [
+          {
+            "nct_id": "NCT04396860",
+            "title": "Testing the Use of the Immunotherapy Drugs Ipilimumab and Nivolumab Plus Radiation Therapy Compared to the Usual Treatment (Temozolomide and Radiation Therapy) for Newly Diagnosed MGMT Unmethylated Glioblastoma",
+            "excerpt": "Enrollment: 159 patients, Duration: ~60 months for study 'Testing the Use of the Immunotherapy Drugs Ipilimumab and Nivolumab Plus Radiation Therapy Compared to the Usual Treatment (Temozolomide and Radiation Therapy) for Newly Diagnosed MGMT Unmethy...",
+            "url": "https://clinicaltrials.gov/study/NCT04396860",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT04396860"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT07141186",
+        "title": "QL1706 in Patients With Recurrent and Metastatic Cervical Cancer Resistant to Prior PD-1/PD-L1 Antibody Therapy",
+        "enrollment": 50,
+        "duration_months": 60,
+        "phase": "Phase 2",
+        "lead_sponsor": "Tianjin Medical University Cancer Institute and Hospital",
+        "citations": [
+          {
+            "nct_id": "NCT07141186",
+            "title": "QL1706 in Patients With Recurrent and Metastatic Cervical Cancer Resistant to Prior PD-1/PD-L1 Antibody Therapy",
+            "excerpt": "Enrollment: 50 patients, Duration: ~60 months for study 'QL1706 in Patients With Recurrent and Metastatic Cervical Cancer Resistant to Prior PD-1/PD-L1 Antibody Therapy'",
+            "url": "https://clinicaltrials.gov/study/NCT07141186",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT07141186"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT01874054",
+        "title": "Study of Brentuximab Vedotin Combined With Bendamustine in Patients With Hodgkin Lymphoma",
+        "enrollment": 55,
+        "duration_months": 60,
+        "phase": "Phase 1",
+        "lead_sponsor": "Seagen Inc.",
+        "citations": [
+          {
+            "nct_id": "NCT01874054",
+            "title": "Study of Brentuximab Vedotin Combined With Bendamustine in Patients With Hodgkin Lymphoma",
+            "excerpt": "Enrollment: 55 patients, Duration: ~60 months for study 'Study of Brentuximab Vedotin Combined With Bendamustine in Patients With Hodgkin Lymphoma'",
+            "url": "https://clinicaltrials.gov/study/NCT01874054",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT01874054"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT03007823",
+        "title": "High-activity Natural Killer Immunotherapy for Small Metastases of Melanoma",
+        "enrollment": 20,
+        "duration_months": 36,
+        "phase": "Phase 1",
+        "lead_sponsor": "Fuda Cancer Hospital, Guangzhou",
+        "citations": [
+          {
+            "nct_id": "NCT03007823",
+            "title": "High-activity Natural Killer Immunotherapy for Small Metastases of Melanoma",
+            "excerpt": "Enrollment: 20 patients, Duration: ~36 months for study 'High-activity Natural Killer Immunotherapy for Small Metastases of Melanoma'",
+            "url": "https://clinicaltrials.gov/study/NCT03007823",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT03007823"
+          }
+        ]
+      },
+      {
+        "nct_id": "NCT05645380",
+        "title": "Neoadjuvant TIL- and Response-Adapted Chemoimmunotherapy for TNBC",
+        "enrollment": 139,
+        "duration_months": 72,
+        "phase": "Phase 2",
+        "lead_sponsor": "University of Kansas Medical Center",
+        "citations": [
+          {
+            "nct_id": "NCT05645380",
+            "title": "Neoadjuvant TIL- and Response-Adapted Chemoimmunotherapy for TNBC",
+            "excerpt": "Enrollment: 139 patients, Duration: ~72 months for study 'Neoadjuvant TIL- and Response-Adapted Chemoimmunotherapy for TNBC'",
+            "url": "https://clinicaltrials.gov/study/NCT05645380",
+            "field_name": "designModule.enrollmentInfo",
+            "data_bucket": "NCT05645380"
+          }
+        ]
+      }
+    ],
+    "nodes": null,
+    "edges": null
+  },
+  "meta": {
+    "filters_applied": {
+      "condition": "Immunotherapy"
+    },
+    "source": "clinicaltrials.gov",
+    "total_trials_analyzed": 100,
+    "query_interpretation": "Parsed query as 'network_sponsors_drugs' intent focusing on 'Immunotherapy'. Recommended visualization: network_graph.",
+    "time_granularity": "none",
+    "units": {
+      "y": "trial_count"
+    },
+    "notes": [
+      "Aggregated 100 clinical trial records from ClinicalTrials.gov API v2.",
+      "Generated 93 deep source citations linking back to individual study NCT IDs."
+    ]
+  },
+  "citations": [
+    {
+      "nct_id": "NCT03816657",
+      "title": "The Predictive Role of Programmed Death Ligand 1 (PD-L1) and Neutrophil to Lymphocyte Ratio (NLR) in Non-Small Cell Lung Cancer (NSCLC)",
+      "excerpt": "Enrollment: 93 patients, Duration: ~48 months for study 'The Predictive Role of Programmed Death Ligand 1 (PD-L1) and Neutrophil to Lymphocyte Ratio (NLR) in Non-Small Cell Lung Cancer (NSCLC)'",
+      "url": "https://clinicaltrials.gov/study/NCT03816657",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT03816657"
+    },
+    {
+      "nct_id": "NCT07245901",
+      "title": "Safety and Tolerability of a mRNA Vaccine Encoding Tumor-Specific Circular RNA Antigens in Combination With Anti-PD-1 Monoclonal Antibody in Patients With Advanced Solid Tumors",
+      "excerpt": "Enrollment: 60 patients, Duration: ~60 months for study 'Safety and Tolerability of a mRNA Vaccine Encoding Tumor-Specific Circular RNA Antigens in Combination With Anti-PD-1 Monoclonal Antibody in Patients With Advanced Solid Tumors'",
+      "url": "https://clinicaltrials.gov/study/NCT07245901",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT07245901"
+    },
+    {
+      "nct_id": "NCT03041012",
+      "title": "Early Administration of Romidepsin and 3BNC117 in Treatment-na\u00efve HIV Patients Starting ART",
+      "excerpt": "Enrollment: 60 patients, Duration: ~60 months for study 'Early Administration of Romidepsin and 3BNC117 in Treatment-na\u00efve HIV Patients Starting ART'",
+      "url": "https://clinicaltrials.gov/study/NCT03041012",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT03041012"
+    },
+    {
+      "nct_id": "NCT04977375",
+      "title": "Trial of Anti-PD-1 Immunotherapy and Stereotactic Radiation in Patients With Recurrent Glioblastoma",
+      "excerpt": "Enrollment: 10 patients, Duration: ~60 months for study 'Trial of Anti-PD-1 Immunotherapy and Stereotactic Radiation in Patients With Recurrent Glioblastoma'",
+      "url": "https://clinicaltrials.gov/study/NCT04977375",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT04977375"
+    },
+    {
+      "nct_id": "NCT06834165",
+      "title": "Study Evaluating the Safety and Efficacy of Neffy or Intramuscular Adrenalin in Patients With Allergic Reactions After Oral Food Challenge or Allergen Immunotherapy",
+      "excerpt": "Enrollment: 600 patients, Duration: ~24 months for study 'Study Evaluating the Safety and Efficacy of Neffy or Intramuscular Adrenalin in Patients With Allergic Reactions After Oral Food Challenge or Allergen Immunotherapy'",
+      "url": "https://clinicaltrials.gov/study/NCT06834165",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT06834165"
+    },
+    {
+      "nct_id": "NCT00779792",
+      "title": "Efficacy of Glycerol, Two Topical Steroids, and a Topical Immune Modulator Against Skin Irritation",
+      "excerpt": "Enrollment: 36 patients, Duration: ~1 months for study 'Efficacy of Glycerol, Two Topical Steroids, and a Topical Immune Modulator Against Skin Irritation'",
+      "url": "https://clinicaltrials.gov/study/NCT00779792",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT00779792"
+    },
+    {
+      "nct_id": "NCT06180499",
+      "title": "Allogeneic Immunotherapy of Hematological Malignancies Using Regulatory T-cell Selective Depletion",
+      "excerpt": "Enrollment: 27 patients, Duration: ~60 months for study 'Allogeneic Immunotherapy of Hematological Malignancies Using Regulatory T-cell Selective Depletion'",
+      "url": "https://clinicaltrials.gov/study/NCT06180499",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT06180499"
+    },
+    {
+      "nct_id": "NCT05477095",
+      "title": "A Phase 1 Study to Evaluate the Safety, Tolerability, and Immunogenicity of UB-313 in Healthy Participants",
+      "excerpt": "Enrollment: 40 patients, Duration: ~12 months for study 'A Phase 1 Study to Evaluate the Safety, Tolerability, and Immunogenicity of UB-313 in Healthy Participants'",
+      "url": "https://clinicaltrials.gov/study/NCT05477095",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT05477095"
+    },
+    {
+      "nct_id": "NCT01959672",
+      "title": "Chemotherapy, Stereotactic Body Radiation Therapy & Nelfinavir Mesylate in Locally Advanced Pancreatic Cancer",
+      "excerpt": "Enrollment: 11 patients, Duration: ~60 months for study 'Chemotherapy, Stereotactic Body Radiation Therapy & Nelfinavir Mesylate in Locally Advanced Pancreatic Cancer'",
+      "url": "https://clinicaltrials.gov/study/NCT01959672",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT01959672"
+    },
+    {
+      "nct_id": "NCT05641012",
+      "title": "Association Between Helioderma and Response to Immunotherapy in Patients With Metastatic Melanoma",
+      "excerpt": "Enrollment: 100 patients, Duration: ~36 months for study 'Association Between Helioderma and Response to Immunotherapy in Patients With Metastatic Melanoma'",
+      "url": "https://clinicaltrials.gov/study/NCT05641012",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT05641012"
+    },
+    {
+      "nct_id": "NCT06089967",
+      "title": "Immune-Related Adverse Events and Associated Biomarkers in Patients Receiving Cancer Immunotherapy",
+      "excerpt": "Enrollment: 30 patients, Duration: ~24 months for study 'Immune-Related Adverse Events and Associated Biomarkers in Patients Receiving Cancer Immunotherapy'",
+      "url": "https://clinicaltrials.gov/study/NCT06089967",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT06089967"
+    },
+    {
+      "nct_id": "NCT00001830",
+      "title": "Donor Th2 Cells to Prevent Graft-Versus-Host Disease in Bone Marrow Transplants",
+      "excerpt": "Enrollment: 110 patients, Duration: ~192 months for study 'Donor Th2 Cells to Prevent Graft-Versus-Host Disease in Bone Marrow Transplants'",
+      "url": "https://clinicaltrials.gov/study/NCT00001830",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT00001830"
+    },
+    {
+      "nct_id": "NCT05672147",
+      "title": "CD33-CAR T Cell Therapy for the Treatment of Recurrent or Refractory Acute Myeloid Leukemia",
+      "excerpt": "Enrollment: 27 patients, Duration: ~60 months for study 'CD33-CAR T Cell Therapy for the Treatment of Recurrent or Refractory Acute Myeloid Leukemia'",
+      "url": "https://clinicaltrials.gov/study/NCT05672147",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT05672147"
+    },
+    {
+      "nct_id": "NCT07694947",
+      "title": "Changes in Eosinophil Cationic Protein and Sputum Eosinophils Following Allergen Immunotherapy",
+      "excerpt": "Enrollment: 100 patients, Duration: ~12 months for study 'Changes in Eosinophil Cationic Protein and Sputum Eosinophils Following Allergen Immunotherapy'",
+      "url": "https://clinicaltrials.gov/study/NCT07694947",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT07694947"
+    },
+    {
+      "nct_id": "NCT07258147",
+      "title": "Safety and Efficacy of Radiotherapy Combined With Immunochemotherapy in Pre-treated SCLC Patients With Liver Metastases",
+      "excerpt": "Enrollment: 30 patients, Duration: ~24 months for study 'Safety and Efficacy of Radiotherapy Combined With Immunochemotherapy in Pre-treated SCLC Patients With Liver Metastases'",
+      "url": "https://clinicaltrials.gov/study/NCT07258147",
+      "field_name": "designModule.enrollmentInfo",
+      "data_bucket": "NCT07258147"
+    }
+  ]
+}

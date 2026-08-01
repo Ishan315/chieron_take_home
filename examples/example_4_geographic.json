@@ -1,0 +1,779 @@
+{
+  "request_input": {
+    "query": "Which countries have the most recruiting trials for Breast Cancer?",
+    "drug_name": null,
+    "condition": "Breast Cancer",
+    "trial_phase": null,
+    "sponsor": null,
+    "country": null,
+    "start_year": null,
+    "end_year": null,
+    "overall_status": "RECRUITING",
+    "visualization_override": null,
+    "max_trials_to_analyze": 100
+  },
+  "visualization": {
+    "type": "choropleth_map",
+    "title": "Geographic Distribution of Breast Cancer Trials",
+    "subtitle": "Count of trials by country location",
+    "encoding": {
+      "x": {
+        "field": "country",
+        "label": "Country",
+        "type": "nominal",
+        "unit": null
+      },
+      "y": {
+        "field": "trial_count",
+        "label": "Trial Count",
+        "type": "quantitative",
+        "unit": "trials"
+      },
+      "group": null,
+      "color": null,
+      "size": null,
+      "network": null
+    },
+    "data": [
+      {
+        "country": "United States",
+        "trial_count": 40,
+        "citations": [
+          {
+            "nct_id": "NCT05059444",
+            "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+            "excerpt": "Trial active in United States: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+            "url": "https://clinicaltrials.gov/study/NCT05059444",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "United States"
+          },
+          {
+            "nct_id": "NCT05245812",
+            "title": "Safety and Feasibility of Robotic SP Nipple Sparing Mastectomy",
+            "excerpt": "Trial active in United States: 'Safety and Feasibility of Robotic SP Nipple Sparing Mastectomy' (NCT05245812)",
+            "url": "https://clinicaltrials.gov/study/NCT05245812",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "United States"
+          },
+          {
+            "nct_id": "NCT03823144",
+            "title": "Intravital Microscopy in Human Solid Tumors",
+            "excerpt": "Trial active in United States: 'Intravital Microscopy in Human Solid Tumors' (NCT03823144)",
+            "url": "https://clinicaltrials.gov/study/NCT03823144",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "United States"
+          }
+        ]
+      },
+      {
+        "country": "China",
+        "trial_count": 36,
+        "citations": [
+          {
+            "nct_id": "NCT06660628",
+            "title": "Large Segmentation Radiotherapy \u00b1 Deep Inspiration Breath Hold(DIBH) for Left Breast Cancer",
+            "excerpt": "Trial active in China: 'Large Segmentation Radiotherapy \u00b1 Deep Inspiration Breath Hold(DIBH) for Left Breast Cancer' (NCT06660628)",
+            "url": "https://clinicaltrials.gov/study/NCT06660628",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "China"
+          },
+          {
+            "nct_id": "NCT07469267",
+            "title": "Level I-II Axillary Irradiation in Breast Cancer With Sentinel-Node Macro-metastases",
+            "excerpt": "Trial active in China: 'Level I-II Axillary Irradiation in Breast Cancer With Sentinel-Node Macro-metastases' (NCT07469267)",
+            "url": "https://clinicaltrials.gov/study/NCT07469267",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "China"
+          },
+          {
+            "nct_id": "NCT07541664",
+            "title": "Digital Mind-Body Therapy for Neoadjuvant Breast Cancer",
+            "excerpt": "Trial active in China: 'Digital Mind-Body Therapy for Neoadjuvant Breast Cancer' (NCT07541664)",
+            "url": "https://clinicaltrials.gov/study/NCT07541664",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "China"
+          }
+        ]
+      },
+      {
+        "country": "France",
+        "trial_count": 11,
+        "citations": [
+          {
+            "nct_id": "NCT05800132",
+            "title": "Diagnostic Performance of Breast Cancer Screening Second Reading Process Assisted by AI",
+            "excerpt": "Trial active in France: 'Diagnostic Performance of Breast Cancer Screening Second Reading Process Assisted by AI' (NCT05800132)",
+            "url": "https://clinicaltrials.gov/study/NCT05800132",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "France"
+          },
+          {
+            "nct_id": "NCT05059444",
+            "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+            "excerpt": "Trial active in France: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+            "url": "https://clinicaltrials.gov/study/NCT05059444",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "France"
+          },
+          {
+            "nct_id": "NCT06505018",
+            "title": "Telemonitoring Platform \"CUREETY TECHCARE\" vs Standard of Care for mTBNC Patients Initiating a First-line Treatment",
+            "excerpt": "Trial active in France: 'Telemonitoring Platform \"CUREETY TECHCARE\" vs Standard of Care for mTBNC Patients Initiating a First-line Treatment' (NCT06505018)",
+            "url": "https://clinicaltrials.gov/study/NCT06505018",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "France"
+          }
+        ]
+      },
+      {
+        "country": "Spain",
+        "trial_count": 10,
+        "citations": [
+          {
+            "nct_id": "NCT05059444",
+            "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+            "excerpt": "Trial active in Spain: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+            "url": "https://clinicaltrials.gov/study/NCT05059444",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Spain"
+          },
+          {
+            "nct_id": "NCT07222267",
+            "title": "An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors",
+            "excerpt": "Trial active in Spain: 'An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors' (NCT07222267)",
+            "url": "https://clinicaltrials.gov/study/NCT07222267",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Spain"
+          },
+          {
+            "nct_id": "NCT07007559",
+            "title": "ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer",
+            "excerpt": "Trial active in Spain: 'ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer' (NCT07007559)",
+            "url": "https://clinicaltrials.gov/study/NCT07007559",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Spain"
+          }
+        ]
+      },
+      {
+        "country": "Italy",
+        "trial_count": 9,
+        "citations": [
+          {
+            "nct_id": "NCT05059444",
+            "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+            "excerpt": "Trial active in Italy: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+            "url": "https://clinicaltrials.gov/study/NCT05059444",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Italy"
+          },
+          {
+            "nct_id": "NCT07222267",
+            "title": "An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors",
+            "excerpt": "Trial active in Italy: 'An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors' (NCT07222267)",
+            "url": "https://clinicaltrials.gov/study/NCT07222267",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Italy"
+          },
+          {
+            "nct_id": "NCT07180693",
+            "title": "Breast Cancer RElapsed in Patients Treated With Adjuvant CDK4/6 Inhibitors:",
+            "excerpt": "Trial active in Italy: 'Breast Cancer RElapsed in Patients Treated With Adjuvant CDK4/6 Inhibitors:' (NCT07180693)",
+            "url": "https://clinicaltrials.gov/study/NCT07180693",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Italy"
+          }
+        ]
+      },
+      {
+        "country": "Germany",
+        "trial_count": 8,
+        "citations": [
+          {
+            "nct_id": "NCT05059444",
+            "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+            "excerpt": "Trial active in Germany: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+            "url": "https://clinicaltrials.gov/study/NCT05059444",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Germany"
+          },
+          {
+            "nct_id": "NCT05999396",
+            "title": "FIH, Bispecific CD276xCD3 Antibody CC-3 in Patients With Colorectal Cancer",
+            "excerpt": "Trial active in Germany: 'FIH, Bispecific CD276xCD3 Antibody CC-3 in Patients With Colorectal Cancer' (NCT05999396)",
+            "url": "https://clinicaltrials.gov/study/NCT05999396",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Germany"
+          },
+          {
+            "nct_id": "NCT05208762",
+            "title": "A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors",
+            "excerpt": "Trial active in Germany: 'A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors' (NCT05208762)",
+            "url": "https://clinicaltrials.gov/study/NCT05208762",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Germany"
+          }
+        ]
+      },
+      {
+        "country": "Canada",
+        "trial_count": 7,
+        "citations": [
+          {
+            "nct_id": "NCT07252726",
+            "title": "Evaluating Dose Timing (Morning vs Evening) of Endocrine-based Therapies in Metastatic Breast and Prostate Cancers",
+            "excerpt": "Trial active in Canada: 'Evaluating Dose Timing (Morning vs Evening) of Endocrine-based Therapies in Metastatic Breast and Prostate Cancers' (NCT07252726)",
+            "url": "https://clinicaltrials.gov/study/NCT07252726",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Canada"
+          },
+          {
+            "nct_id": "NCT07007559",
+            "title": "ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer",
+            "excerpt": "Trial active in Canada: 'ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer' (NCT07007559)",
+            "url": "https://clinicaltrials.gov/study/NCT07007559",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Canada"
+          },
+          {
+            "nct_id": "NCT05208762",
+            "title": "A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors",
+            "excerpt": "Trial active in Canada: 'A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors' (NCT05208762)",
+            "url": "https://clinicaltrials.gov/study/NCT05208762",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Canada"
+          }
+        ]
+      },
+      {
+        "country": "Australia",
+        "trial_count": 6,
+        "citations": [
+          {
+            "nct_id": "NCT07222267",
+            "title": "An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors",
+            "excerpt": "Trial active in Australia: 'An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors' (NCT07222267)",
+            "url": "https://clinicaltrials.gov/study/NCT07222267",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Australia"
+          },
+          {
+            "nct_id": "NCT01793168",
+            "title": "Rare Disease Patient Registry & Natural History Study - Coordination of Rare Diseases at Sanford",
+            "excerpt": "Trial active in Australia: 'Rare Disease Patient Registry & Natural History Study - Coordination of Rare Diseases at Sanford' (NCT01793168)",
+            "url": "https://clinicaltrials.gov/study/NCT01793168",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Australia"
+          },
+          {
+            "nct_id": "NCT06249048",
+            "title": "Phase 1/2 Study of Intratumoral Injection of STX-001 in Advanced Solid Tumors as Monotherapy or in Combination With Pembrolizumab",
+            "excerpt": "Trial active in Australia: 'Phase 1/2 Study of Intratumoral Injection of STX-001 in Advanced Solid Tumors as Monotherapy or in Combination With Pembrolizumab' (NCT06249048)",
+            "url": "https://clinicaltrials.gov/study/NCT06249048",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Australia"
+          }
+        ]
+      },
+      {
+        "country": "United Kingdom",
+        "trial_count": 6,
+        "citations": [
+          {
+            "nct_id": "NCT06468124",
+            "title": "Sensitivity of Organoids to Predict Treatment Outcome in Breast Cancer Metastases",
+            "excerpt": "Trial active in United Kingdom: 'Sensitivity of Organoids to Predict Treatment Outcome in Breast Cancer Metastases' (NCT06468124)",
+            "url": "https://clinicaltrials.gov/study/NCT06468124",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "United Kingdom"
+          },
+          {
+            "nct_id": "NCT07007559",
+            "title": "ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer",
+            "excerpt": "Trial active in United Kingdom: 'ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer' (NCT07007559)",
+            "url": "https://clinicaltrials.gov/study/NCT07007559",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "United Kingdom"
+          },
+          {
+            "nct_id": "NCT05208762",
+            "title": "A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors",
+            "excerpt": "Trial active in United Kingdom: 'A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors' (NCT05208762)",
+            "url": "https://clinicaltrials.gov/study/NCT05208762",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "United Kingdom"
+          }
+        ]
+      },
+      {
+        "country": "South Korea",
+        "trial_count": 6,
+        "citations": [
+          {
+            "nct_id": "NCT07405931",
+            "title": "Evaluation of the Effectiveness of Managing Chemotherapy Side Effects Using ePRO and a Standardized Telenursing Program for Cancer Patients",
+            "excerpt": "Trial active in South Korea: 'Evaluation of the Effectiveness of Managing Chemotherapy Side Effects Using ePRO and a Standardized Telenursing Program for Cancer Patients' (NCT07405931)",
+            "url": "https://clinicaltrials.gov/study/NCT07405931",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "South Korea"
+          },
+          {
+            "nct_id": "NCT07007559",
+            "title": "ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer",
+            "excerpt": "Trial active in South Korea: 'ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer' (NCT07007559)",
+            "url": "https://clinicaltrials.gov/study/NCT07007559",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "South Korea"
+          },
+          {
+            "nct_id": "NCT06253871",
+            "title": "A Phase 1/1b Study of IAM1363 in HER2 Cancers",
+            "excerpt": "Trial active in South Korea: 'A Phase 1/1b Study of IAM1363 in HER2 Cancers' (NCT06253871)",
+            "url": "https://clinicaltrials.gov/study/NCT06253871",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "South Korea"
+          }
+        ]
+      },
+      {
+        "country": "Netherlands",
+        "trial_count": 5,
+        "citations": [
+          {
+            "nct_id": "NCT06595563",
+            "title": "HER2 Molecular Imaging With 89Zr-trastuzumab PET/CT as a Predictive Biomarker for Antibody-drug Conjugate Sequencing in Patients With Advanced HER2-positive Breast Cancer",
+            "excerpt": "Trial active in Netherlands: 'HER2 Molecular Imaging With 89Zr-trastuzumab PET/CT as a Predictive Biomarker for Antibody-drug Conjugate Sequencing in Patients With Advanced HER2-positive Breast Cancer' (NCT06595563)",
+            "url": "https://clinicaltrials.gov/study/NCT06595563",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Netherlands"
+          },
+          {
+            "nct_id": "NCT05216900",
+            "title": "Breast Reconstruction and Neoadjuvant Radiotherapy",
+            "excerpt": "Trial active in Netherlands: 'Breast Reconstruction and Neoadjuvant Radiotherapy' (NCT05216900)",
+            "url": "https://clinicaltrials.gov/study/NCT05216900",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Netherlands"
+          },
+          {
+            "nct_id": "NCT05208762",
+            "title": "A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors",
+            "excerpt": "Trial active in Netherlands: 'A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors' (NCT05208762)",
+            "url": "https://clinicaltrials.gov/study/NCT05208762",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Netherlands"
+          }
+        ]
+      },
+      {
+        "country": "Japan",
+        "trial_count": 4,
+        "citations": [
+          {
+            "nct_id": "NCT05208762",
+            "title": "A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors",
+            "excerpt": "Trial active in Japan: 'A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors' (NCT05208762)",
+            "url": "https://clinicaltrials.gov/study/NCT05208762",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Japan"
+          },
+          {
+            "nct_id": "NCT07114601",
+            "title": "A Study of LY4257496 in Participants With Cancer (OMNIRAY)",
+            "excerpt": "Trial active in Japan: 'A Study of LY4257496 in Participants With Cancer (OMNIRAY)' (NCT07114601)",
+            "url": "https://clinicaltrials.gov/study/NCT07114601",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Japan"
+          },
+          {
+            "nct_id": "NCT05307705",
+            "title": "A Study of LOXO-783 in Patients With Breast Cancer/Other Solid Tumors",
+            "excerpt": "Trial active in Japan: 'A Study of LOXO-783 in Patients With Breast Cancer/Other Solid Tumors' (NCT05307705)",
+            "url": "https://clinicaltrials.gov/study/NCT05307705",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Japan"
+          }
+        ]
+      },
+      {
+        "country": "Belgium",
+        "trial_count": 3,
+        "citations": [
+          {
+            "nct_id": "NCT06595563",
+            "title": "HER2 Molecular Imaging With 89Zr-trastuzumab PET/CT as a Predictive Biomarker for Antibody-drug Conjugate Sequencing in Patients With Advanced HER2-positive Breast Cancer",
+            "excerpt": "Trial active in Belgium: 'HER2 Molecular Imaging With 89Zr-trastuzumab PET/CT as a Predictive Biomarker for Antibody-drug Conjugate Sequencing in Patients With Advanced HER2-positive Breast Cancer' (NCT06595563)",
+            "url": "https://clinicaltrials.gov/study/NCT06595563",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Belgium"
+          },
+          {
+            "nct_id": "NCT05208762",
+            "title": "A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors",
+            "excerpt": "Trial active in Belgium: 'A Study of PF-08046054/SGN-PDL1V in Advanced Solid Tumors' (NCT05208762)",
+            "url": "https://clinicaltrials.gov/study/NCT05208762",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Belgium"
+          },
+          {
+            "nct_id": "NCT05307705",
+            "title": "A Study of LOXO-783 in Patients With Breast Cancer/Other Solid Tumors",
+            "excerpt": "Trial active in Belgium: 'A Study of LOXO-783 in Patients With Breast Cancer/Other Solid Tumors' (NCT05307705)",
+            "url": "https://clinicaltrials.gov/study/NCT05307705",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Belgium"
+          }
+        ]
+      },
+      {
+        "country": "Singapore",
+        "trial_count": 3,
+        "citations": [
+          {
+            "nct_id": "NCT07007559",
+            "title": "ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer",
+            "excerpt": "Trial active in Singapore: 'ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer' (NCT07007559)",
+            "url": "https://clinicaltrials.gov/study/NCT07007559",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Singapore"
+          },
+          {
+            "nct_id": "NCT05181033",
+            "title": "Lenvatinib+Letrozole Versus Fulvestrant in Metastatic ER+/HER2- Breast Cancer, Post Progression on Al + CDK4/6 Inhibitor",
+            "excerpt": "Trial active in Singapore: 'Lenvatinib+Letrozole Versus Fulvestrant in Metastatic ER+/HER2- Breast Cancer, Post Progression on Al + CDK4/6 Inhibitor' (NCT05181033)",
+            "url": "https://clinicaltrials.gov/study/NCT05181033",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Singapore"
+          },
+          {
+            "nct_id": "NCT05307705",
+            "title": "A Study of LOXO-783 in Patients With Breast Cancer/Other Solid Tumors",
+            "excerpt": "Trial active in Singapore: 'A Study of LOXO-783 in Patients With Breast Cancer/Other Solid Tumors' (NCT05307705)",
+            "url": "https://clinicaltrials.gov/study/NCT05307705",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Singapore"
+          }
+        ]
+      },
+      {
+        "country": "Brazil",
+        "trial_count": 2,
+        "citations": [
+          {
+            "nct_id": "NCT07070128",
+            "title": "Screening Tool Artificial Intelligence-based for Predicting the Genetic Risk of BREAST Cancer",
+            "excerpt": "Trial active in Brazil: 'Screening Tool Artificial Intelligence-based for Predicting the Genetic Risk of BREAST Cancer' (NCT07070128)",
+            "url": "https://clinicaltrials.gov/study/NCT07070128",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Brazil"
+          },
+          {
+            "nct_id": "NCT06380751",
+            "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+            "excerpt": "Trial active in Brazil: 'Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PA...",
+            "url": "https://clinicaltrials.gov/study/NCT06380751",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Brazil"
+          }
+        ]
+      },
+      {
+        "country": "Taiwan",
+        "trial_count": 2,
+        "citations": [
+          {
+            "nct_id": "NCT05766410",
+            "title": "A Randomized Study Comparing the Immune Modulation Effect of Ribociclib, Palbociclib, and Abemaciclib in ER+/HER2- EBC",
+            "excerpt": "Trial active in Taiwan: 'A Randomized Study Comparing the Immune Modulation Effect of Ribociclib, Palbociclib, and Abemaciclib in ER+/HER2- EBC' (NCT05766410)",
+            "url": "https://clinicaltrials.gov/study/NCT05766410",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Taiwan"
+          },
+          {
+            "nct_id": "NCT06380751",
+            "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+            "excerpt": "Trial active in Taiwan: 'Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PA...",
+            "url": "https://clinicaltrials.gov/study/NCT06380751",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Taiwan"
+          }
+        ]
+      },
+      {
+        "country": "Sweden",
+        "trial_count": 2,
+        "citations": [
+          {
+            "nct_id": "NCT07273357",
+            "title": "Aspects of Adjuvant CDK4/6 Inhibitors in Older Breast Cancer Patients - Focusing on Geriatric Screening",
+            "excerpt": "Trial active in Sweden: 'Aspects of Adjuvant CDK4/6 Inhibitors in Older Breast Cancer Patients - Focusing on Geriatric Screening' (NCT07273357)",
+            "url": "https://clinicaltrials.gov/study/NCT07273357",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Sweden"
+          },
+          {
+            "nct_id": "NCT07059104",
+            "title": "Implant-based Breast Reconstruction in Post-bariatric Women - a Registry-based National Study",
+            "excerpt": "Trial active in Sweden: 'Implant-based Breast Reconstruction in Post-bariatric Women - a Registry-based National Study' (NCT07059104)",
+            "url": "https://clinicaltrials.gov/study/NCT07059104",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Sweden"
+          }
+        ]
+      },
+      {
+        "country": "Slovakia",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT07213271",
+            "title": "Physical Exercise on Metabolic Health, Gut Microbiota, Physical Fitness, and Quality of Life in Obese Breast Cancer Survivors",
+            "excerpt": "Trial active in Slovakia: 'Physical Exercise on Metabolic Health, Gut Microbiota, Physical Fitness, and Quality of Life in Obese Breast Cancer Survivors' (NCT07213271)",
+            "url": "https://clinicaltrials.gov/study/NCT07213271",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Slovakia"
+          }
+        ]
+      },
+      {
+        "country": "Mexico",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT05544240",
+            "title": "Phase 1 Trial of SYNC-T - Immunotherapy for Patients With Advanced/Metastatic Solid Tumors",
+            "excerpt": "Trial active in Mexico: 'Phase 1 Trial of SYNC-T - Immunotherapy for Patients With Advanced/Metastatic Solid Tumors' (NCT05544240)",
+            "url": "https://clinicaltrials.gov/study/NCT05544240",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Mexico"
+          }
+        ]
+      },
+      {
+        "country": "Russia",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT07658170",
+            "title": "Evaluation of the Efficacy and Safety of Using Platelet-rich Fibrin (PRF)-Based Lipobolus for the Immediate Reconstruction of Defects After Breast-conserving Resection for Breast Cancer (Minimally Invasive Primary Immediate Grafting)",
+            "excerpt": "Trial active in Russia: 'Evaluation of the Efficacy and Safety of Using Platelet-rich Fibrin (PRF)-Based Lipobolus for the Immediate Reconstruction of Defects After Breast-conserving Resection for Breast Cancer (Minimally Invasive Primary Immediate G...",
+            "url": "https://clinicaltrials.gov/study/NCT07658170",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Russia"
+          }
+        ]
+      },
+      {
+        "country": "Ireland",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT06253871",
+            "title": "A Phase 1/1b Study of IAM1363 in HER2 Cancers",
+            "excerpt": "Trial active in Ireland: 'A Phase 1/1b Study of IAM1363 in HER2 Cancers' (NCT06253871)",
+            "url": "https://clinicaltrials.gov/study/NCT06253871",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Ireland"
+          }
+        ]
+      },
+      {
+        "country": "Egypt",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT06913244",
+            "title": "Long-Term Multidisciplinary Physiotherapy for Breast Cancer Survivors: A Randomized Controlled Trial",
+            "excerpt": "Trial active in Egypt: 'Long-Term Multidisciplinary Physiotherapy for Breast Cancer Survivors: A Randomized Controlled Trial' (NCT06913244)",
+            "url": "https://clinicaltrials.gov/study/NCT06913244",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Egypt"
+          }
+        ]
+      },
+      {
+        "country": "Argentina",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT06380751",
+            "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+            "excerpt": "Trial active in Argentina: 'Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or...",
+            "url": "https://clinicaltrials.gov/study/NCT06380751",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Argentina"
+          }
+        ]
+      },
+      {
+        "country": "Austria",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT06380751",
+            "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+            "excerpt": "Trial active in Austria: 'Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or P...",
+            "url": "https://clinicaltrials.gov/study/NCT06380751",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Austria"
+          }
+        ]
+      },
+      {
+        "country": "Bulgaria",
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT06380751",
+            "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+            "excerpt": "Trial active in Bulgaria: 'Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or ...",
+            "url": "https://clinicaltrials.gov/study/NCT06380751",
+            "field_name": "contactsLocationsModule",
+            "data_bucket": "Bulgaria"
+          }
+        ]
+      }
+    ],
+    "nodes": null,
+    "edges": null
+  },
+  "meta": {
+    "filters_applied": {
+      "condition": "Breast Cancer",
+      "status": "RECRUITING"
+    },
+    "source": "clinicaltrials.gov",
+    "total_trials_analyzed": 100,
+    "query_interpretation": "Parsed query as 'geographic_distribution' intent focusing on 'Breast Cancer'. Recommended visualization: choropleth_map.",
+    "time_granularity": "none",
+    "units": {
+      "y": "trial_count"
+    },
+    "notes": [
+      "Aggregated 100 clinical trial records from ClinicalTrials.gov API v2.",
+      "Generated 56 deep source citations linking back to individual study NCT IDs."
+    ]
+  },
+  "citations": [
+    {
+      "nct_id": "NCT05059444",
+      "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+      "excerpt": "Trial active in United States: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+      "url": "https://clinicaltrials.gov/study/NCT05059444",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "United States"
+    },
+    {
+      "nct_id": "NCT05245812",
+      "title": "Safety and Feasibility of Robotic SP Nipple Sparing Mastectomy",
+      "excerpt": "Trial active in United States: 'Safety and Feasibility of Robotic SP Nipple Sparing Mastectomy' (NCT05245812)",
+      "url": "https://clinicaltrials.gov/study/NCT05245812",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "United States"
+    },
+    {
+      "nct_id": "NCT03823144",
+      "title": "Intravital Microscopy in Human Solid Tumors",
+      "excerpt": "Trial active in United States: 'Intravital Microscopy in Human Solid Tumors' (NCT03823144)",
+      "url": "https://clinicaltrials.gov/study/NCT03823144",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "United States"
+    },
+    {
+      "nct_id": "NCT06660628",
+      "title": "Large Segmentation Radiotherapy \u00b1 Deep Inspiration Breath Hold(DIBH) for Left Breast Cancer",
+      "excerpt": "Trial active in China: 'Large Segmentation Radiotherapy \u00b1 Deep Inspiration Breath Hold(DIBH) for Left Breast Cancer' (NCT06660628)",
+      "url": "https://clinicaltrials.gov/study/NCT06660628",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "China"
+    },
+    {
+      "nct_id": "NCT07469267",
+      "title": "Level I-II Axillary Irradiation in Breast Cancer With Sentinel-Node Macro-metastases",
+      "excerpt": "Trial active in China: 'Level I-II Axillary Irradiation in Breast Cancer With Sentinel-Node Macro-metastases' (NCT07469267)",
+      "url": "https://clinicaltrials.gov/study/NCT07469267",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "China"
+    },
+    {
+      "nct_id": "NCT07541664",
+      "title": "Digital Mind-Body Therapy for Neoadjuvant Breast Cancer",
+      "excerpt": "Trial active in China: 'Digital Mind-Body Therapy for Neoadjuvant Breast Cancer' (NCT07541664)",
+      "url": "https://clinicaltrials.gov/study/NCT07541664",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "China"
+    },
+    {
+      "nct_id": "NCT05800132",
+      "title": "Diagnostic Performance of Breast Cancer Screening Second Reading Process Assisted by AI",
+      "excerpt": "Trial active in France: 'Diagnostic Performance of Breast Cancer Screening Second Reading Process Assisted by AI' (NCT05800132)",
+      "url": "https://clinicaltrials.gov/study/NCT05800132",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "France"
+    },
+    {
+      "nct_id": "NCT05059444",
+      "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+      "excerpt": "Trial active in France: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+      "url": "https://clinicaltrials.gov/study/NCT05059444",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "France"
+    },
+    {
+      "nct_id": "NCT06505018",
+      "title": "Telemonitoring Platform \"CUREETY TECHCARE\" vs Standard of Care for mTBNC Patients Initiating a First-line Treatment",
+      "excerpt": "Trial active in France: 'Telemonitoring Platform \"CUREETY TECHCARE\" vs Standard of Care for mTBNC Patients Initiating a First-line Treatment' (NCT06505018)",
+      "url": "https://clinicaltrials.gov/study/NCT06505018",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "France"
+    },
+    {
+      "nct_id": "NCT05059444",
+      "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+      "excerpt": "Trial active in Spain: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+      "url": "https://clinicaltrials.gov/study/NCT05059444",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "Spain"
+    },
+    {
+      "nct_id": "NCT07222267",
+      "title": "An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors",
+      "excerpt": "Trial active in Spain: 'An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors' (NCT07222267)",
+      "url": "https://clinicaltrials.gov/study/NCT07222267",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "Spain"
+    },
+    {
+      "nct_id": "NCT07007559",
+      "title": "ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer",
+      "excerpt": "Trial active in Spain: 'ASPEN-09-03: A Study of Evorpacept in Combination With Trastuzumab and Chemotherapy in Metastatic HER2-Positive Breast Cancer' (NCT07007559)",
+      "url": "https://clinicaltrials.gov/study/NCT07007559",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "Spain"
+    },
+    {
+      "nct_id": "NCT05059444",
+      "title": "ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation",
+      "excerpt": "Trial active in Italy: 'ORACLE: Observation of ResiduAl Cancer With Liquid Biopsy Evaluation' (NCT05059444)",
+      "url": "https://clinicaltrials.gov/study/NCT05059444",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "Italy"
+    },
+    {
+      "nct_id": "NCT07222267",
+      "title": "An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors",
+      "excerpt": "Trial active in Italy: 'An Investigational Study of BG-75202 Alone and in Combination With Other Therapeutic Agents in Adults With Advanced Solid Tumors' (NCT07222267)",
+      "url": "https://clinicaltrials.gov/study/NCT07222267",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "Italy"
+    },
+    {
+      "nct_id": "NCT07180693",
+      "title": "Breast Cancer RElapsed in Patients Treated With Adjuvant CDK4/6 Inhibitors:",
+      "excerpt": "Trial active in Italy: 'Breast Cancer RElapsed in Patients Treated With Adjuvant CDK4/6 Inhibitors:' (NCT07180693)",
+      "url": "https://clinicaltrials.gov/study/NCT07180693",
+      "field_name": "contactsLocationsModule",
+      "data_bucket": "Italy"
+    }
+  ]
+}

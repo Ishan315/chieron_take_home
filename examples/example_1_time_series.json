@@ -1,0 +1,401 @@
+{
+  "request_input": {
+    "query": "How has the number of trials for Pembrolizumab changed over time?",
+    "drug_name": "Pembrolizumab",
+    "condition": null,
+    "trial_phase": null,
+    "sponsor": null,
+    "country": null,
+    "start_year": null,
+    "end_year": null,
+    "overall_status": null,
+    "visualization_override": null,
+    "max_trials_to_analyze": 100
+  },
+  "visualization": {
+    "type": "time_series",
+    "title": "Trial Count Over Time for Pembrolizumab",
+    "subtitle": "Annual count of clinical trial starts",
+    "encoding": {
+      "x": {
+        "field": "year",
+        "label": "Year",
+        "type": "temporal",
+        "unit": null
+      },
+      "y": {
+        "field": "trial_count",
+        "label": "Number of Trials Started",
+        "type": "quantitative",
+        "unit": "trials"
+      },
+      "group": null,
+      "color": null,
+      "size": null,
+      "network": null
+    },
+    "data": [
+      {
+        "year": 2015,
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT02395627",
+            "title": "Reversing Therapy Resistance With Epigenetic-Immune Modification",
+            "excerpt": "Study started in 2015: 'Reversing Therapy Resistance With Epigenetic-immune Modification: Phase II Trial of Vorinostat, Tamoxifen and Pembrolizumab in Hormone Receptor Expressing Advanced Breast Cancer' (NCT02395627)",
+            "url": "https://clinicaltrials.gov/study/NCT02395627",
+            "field_name": "startDateStruct",
+            "data_bucket": "2015"
+          }
+        ]
+      },
+      {
+        "year": 2016,
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT02650999",
+            "title": "Pembrolizumab in Patients Failing to Respond to or Relapsing After CAR T Cell Therapy for Relapsed or Refractory Lymphomas",
+            "excerpt": "Study started in 2016: 'Phase I/II Study of Pembrolizumab in Patients Failing to Respond to or Relapsing After Anti-CD19 Chimeric Antigen Receptor Modified T Cell Therapy for Relapsed or Refractory CD19+ Lymphomas' (NCT02650999)",
+            "url": "https://clinicaltrials.gov/study/NCT02650999",
+            "field_name": "startDateStruct",
+            "data_bucket": "2016"
+          }
+        ]
+      },
+      {
+        "year": 2017,
+        "trial_count": 2,
+        "citations": [
+          {
+            "nct_id": "NCT02999477",
+            "title": "A Study Of Changes In PD-L1 Expression During Preoperative Treatment With Nab-Paclitaxel And Pembrolizumab In Hormone Receptor-Positive Breast Cancer",
+            "excerpt": "Study started in 2017: 'A Pilot Study Of Changes In PD-L1 Expression During Preoperative Treatment With Nab-Paclitaxel And Pembrolizumab In Hormone Receptor-Positive Breast Cancer' (NCT02999477)",
+            "url": "https://clinicaltrials.gov/study/NCT02999477",
+            "field_name": "startDateStruct",
+            "data_bucket": "2017"
+          },
+          {
+            "nct_id": "NCT03241927",
+            "title": "Pembrolizumab Effects on NK Cell Exhaustion in Melanoma (Merck NK-IIT)",
+            "excerpt": "Study started in 2017: 'A Phase II Study Assessing the Effect of Pembrolizumab Induced Changes to the NK Cell Exhaustion Phenotype on the Efficacy of PD-1 Targeted Treatment in Patients With Unresectable Stage III or Stage IV Melanoma' (NCT03241927)",
+            "url": "https://clinicaltrials.gov/study/NCT03241927",
+            "field_name": "startDateStruct",
+            "data_bucket": "2017"
+          }
+        ]
+      },
+      {
+        "year": 2018,
+        "trial_count": 1,
+        "citations": [
+          {
+            "nct_id": "NCT03419481",
+            "title": "Pembrolizumab in Hepatocellular Carcinoma",
+            "excerpt": "Study started in 2018: 'A Clinical Trial of Pembrolizumab in Patients With Hepatitis B Virus-related Hepatocellular Carcinoma, With Parallel Study on Baseline and Serial Change in the Immune Environment' (NCT03419481)",
+            "url": "https://clinicaltrials.gov/study/NCT03419481",
+            "field_name": "startDateStruct",
+            "data_bucket": "2018"
+          }
+        ]
+      },
+      {
+        "year": 2019,
+        "trial_count": 3,
+        "citations": [
+          {
+            "nct_id": "NCT03546361",
+            "title": "CCL21-Gene Modified Dendritic Cell Vaccine and Pembrolizumab in Treating Patients With Stage IV Non-small Cell Lung Cancer",
+            "excerpt": "Study started in 2019: 'A Phase I Trial of Intratumoral Administration of CCL21-Gene Modified Dendritic Cell (Ad-CCL21-DC) Combined With Intravenous Pembrolizumab for Advanced NSCLC' (NCT03546361)",
+            "url": "https://clinicaltrials.gov/study/NCT03546361",
+            "field_name": "startDateStruct",
+            "data_bucket": "2019"
+          },
+          {
+            "nct_id": "NCT03832348",
+            "title": "Dynamics of 18-FDG Uptake in Stage III/IV Non Small Cell Lung Cancer During First Line Pembrolizumab Treatment",
+            "excerpt": "Study started in 2019: '18-FDG Tumour Metabolism Changes in PDL1 Superior to 50% Stage III/IV Non Small Cell Lung Cancer During First Line Treatment With Pembrolizumab' (NCT03832348)",
+            "url": "https://clinicaltrials.gov/study/NCT03832348",
+            "field_name": "startDateStruct",
+            "data_bucket": "2019"
+          },
+          {
+            "nct_id": "NCT03990961",
+            "title": "Pembrolizumab for Patients With PD-L1 Diffuse Large B Cell Lymphoma (DLBCL)",
+            "excerpt": "Study started in 2019: 'Phase II Study of Pembrolizumab for PD-L1 Gene-Altered, Relapsed/Refractory DLBCL' (NCT03990961)",
+            "url": "https://clinicaltrials.gov/study/NCT03990961",
+            "field_name": "startDateStruct",
+            "data_bucket": "2019"
+          }
+        ]
+      },
+      {
+        "year": 2020,
+        "trial_count": 2,
+        "citations": [
+          {
+            "nct_id": "NCT03978624",
+            "title": "Window of Opportunity Study of Pembrolizumab Alone and in Combinations in Bladder Cancer",
+            "excerpt": "Study started in 2020: 'Window of Opportunity Platform Study to Define Immunogenomic Changes With Pembrolizumab Alone and in Rational Combinations in Muscle-Invasive Bladder Cancer' (NCT03978624)",
+            "url": "https://clinicaltrials.gov/study/NCT03978624",
+            "field_name": "startDateStruct",
+            "data_bucket": "2020"
+          },
+          {
+            "nct_id": "NCT04166487",
+            "title": "Plasma-Adapted First-Line Pembro In NSCLC",
+            "excerpt": "Study started in 2020: 'Pilot Study of Serial Plasma Genotyping to Guide the Adaptive Treatment of Advanced NSCLC Receiving First-line Pembrolizumab' (NCT04166487)",
+            "url": "https://clinicaltrials.gov/study/NCT04166487",
+            "field_name": "startDateStruct",
+            "data_bucket": "2020"
+          }
+        ]
+      },
+      {
+        "year": 2022,
+        "trial_count": 4,
+        "citations": [
+          {
+            "nct_id": "NCT05404945",
+            "title": "Fitness-adapted, Pembrolizumab-based Therapy for Untreated Classical Hodgkin Lymphoma Patients 60 Years of Age and Above",
+            "excerpt": "Study started in 2022: 'Fitness-adapted, Pembrolizumab-based Therapy for Untreated Classical Hodgkin Lymphoma Patients 60 Years of Age and Above (cHL 001)' (NCT05404945)",
+            "url": "https://clinicaltrials.gov/study/NCT05404945",
+            "field_name": "startDateStruct",
+            "data_bucket": "2022"
+          },
+          {
+            "nct_id": "NCT05024318",
+            "title": "NeoAdjuvant Pembrolizumab and STEreotactic Radiotherapy Prior to Nephrectomy for Renal Cell Carcinoma",
+            "excerpt": "Study started in 2022: 'NeoAdjuvant Pembrolizumab and STEreotactic Radiotherapy Prior to Nephrectomy for Renal Cell Carcinoma: Investigating Induced Immune Context Changes' (NCT05024318)",
+            "url": "https://clinicaltrials.gov/study/NCT05024318",
+            "field_name": "startDateStruct",
+            "data_bucket": "2022"
+          },
+          {
+            "nct_id": "NCT05273554",
+            "title": "A Pilot Study to Assess Changes in Tumor Biology Following Second-line Treatment With Pembrolizumab Plus Lenvatinib in Patients With Advanced Pancreatic Ductal Adenocarcinoma",
+            "excerpt": "Study started in 2022: 'A Pilot Study to Assess Changes in Tumor Biology Following Second-line Treatment With Pembrolizumab Plus Lenvatinib in Patients With Advanced Pancreatic Ductal Adenocarcinoma' (NCT05273554)",
+            "url": "https://clinicaltrials.gov/study/NCT05273554",
+            "field_name": "startDateStruct",
+            "data_bucket": "2022"
+          }
+        ]
+      },
+      {
+        "year": 2023,
+        "trial_count": 2,
+        "citations": [
+          {
+            "nct_id": "NCT05922904",
+            "title": "PET Adapted Brentuximab Vedotin and Pembrolizumab in Combination With Doxorubicin and Dacarbazine in Classic Hodgkin Lymphoma",
+            "excerpt": "Study started in 2023: 'PET Adapted Brentuximab Vedotin and Pembrolizumab in Combination With Doxorubicin and Dacarbazine in Classic Hodgkin Lymphoma' (NCT05922904)",
+            "url": "https://clinicaltrials.gov/study/NCT05922904",
+            "field_name": "startDateStruct",
+            "data_bucket": "2023"
+          },
+          {
+            "nct_id": "NCT05859074",
+            "title": "A Study of MQ710 With and Without Pembrolizumab in People With Solid Tumor Cancer",
+            "excerpt": "Study started in 2023: 'A First-In-Human Phase I, Open Label, Safety and Tolerability Study of Escalating Multiple Doses of Intratumoral MQ710, a Multi-Transgene Expressing Modified Vaccinia Virus Ankara-Based Virotherapy, Alone and in Combination Wi...",
+            "url": "https://clinicaltrials.gov/study/NCT05859074",
+            "field_name": "startDateStruct",
+            "data_bucket": "2023"
+          }
+        ]
+      },
+      {
+        "year": 2024,
+        "trial_count": 4,
+        "citations": [
+          {
+            "nct_id": "NCT06081244",
+            "title": "NeoAdj. Therapy Comparing Sacituzumab Govitecan (SG) vs. SG+Pembrolizumab in Low-risk, Triple-neg. EBC (ADAPT-TN-III)",
+            "excerpt": "Study started in 2024: 'NeoAdjuvant Dynamic Marker - Adjusted Personalized Therapy Comparing Sacituzumab Govitecan Versus Sacituzumab Govitecan+Pembrolizumab in Low-risk, Triple-negative Early Breast Cancer (ADAPT-TN-III)' (NCT06081244)",
+            "url": "https://clinicaltrials.gov/study/NCT06081244",
+            "field_name": "startDateStruct",
+            "data_bucket": "2024"
+          },
+          {
+            "nct_id": "NCT06377566",
+            "title": "A Study of BV-AVD in People With Bulky Hodgkin Lymphoma",
+            "excerpt": "Study started in 2024: 'BV-AVD in Patients With Newly-Diagnosed, Early Stage, Bulky Hodgkin Lymphoma Using a PET-adapted and MTV-guided Approach' (NCT06377566)",
+            "url": "https://clinicaltrials.gov/study/NCT06377566",
+            "field_name": "startDateStruct",
+            "data_bucket": "2024"
+          },
+          {
+            "nct_id": "NCT06245889",
+            "title": "PET Dynamics to Response-Adapted Neoadjuvant Therapy in TNBC",
+            "excerpt": "Study started in 2024: 'A Pilot Study of Neoadjuvant Response-Adapted Chemotherapy With Pembrolizumab in Patients With Stage 2 and 3 Triple Negative Breast Cancer to Determine Early PET and Biomarker Dynamics' (NCT06245889)",
+            "url": "https://clinicaltrials.gov/study/NCT06245889",
+            "field_name": "startDateStruct",
+            "data_bucket": "2024"
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "trial_count": 2,
+        "citations": [
+          {
+            "nct_id": "NCT07183319",
+            "title": "Circulating Tumor DNA Response In Urothelial Cancer",
+            "excerpt": "Study started in 2026: 'Circulating Tumor DNA Response Adapted Treatment De-escalation Metastatic Urothelial Carcinoma (CT-READ)' (NCT07183319)",
+            "url": "https://clinicaltrials.gov/study/NCT07183319",
+            "field_name": "startDateStruct",
+            "data_bucket": "2026"
+          },
+          {
+            "nct_id": "NCT07663747",
+            "title": "Enfortumab Vedotin + Pembrolizumab Induction to Spare the Bladder in MIBC",
+            "excerpt": "Study started in 2026: 'A Phase 2 Study to Assess Efficacy of Induction Enfortumab Vedotin Plus Pembrolizumab Using a Response-adapted Approach to Spare the Bladder: FIDELIO' (NCT07663747)",
+            "url": "https://clinicaltrials.gov/study/NCT07663747",
+            "field_name": "startDateStruct",
+            "data_bucket": "2026"
+          }
+        ]
+      }
+    ],
+    "nodes": null,
+    "edges": null
+  },
+  "meta": {
+    "filters_applied": {
+      "condition": "Pembrolizumab changed",
+      "term": "Pembrolizumab"
+    },
+    "source": "clinicaltrials.gov",
+    "total_trials_analyzed": 22,
+    "query_interpretation": "Parsed query as 'time_trend' intent focusing on 'Pembrolizumab'. Recommended visualization: time_series.",
+    "time_granularity": "year",
+    "units": {
+      "y": "trial_count"
+    },
+    "notes": [
+      "Aggregated 22 clinical trial records from ClinicalTrials.gov API v2.",
+      "Generated 20 deep source citations linking back to individual study NCT IDs."
+    ]
+  },
+  "citations": [
+    {
+      "nct_id": "NCT02395627",
+      "title": "Reversing Therapy Resistance With Epigenetic-Immune Modification",
+      "excerpt": "Study started in 2015: 'Reversing Therapy Resistance With Epigenetic-immune Modification: Phase II Trial of Vorinostat, Tamoxifen and Pembrolizumab in Hormone Receptor Expressing Advanced Breast Cancer' (NCT02395627)",
+      "url": "https://clinicaltrials.gov/study/NCT02395627",
+      "field_name": "startDateStruct",
+      "data_bucket": "2015"
+    },
+    {
+      "nct_id": "NCT02650999",
+      "title": "Pembrolizumab in Patients Failing to Respond to or Relapsing After CAR T Cell Therapy for Relapsed or Refractory Lymphomas",
+      "excerpt": "Study started in 2016: 'Phase I/II Study of Pembrolizumab in Patients Failing to Respond to or Relapsing After Anti-CD19 Chimeric Antigen Receptor Modified T Cell Therapy for Relapsed or Refractory CD19+ Lymphomas' (NCT02650999)",
+      "url": "https://clinicaltrials.gov/study/NCT02650999",
+      "field_name": "startDateStruct",
+      "data_bucket": "2016"
+    },
+    {
+      "nct_id": "NCT02999477",
+      "title": "A Study Of Changes In PD-L1 Expression During Preoperative Treatment With Nab-Paclitaxel And Pembrolizumab In Hormone Receptor-Positive Breast Cancer",
+      "excerpt": "Study started in 2017: 'A Pilot Study Of Changes In PD-L1 Expression During Preoperative Treatment With Nab-Paclitaxel And Pembrolizumab In Hormone Receptor-Positive Breast Cancer' (NCT02999477)",
+      "url": "https://clinicaltrials.gov/study/NCT02999477",
+      "field_name": "startDateStruct",
+      "data_bucket": "2017"
+    },
+    {
+      "nct_id": "NCT03241927",
+      "title": "Pembrolizumab Effects on NK Cell Exhaustion in Melanoma (Merck NK-IIT)",
+      "excerpt": "Study started in 2017: 'A Phase II Study Assessing the Effect of Pembrolizumab Induced Changes to the NK Cell Exhaustion Phenotype on the Efficacy of PD-1 Targeted Treatment in Patients With Unresectable Stage III or Stage IV Melanoma' (NCT03241927)",
+      "url": "https://clinicaltrials.gov/study/NCT03241927",
+      "field_name": "startDateStruct",
+      "data_bucket": "2017"
+    },
+    {
+      "nct_id": "NCT03419481",
+      "title": "Pembrolizumab in Hepatocellular Carcinoma",
+      "excerpt": "Study started in 2018: 'A Clinical Trial of Pembrolizumab in Patients With Hepatitis B Virus-related Hepatocellular Carcinoma, With Parallel Study on Baseline and Serial Change in the Immune Environment' (NCT03419481)",
+      "url": "https://clinicaltrials.gov/study/NCT03419481",
+      "field_name": "startDateStruct",
+      "data_bucket": "2018"
+    },
+    {
+      "nct_id": "NCT03546361",
+      "title": "CCL21-Gene Modified Dendritic Cell Vaccine and Pembrolizumab in Treating Patients With Stage IV Non-small Cell Lung Cancer",
+      "excerpt": "Study started in 2019: 'A Phase I Trial of Intratumoral Administration of CCL21-Gene Modified Dendritic Cell (Ad-CCL21-DC) Combined With Intravenous Pembrolizumab for Advanced NSCLC' (NCT03546361)",
+      "url": "https://clinicaltrials.gov/study/NCT03546361",
+      "field_name": "startDateStruct",
+      "data_bucket": "2019"
+    },
+    {
+      "nct_id": "NCT03832348",
+      "title": "Dynamics of 18-FDG Uptake in Stage III/IV Non Small Cell Lung Cancer During First Line Pembrolizumab Treatment",
+      "excerpt": "Study started in 2019: '18-FDG Tumour Metabolism Changes in PDL1 Superior to 50% Stage III/IV Non Small Cell Lung Cancer During First Line Treatment With Pembrolizumab' (NCT03832348)",
+      "url": "https://clinicaltrials.gov/study/NCT03832348",
+      "field_name": "startDateStruct",
+      "data_bucket": "2019"
+    },
+    {
+      "nct_id": "NCT03990961",
+      "title": "Pembrolizumab for Patients With PD-L1 Diffuse Large B Cell Lymphoma (DLBCL)",
+      "excerpt": "Study started in 2019: 'Phase II Study of Pembrolizumab for PD-L1 Gene-Altered, Relapsed/Refractory DLBCL' (NCT03990961)",
+      "url": "https://clinicaltrials.gov/study/NCT03990961",
+      "field_name": "startDateStruct",
+      "data_bucket": "2019"
+    },
+    {
+      "nct_id": "NCT03978624",
+      "title": "Window of Opportunity Study of Pembrolizumab Alone and in Combinations in Bladder Cancer",
+      "excerpt": "Study started in 2020: 'Window of Opportunity Platform Study to Define Immunogenomic Changes With Pembrolizumab Alone and in Rational Combinations in Muscle-Invasive Bladder Cancer' (NCT03978624)",
+      "url": "https://clinicaltrials.gov/study/NCT03978624",
+      "field_name": "startDateStruct",
+      "data_bucket": "2020"
+    },
+    {
+      "nct_id": "NCT04166487",
+      "title": "Plasma-Adapted First-Line Pembro In NSCLC",
+      "excerpt": "Study started in 2020: 'Pilot Study of Serial Plasma Genotyping to Guide the Adaptive Treatment of Advanced NSCLC Receiving First-line Pembrolizumab' (NCT04166487)",
+      "url": "https://clinicaltrials.gov/study/NCT04166487",
+      "field_name": "startDateStruct",
+      "data_bucket": "2020"
+    },
+    {
+      "nct_id": "NCT05404945",
+      "title": "Fitness-adapted, Pembrolizumab-based Therapy for Untreated Classical Hodgkin Lymphoma Patients 60 Years of Age and Above",
+      "excerpt": "Study started in 2022: 'Fitness-adapted, Pembrolizumab-based Therapy for Untreated Classical Hodgkin Lymphoma Patients 60 Years of Age and Above (cHL 001)' (NCT05404945)",
+      "url": "https://clinicaltrials.gov/study/NCT05404945",
+      "field_name": "startDateStruct",
+      "data_bucket": "2022"
+    },
+    {
+      "nct_id": "NCT05024318",
+      "title": "NeoAdjuvant Pembrolizumab and STEreotactic Radiotherapy Prior to Nephrectomy for Renal Cell Carcinoma",
+      "excerpt": "Study started in 2022: 'NeoAdjuvant Pembrolizumab and STEreotactic Radiotherapy Prior to Nephrectomy for Renal Cell Carcinoma: Investigating Induced Immune Context Changes' (NCT05024318)",
+      "url": "https://clinicaltrials.gov/study/NCT05024318",
+      "field_name": "startDateStruct",
+      "data_bucket": "2022"
+    },
+    {
+      "nct_id": "NCT05273554",
+      "title": "A Pilot Study to Assess Changes in Tumor Biology Following Second-line Treatment With Pembrolizumab Plus Lenvatinib in Patients With Advanced Pancreatic Ductal Adenocarcinoma",
+      "excerpt": "Study started in 2022: 'A Pilot Study to Assess Changes in Tumor Biology Following Second-line Treatment With Pembrolizumab Plus Lenvatinib in Patients With Advanced Pancreatic Ductal Adenocarcinoma' (NCT05273554)",
+      "url": "https://clinicaltrials.gov/study/NCT05273554",
+      "field_name": "startDateStruct",
+      "data_bucket": "2022"
+    },
+    {
+      "nct_id": "NCT05922904",
+      "title": "PET Adapted Brentuximab Vedotin and Pembrolizumab in Combination With Doxorubicin and Dacarbazine in Classic Hodgkin Lymphoma",
+      "excerpt": "Study started in 2023: 'PET Adapted Brentuximab Vedotin and Pembrolizumab in Combination With Doxorubicin and Dacarbazine in Classic Hodgkin Lymphoma' (NCT05922904)",
+      "url": "https://clinicaltrials.gov/study/NCT05922904",
+      "field_name": "startDateStruct",
+      "data_bucket": "2023"
+    },
+    {
+      "nct_id": "NCT05859074",
+      "title": "A Study of MQ710 With and Without Pembrolizumab in People With Solid Tumor Cancer",
+      "excerpt": "Study started in 2023: 'A First-In-Human Phase I, Open Label, Safety and Tolerability Study of Escalating Multiple Doses of Intratumoral MQ710, a Multi-Transgene Expressing Modified Vaccinia Virus Ankara-Based Virotherapy, Alone and in Combination Wi...",
+      "url": "https://clinicaltrials.gov/study/NCT05859074",
+      "field_name": "startDateStruct",
+      "data_bucket": "2023"
+    }
+  ]
+}
