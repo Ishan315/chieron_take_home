@@ -57,7 +57,7 @@ chieron_take_home/
 │   └── example_8_drug_comparison.json
 ├── scripts/
 │   └── generate_example_runs.py       # Script to generate example JSON output runs
-├── tests/                             # Pytest test suite (30 test cases)
+├── tests/                             # Pytest test suite (40 test cases)
 │   ├── test_api_query.py
 │   ├── test_clinical_trials_client.py
 │   ├── test_data_aggregator.py
@@ -108,7 +108,7 @@ Interactive OpenAPI Swagger docs will be available at `http://localhost:8000/doc
 
 ### 4. Running Tests
 
-Run the complete test suite (30 test cases covering API client, analyzer, aggregator, citations, and API routes):
+Run the complete test suite (40 test cases covering API client, analyzer, aggregator, citations, and API routes):
 
 ```bash
 pytest tests/
@@ -154,7 +154,7 @@ python scripts/generate_example_runs.py
 * `trial_phase` *(string, optional)*: Filter by phase (e.g., `"Phase 1"`, `"Phase 3"`).
 * `sponsor` *(string, optional)*: Filter by lead sponsor or collaborator.
 * `country` *(string, optional)*: Filter by location/country.
-* `start_year` / `end_year` *(int, optional)*: Filter studies by start year range.
+* `start_year` / `end_year` *(int, optional)*: Filter studies by start year range. Each must be between `1900` and `2100`, and `start_year` must be `<= end_year` if both are given — invalid values return `422`.
 * `overall_status` *(string, optional)*: Filter by status (e.g. `RECRUITING`, `COMPLETED`).
 * `visualization_override` *(string, optional)*: Override visualization format (`bar_chart`, `grouped_bar_chart`, `time_series`, `scatter_plot`, `histogram`, `choropleth_map`, `network_graph`, `pie_chart`).
 * `max_trials_to_analyze` *(int, default=200)*: Max records to analyze from ClinicalTrials.gov.
@@ -257,8 +257,61 @@ python scripts/generate_example_runs.py
 
 ---
 
+## ⚠️ Limitations & What I'd Improve With More Time
+
+* **No retry/backoff on transient upstream failures.** `fetch_studies()` catches
+  any request failure (rate limits, timeouts, transient 5xx) the same way it
+  handles a legitimately empty result set: log and continue with whatever was
+  fetched so far. Observed live during development: a mid-run `429 Too Many
+  Requests` from ClinicalTrials.gov during a dual-fetch comparison silently
+  produced an incomplete result for one side, with no signal in the response
+  that anything had gone wrong. Bad-input cases that reliably trigger a `400`
+  (e.g. an out-of-range year) are now caught by request-level validation before
+  the call is made, but a transient failure on an otherwise-valid request is
+  still swallowed silently. With more time: add bounded retry with backoff for
+  5xx/429s, and surface partial-failure state explicitly in `meta.notes` (e.g.
+  "results for 'Nivolumab' may be incomplete due to a transient API error")
+  rather than returning what looks like a complete, successful answer.
+* **No caching layer.** Every request hits ClinicalTrials.gov live, including
+  identical repeated queries. A short-TTL cache (in-memory or Redis) would cut
+  redundant calls, reduce rate-limit exposure (see above), and speed up
+  frequently-asked queries. Given the assignment's real-time-data framing this
+  was a deliberate scope cut, not an oversight.
+* **Citation excerpts are synthesized, not verbatim.** Each citation embeds
+  real field values (title, phase, sponsor, NCT ID) inside an app-authored
+  sentence (e.g. `"Phase 3 study: '{title}' (Sponsor: {sponsor})"`), rather
+  than an exact substring sliced directly out of the raw API response. A
+  stricter reading of "exact text excerpt from the API response" would want
+  the latter — pulling literal spans from the stored raw JSON instead of
+  constructing a sentence around the values.
+* **Comparisons cap at two entities.** "Compare Drug A vs Drug B" is fully
+  supported via an independent dual-fetch, but there's no N-way comparison
+  (e.g. three drugs at once) — the analyzer deliberately picks only the first
+  two entities it finds and silently drops the rest.
+* **The rule-based fallback is meaningfully weaker than the LLM path.** It
+  recognizes a fixed list of ~17 known drug names and uses regex/keyword
+  heuristics for everything else; it has no synonym resolution (brand vs.
+  generic names), and ambiguous or highly compositional queries it can't
+  pattern-match will fall back to a generic distribution rather than the
+  intended interpretation. This gap only matters when `OPENAI_API_KEY` is
+  unset, but that's the default out-of-the-box state for anyone who clones
+  the repo without configuring a key.
+* **`DataAggregator` has real duplication.** Each `_aggregate_*` method
+  repeats the same bucket → count → sample-citations → build-spec shape.
+  Extracting a shared bucketing helper would reduce the file's size
+  (currently ~800 lines) and make adding a new visualization type less
+  copy-paste-driven.
+* **No persistence.** Every query is stateless — no history, no saved
+  dashboards, no way to compare a chart against a previous run of the same
+  question over time.
+* **Network graphs cap at the top 15-20 nodes per group** for legibility.
+  For conditions with hundreds of distinct sponsors/drugs, this means the
+  graph shows the most active entities, not the complete relationship set.
+
+---
+
 ## 🔬 AI Tools & Engineering Integrity Declaration
 
 * **Tools Used:** OpenAI GPT-4o-mini SDK, FastAPI, Pydantic v2, pytest.
-* **Validation Methodology:** Automated test suite (`pytest`) covering 30 unit & integration tests, verifying API endpoints, parsing accuracy, edge cases, and JSON output generation.
+* **Validation Methodology:** Automated test suite (`pytest`) covering 40 unit & integration tests, verifying API endpoints, parsing accuracy, edge cases, and JSON output generation. Additionally stress-tested against boundary values, malformed input, and adversarial strings (XSS/SQL-injection-style payloads, prompt injection, non-Latin scripts, degenerate-length input) directly against the live ClinicalTrials.gov API — several of the fixes above were found this way, not from normal-path testing alone.
 * **Deliberate Construction:** Designed the normalization schemas, data aggregation algorithms, citation generator, and fallback logic manually to ensure precision and architectural robustness.
