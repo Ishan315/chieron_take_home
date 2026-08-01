@@ -1,0 +1,113 @@
+from typing import List, Dict, Any
+from fastapi import APIRouter, HTTPException, Depends
+from app.models.schemas import QueryRequest, QueryResponse
+from app.services.query_analyzer import QueryAnalyzerAgent
+from app.services.clinical_trials_client import ClinicalTrialsClient
+from app.services.data_aggregator import DataAggregator
+
+router = APIRouter()
+
+analyzer_agent = QueryAnalyzerAgent()
+ct_client = ClinicalTrialsClient()
+aggregator = DataAggregator()
+
+PRESET_EXAMPLES = [
+    {
+        "id": "time_series_pembrolizumab",
+        "title": "Pembrolizumab Time Trend",
+        "request": {
+            "query": "How has the number of trials for Pembrolizumab changed over time?",
+            "drug_name": "Pembrolizumab"
+        }
+    },
+    {
+        "id": "phase_distribution_melanoma",
+        "title": "Melanoma Phase Distribution",
+        "request": {
+            "query": "How are Melanoma trials distributed across phases?",
+            "condition": "Melanoma"
+        }
+    },
+    {
+        "id": "network_sponsor_drug",
+        "title": "Sponsor-Drug Network Graph",
+        "request": {
+            "query": "Show a network of sponsors to drugs for Lung Cancer trials.",
+            "condition": "Lung Cancer",
+            "visualization_override": "network_graph"
+        }
+    },
+    {
+        "id": "geographic_recruiting",
+        "title": "Geographic Distribution of Recruiting Trials",
+        "request": {
+            "query": "Which countries have the most recruiting trials for Breast Cancer?",
+            "condition": "Breast Cancer",
+            "overall_status": "RECRUITING"
+        }
+    },
+    {
+        "id": "scatter_enrollment_duration",
+        "title": "Enrollment vs. Duration Scatter Plot",
+        "request": {
+            "query": "What is the relationship between trial enrollment count and study duration for Immunotherapy trials?",
+            "query_term": "Immunotherapy",
+            "visualization_override": "scatter_plot"
+        }
+    }
+]
+
+@router.post("/query", response_model=QueryResponse, summary="Convert Clinical Trial Query to Visualization Specification")
+async def process_query(request: QueryRequest) -> QueryResponse:
+    """
+    Main AI Agent Endpoint:
+    1. Interprets natural language question & input parameters
+    2. Retrieves real-time trial data from ClinicalTrials.gov API v2
+    3. Builds structured visualization spec with encodings, chart data / network graph
+    4. Generates deep citations tracing back to exact NCT IDs and field excerpts
+    """
+    try:
+        # Step 1: AI / Rule-Based Query Analysis
+        analysis = await analyzer_agent.analyze(request)
+
+        # Step 2: Formulate ClinicalTrials.gov API parameters
+        filters_applied = {
+            "condition": analysis.condition,
+            "term": analysis.search_term,
+            "sponsor": analysis.sponsor,
+            "location": analysis.location,
+            "status": analysis.status
+        }
+        # Clean null values
+        filters_applied = {k: v for k, v in filters_applied.items() if v is not None}
+
+        # Step 3: Fetch Studies from ClinicalTrials.gov API
+        studies = await ct_client.fetch_studies(
+            condition=analysis.condition,
+            term=analysis.search_term,
+            sponsor=analysis.sponsor,
+            location=analysis.location,
+            status=analysis.status,
+            max_results=request.max_trials_to_analyze
+        )
+
+        if not studies:
+            # Retry with broader search term if specific condition produced 0 results
+            if analysis.search_term:
+                studies = await ct_client.fetch_studies(term=analysis.search_term, max_results=request.max_trials_to_analyze)
+
+        # Step 4: Data Aggregation & Deep Citation Extraction
+        spec, meta, citations = aggregator.process(studies, analysis, filters_applied)
+
+        return QueryResponse(
+            visualization=spec,
+            meta=meta,
+            citations=citations
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error processing clinical trials query: {str(e)}")
+
+@router.get("/examples", summary="Get Preset Example Queries")
+async def get_examples() -> List[Dict[str, Any]]:
+    return PRESET_EXAMPLES

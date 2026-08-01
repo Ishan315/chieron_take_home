@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
+from app.api.v1.router import api_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
-    description="AI-enabled backend service converting clinical trials queries into structured visualization specifications backed by ClinicalTrials.gov API data."
+    description="AI-enabled backend service converting clinical trials questions into structured visualization specifications backed by ClinicalTrials.gov API data."
 )
 
 # Enable CORS for local frontend development
@@ -16,6 +17,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include API v1 router
+app.include_router(api_router, prefix=settings.API_V1_STR)
 
 @app.get("/")
 async def root():
