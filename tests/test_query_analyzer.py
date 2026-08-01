@@ -57,6 +57,17 @@ async def test_condition_regex_stops_before_since_clause(agent):
     assert analysis.condition == "Melanoma"
 
 @pytest.mark.asyncio
+async def test_non_latin_script_entity_extraction(agent):
+    # The Latin-only word-grab (\b[A-Za-z]{4,}\b) can never match Chinese, so this
+    # used to silently fall through to an English filler word ("Distribution")
+    # instead of the real condition. Confirmed live that the extracted term
+    # actually matches a real diabetes trial on ClinicalTrials.gov.
+    req = QueryRequest(query="糖尿病 trials distribution across phases")
+    analysis = await agent.analyze(req)
+
+    assert analysis.search_term == "糖尿病"
+
+@pytest.mark.asyncio
 async def test_two_drug_comparison_detection(agent):
     req = QueryRequest(query="Compare phases for trials involving pembrolizumab vs nivolumab")
     analysis = await agent.analyze(req)

@@ -235,11 +235,22 @@ class QueryAnalyzerAgent:
                         break
 
         if not search_term and not condition:
-            # Fallback search term from query words excluding generic words
-            words = [w for w in re.findall(r'\b[A-Za-z]{4,}\b', query) 
-                     if w.lower() not in ["how", "many", "trials", "studies", "changed", "over", "time", "show", "what", "where", "which", "number", "distributed", "across", "most", "common"]]
-            if words:
-                search_term = words[0].capitalize()
+            # A non-Latin token (Chinese, Cyrillic, etc.) in an otherwise-English
+            # query is almost always the actual named entity -- the surrounding
+            # English words are boilerplate ("trials", "distribution", "phases")
+            # that would otherwise win the plain word-grab below and silently
+            # replace the real condition/drug with filler. Non-Latin scripts are
+            # also far more information-dense per character, so a 2-char floor is
+            # used instead of English's 4-char floor.
+            non_latin_words = re.findall(r'[^\x00-\x7F]{2,}', query)
+            if non_latin_words:
+                search_term = non_latin_words[0]
+            else:
+                # Fallback search term from query words excluding generic words
+                words = [w for w in re.findall(r'\b[A-Za-z]{4,}\b', query)
+                         if w.lower() not in ["how", "many", "trials", "studies", "changed", "over", "time", "show", "what", "where", "which", "number", "distributed", "across", "most", "common"]]
+                if words:
+                    search_term = words[0].capitalize()
 
         # Build Title
         subject = search_term or condition or "Clinical Trials"
