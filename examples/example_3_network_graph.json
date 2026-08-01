@@ -6,6 +6,9 @@
     "trial_phase": null,
     "sponsor": null,
     "country": null,
+    "drug_name_b": null,
+    "condition_b": null,
+    "sponsor_b": null,
     "start_year": null,
     "end_year": null,
     "overall_status": null,
@@ -35,78 +38,15 @@
     "data": [],
     "nodes": [
       {
-        "id": "spon_University of Alberta",
-        "label": "University of Alberta",
-        "group": "sponsor",
-        "val": 1,
-        "details": null
-      },
-      {
-        "id": "spon_Mayo Clinic",
-        "label": "Mayo Clinic",
+        "id": "spon_Sichuan University",
+        "label": "Sichuan University",
         "group": "sponsor",
         "val": 2,
         "details": null
       },
       {
-        "id": "spon_National Cancer Institute (NCI)",
-        "label": "National Cancer Institute (NCI)",
-        "group": "sponsor",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "spon_Gachon University Gil Medical Center",
-        "label": "Gachon University Gil Medical Center",
-        "group": "sponsor",
-        "val": 1,
-        "details": null
-      },
-      {
-        "id": "spon_M.D. Anderson Cancer Center",
-        "label": "M.D. Anderson Cancer Center",
-        "group": "sponsor",
-        "val": 6,
-        "details": null
-      },
-      {
-        "id": "spon_Anhui Medical University",
-        "label": "Anhui Medical University",
-        "group": "sponsor",
-        "val": 1,
-        "details": null
-      },
-      {
-        "id": "spon_Pfizer",
-        "label": "Pfizer",
-        "group": "sponsor",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Eastern Cooperative Oncology Group",
-        "label": "Eastern Cooperative Oncology Group",
-        "group": "sponsor",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Fondazione Ricerca Traslazionale",
-        "label": "Fondazione Ricerca Traslazionale",
-        "group": "sponsor",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Ralph G Zinner",
-        "label": "Ralph G Zinner",
-        "group": "sponsor",
-        "val": 1,
-        "details": null
-      },
-      {
-        "id": "spon_Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
-        "label": "Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
+        "id": "spon_Yonsei University",
+        "label": "Yonsei University",
         "group": "sponsor",
         "val": 2,
         "details": null
@@ -119,23 +59,100 @@
         "details": null
       },
       {
-        "id": "spon_Yonsei University",
-        "label": "Yonsei University",
+        "id": "spon_Pfizer",
+        "label": "Pfizer",
         "group": "sponsor",
         "val": 2,
         "details": null
       },
       {
-        "id": "spon_Sichuan University",
-        "label": "Sichuan University",
+        "id": "spon_Ralph G Zinner",
+        "label": "Ralph G Zinner",
         "group": "sponsor",
-        "val": 2,
+        "val": 1,
         "details": null
       },
       {
         "id": "spon_VA Office of Research and Development",
         "label": "VA Office of Research and Development",
         "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "spon_Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
+        "label": "Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
+        "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "spon_Mayo Clinic",
+        "label": "Mayo Clinic",
+        "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "spon_University of Alberta",
+        "label": "University of Alberta",
+        "group": "sponsor",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "spon_National Cancer Institute (NCI)",
+        "label": "National Cancer Institute (NCI)",
+        "group": "sponsor",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "spon_Fondazione Ricerca Traslazionale",
+        "label": "Fondazione Ricerca Traslazionale",
+        "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "spon_Gachon University Gil Medical Center",
+        "label": "Gachon University Gil Medical Center",
+        "group": "sponsor",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "spon_Anhui Medical University",
+        "label": "Anhui Medical University",
+        "group": "sponsor",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "spon_M.D. Anderson Cancer Center",
+        "label": "M.D. Anderson Cancer Center",
+        "group": "sponsor",
+        "val": 6,
+        "details": null
+      },
+      {
+        "id": "spon_Eastern Cooperative Oncology Group",
+        "label": "Eastern Cooperative Oncology Group",
+        "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Erlotinib",
+        "label": "Erlotinib",
+        "group": "drug",
+        "val": 3,
+        "details": null
+      },
+      {
+        "id": "drug_Biospecimen Collection",
+        "label": "Biospecimen Collection",
+        "group": "drug",
         "val": 2,
         "details": null
       },
@@ -147,22 +164,15 @@
         "details": null
       },
       {
-        "id": "drug_Cisplatin",
-        "label": "Cisplatin",
+        "id": "drug_Computed Tomography",
+        "label": "Computed Tomography",
         "group": "drug",
-        "val": 4,
+        "val": 2,
         "details": null
       },
       {
-        "id": "drug_Docetaxel",
-        "label": "Docetaxel",
-        "group": "drug",
-        "val": 3,
-        "details": null
-      },
-      {
-        "id": "drug_Laboratory Biomarker Analysis",
-        "label": "Laboratory Biomarker Analysis",
+        "id": "drug_Gemcitabine",
+        "label": "Gemcitabine",
         "group": "drug",
         "val": 2,
         "details": null
@@ -172,6 +182,20 @@
         "label": "Trastuzumab",
         "group": "drug",
         "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Pembrolizumab",
+        "label": "Pembrolizumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Cisplatin",
+        "label": "Cisplatin",
+        "group": "drug",
+        "val": 4,
         "details": null
       },
       {
@@ -189,10 +213,17 @@
         "details": null
       },
       {
-        "id": "drug_Pembrolizumab",
-        "label": "Pembrolizumab",
+        "id": "drug_Osimertinib",
+        "label": "Osimertinib",
         "group": "drug",
-        "val": 4,
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Laboratory Biomarker Analysis",
+        "label": "Laboratory Biomarker Analysis",
+        "group": "drug",
+        "val": 2,
         "details": null
       },
       {
@@ -203,13 +234,6 @@
         "details": null
       },
       {
-        "id": "drug_Osimertinib",
-        "label": "Osimertinib",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
         "id": "drug_Carboplatin",
         "label": "Carboplatin",
         "group": "drug",
@@ -217,31 +241,10 @@
         "details": null
       },
       {
-        "id": "drug_Biospecimen Collection",
-        "label": "Biospecimen Collection",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Gemcitabine",
-        "label": "Gemcitabine",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Erlotinib",
-        "label": "Erlotinib",
+        "id": "drug_Docetaxel",
+        "label": "Docetaxel",
         "group": "drug",
         "val": 3,
-        "details": null
-      },
-      {
-        "id": "drug_Computed Tomography",
-        "label": "Computed Tomography",
-        "group": "drug",
-        "val": 2,
         "details": null
       }
     ],

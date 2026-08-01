@@ -6,6 +6,9 @@
     "trial_phase": null,
     "sponsor": null,
     "country": null,
+    "drug_name_b": null,
+    "condition_b": null,
+    "sponsor_b": null,
     "start_year": null,
     "end_year": null,
     "overall_status": null,
@@ -35,45 +38,17 @@
     "data": [],
     "nodes": [
       {
-        "id": "drug_Gemcitabine Hydrochloride",
-        "label": "Gemcitabine Hydrochloride",
+        "id": "drug_Biospecimen Collection",
+        "label": "Biospecimen Collection",
         "group": "drug",
         "val": 2,
         "details": null
       },
       {
-        "id": "drug_Gefitinib",
-        "label": "Gefitinib",
+        "id": "drug_Computed Tomography",
+        "label": "Computed Tomography",
         "group": "drug",
         "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Nivolumab",
-        "label": "Nivolumab",
-        "group": "drug",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "drug_Erlotinib",
-        "label": "Erlotinib",
-        "group": "drug",
-        "val": 3,
-        "details": null
-      },
-      {
-        "id": "drug_Attention Control",
-        "label": "Attention Control",
-        "group": "drug",
-        "val": 1,
-        "details": null
-      },
-      {
-        "id": "drug_Docetaxel",
-        "label": "Docetaxel",
-        "group": "drug",
-        "val": 3,
         "details": null
       },
       {
@@ -91,36 +66,15 @@
         "details": null
       },
       {
-        "id": "drug_Trastuzumab",
-        "label": "Trastuzumab",
+        "id": "drug_Laboratory Biomarker Analysis",
+        "label": "Laboratory Biomarker Analysis",
         "group": "drug",
         "val": 2,
         "details": null
       },
       {
-        "id": "drug_Atezolizumab",
-        "label": "Atezolizumab",
-        "group": "drug",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "drug_Carboplatin",
-        "label": "Carboplatin",
-        "group": "drug",
-        "val": 7,
-        "details": null
-      },
-      {
-        "id": "drug_Biospecimen Collection",
-        "label": "Biospecimen Collection",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Ipilimumab",
-        "label": "Ipilimumab",
+        "id": "drug_Fludarabine",
+        "label": "Fludarabine",
         "group": "drug",
         "val": 2,
         "details": null
@@ -133,15 +87,8 @@
         "details": null
       },
       {
-        "id": "drug_Cisplatin",
-        "label": "Cisplatin",
-        "group": "drug",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "drug_Laboratory Biomarker Analysis",
-        "label": "Laboratory Biomarker Analysis",
+        "id": "drug_Gemcitabine",
+        "label": "Gemcitabine",
         "group": "drug",
         "val": 2,
         "details": null
@@ -154,24 +101,80 @@
         "details": null
       },
       {
-        "id": "drug_Fludarabine",
-        "label": "Fludarabine",
+        "id": "drug_Gemcitabine Hydrochloride",
+        "label": "Gemcitabine Hydrochloride",
         "group": "drug",
         "val": 2,
         "details": null
       },
       {
-        "id": "drug_Gemcitabine",
-        "label": "Gemcitabine",
+        "id": "drug_Carboplatin",
+        "label": "Carboplatin",
+        "group": "drug",
+        "val": 7,
+        "details": null
+      },
+      {
+        "id": "drug_Docetaxel",
+        "label": "Docetaxel",
+        "group": "drug",
+        "val": 3,
+        "details": null
+      },
+      {
+        "id": "drug_Ipilimumab",
+        "label": "Ipilimumab",
         "group": "drug",
         "val": 2,
         "details": null
       },
       {
-        "id": "drug_Computed Tomography",
-        "label": "Computed Tomography",
+        "id": "drug_Erlotinib",
+        "label": "Erlotinib",
+        "group": "drug",
+        "val": 3,
+        "details": null
+      },
+      {
+        "id": "drug_Attention Control",
+        "label": "Attention Control",
+        "group": "drug",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "drug_Nivolumab",
+        "label": "Nivolumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Gefitinib",
+        "label": "Gefitinib",
         "group": "drug",
         "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Trastuzumab",
+        "label": "Trastuzumab",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Cisplatin",
+        "label": "Cisplatin",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Atezolizumab",
+        "label": "Atezolizumab",
+        "group": "drug",
+        "val": 4,
         "details": null
       }
     ],
