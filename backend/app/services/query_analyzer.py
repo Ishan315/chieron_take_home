@@ -126,6 +126,10 @@ class QueryAnalyzerAgent:
             viz_type = VisualizationType.SCATTER_PLOT
             intent = "scatter_enrollment_duration"
 
+        elif any(w in q_lower for w in ["histogram", "distribution of enrollment", "enrollment size", "trial size", "study size", "how large"]):
+            viz_type = VisualizationType.HISTOGRAM
+            intent = "enrollment_histogram"
+
         elif any(w in q_lower for w in ["status", "recruiting vs", "completed vs"]):
             viz_type = VisualizationType.PIE_CHART
             intent = "status_breakdown"
@@ -199,6 +203,7 @@ class QueryAnalyzerAgent:
             "network_drug_drug": f"Drug-Drug Combination Network for {subject}",
             "network_condition_sponsor": f"Condition to Sponsor Network for {subject}",
             "scatter_enrollment_duration": f"Enrollment Count vs. Study Duration for {subject}",
+            "enrollment_histogram": f"Distribution of Enrollment Sizes for {subject} Trials",
             "status_breakdown": f"Overall Trial Status Breakdown for {subject}"
         }
         title = intent_titles.get(intent, f"Clinical Trials Analysis for {subject}")

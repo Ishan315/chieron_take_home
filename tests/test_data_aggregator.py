@@ -148,3 +148,21 @@ def test_scatter_plot_aggregation(sample_studies):
     assert len(spec.data) == 3
     assert "duration_months" in spec.data[0]
     assert "enrollment" in spec.data[0]
+
+
+def test_histogram_aggregation(sample_studies):
+    aggregator = DataAggregator()
+    analysis = QueryIntentAnalysis(
+        intent="enrollment_histogram",
+        recommended_visualization=VisualizationType.HISTOGRAM,
+        suggested_title="Histogram Test",
+        query_interpretation="Test"
+    )
+    spec, meta, citations = aggregator.process(sample_studies, analysis, {})
+
+    # sample_studies have enrollments 300, 150, 50 -> "251-500", "101-250", "0-50"
+    assert spec.type == VisualizationType.HISTOGRAM
+    ranges = {d["enrollment_range"] for d in spec.data}
+    assert ranges == {"251-500", "101-250", "0-50"}
+    assert sum(d["trial_count"] for d in spec.data) == 3
+    assert len(citations) > 0

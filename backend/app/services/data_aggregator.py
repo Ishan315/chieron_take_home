@@ -41,6 +41,8 @@ class DataAggregator:
             spec, citations = self._aggregate_grouped_bar_chart(studies, analysis)
         elif viz_type == VisualizationType.PIE_CHART:
             spec, citations = self._aggregate_pie_chart(studies, analysis)
+        elif viz_type == VisualizationType.HISTOGRAM:
+            spec, citations = self._aggregate_histogram(studies, analysis)
         else:  # Default BAR_CHART
             spec, citations = self._aggregate_bar_chart(studies, analysis)
 
@@ -286,6 +288,59 @@ class DataAggregator:
                 color=AxisEncoding(field="phase", label="Phase", type="nominal")
             ),
             data=data_points[:100]  # Cap scatter points for responsive rendering
+        )
+        return spec, citations
+
+    def _aggregate_histogram(self, studies: List[NormalizedStudy], analysis: QueryIntentAnalysis) -> Tuple[VisualizationSpec, List[DeepCitation]]:
+        """
+        Builds a histogram of trial enrollment sizes, binned into fixed patient-count ranges.
+        """
+        bin_edges = [(0, 50), (51, 100), (101, 250), (251, 500), (501, 1000), (1001, 5000), (5001, float("inf"))]
+        bin_labels = ["0-50", "51-100", "101-250", "251-500", "501-1000", "1001-5000", "5000+"]
+
+        bucket_counts: Dict[str, int] = defaultdict(int)
+        bucket_studies: Dict[str, List[NormalizedStudy]] = defaultdict(list)
+
+        for s in studies:
+            if not s.enrollment or s.enrollment <= 0:
+                continue
+            for (low, high), label in zip(bin_edges, bin_labels):
+                if low <= s.enrollment <= high:
+                    bucket_counts[label] += 1
+                    bucket_studies[label].append(s)
+                    break
+
+        data_points = []
+        citations = []
+        for label in bin_labels:
+            if label not in bucket_counts:
+                continue
+            b_studies = bucket_studies[label]
+            sample_citations = [
+                self._make_citation(
+                    st,
+                    "designModule.enrollmentInfo",
+                    f"Enrollment of {st.enrollment} patients: '{st.brief_title}' ({st.nct_id})",
+                    label
+                ) for st in b_studies[:3]
+            ]
+            citations.extend(sample_citations)
+
+            data_points.append({
+                "enrollment_range": label,
+                "trial_count": bucket_counts[label],
+                "citations": [c.model_dump() for c in sample_citations]
+            })
+
+        spec = VisualizationSpec(
+            type=VisualizationType.HISTOGRAM,
+            title=analysis.suggested_title,
+            subtitle="Distribution of trial enrollment sizes",
+            encoding=EncodingSpec(
+                x=AxisEncoding(field="enrollment_range", label="Enrollment Size Range (Patients)", type="ordinal"),
+                y=AxisEncoding(field="trial_count", label="Number of Trials", type="quantitative", unit="trials")
+            ),
+            data=data_points
         )
         return spec, citations
 
