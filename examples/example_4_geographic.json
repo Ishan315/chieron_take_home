@@ -17,7 +17,7 @@
   },
   "visualization": {
     "type": "choropleth_map",
-    "title": "Geographic Distribution of Breast Cancer Trials",
+    "title": "Countries with the Most Recruiting Trials for Breast Cancer",
     "subtitle": "Count of trials by country location",
     "encoding": {
       "x": {
@@ -647,7 +647,7 @@
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 100,
-    "query_interpretation": "Parsed query as 'geographic_distribution' intent focusing on 'Breast Cancer'. Recommended visualization: choropleth_map.",
+    "query_interpretation": "The user is interested in analyzing the distribution of recruiting clinical trials for the condition Breast Cancer across different countries.",
     "time_granularity": "none",
     "units": {
       "y": "trial_count"

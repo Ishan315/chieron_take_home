@@ -17,7 +17,7 @@
   },
   "visualization": {
     "type": "network_graph",
-    "title": "Drug-Drug Combination Network for Lung Cancer",
+    "title": "Network of Drugs in Combination Studies for Lung Cancer",
     "subtitle": "Network graph of drugs that co-occur in combination studies",
     "encoding": {
       "x": null,
@@ -38,50 +38,8 @@
     "data": [],
     "nodes": [
       {
-        "id": "drug_Biospecimen Collection",
-        "label": "Biospecimen Collection",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Computed Tomography",
-        "label": "Computed Tomography",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Paclitaxel",
-        "label": "Paclitaxel",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Osimertinib",
-        "label": "Osimertinib",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Laboratory Biomarker Analysis",
-        "label": "Laboratory Biomarker Analysis",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Fludarabine",
-        "label": "Fludarabine",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Pemetrexed",
-        "label": "Pemetrexed",
+        "id": "drug_Ipilimumab",
+        "label": "Ipilimumab",
         "group": "drug",
         "val": 2,
         "details": null
@@ -94,10 +52,66 @@
         "details": null
       },
       {
+        "id": "drug_Trastuzumab",
+        "label": "Trastuzumab",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
         "id": "drug_Pembrolizumab",
         "label": "Pembrolizumab",
         "group": "drug",
         "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Nivolumab",
+        "label": "Nivolumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Biospecimen Collection",
+        "label": "Biospecimen Collection",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Pemetrexed",
+        "label": "Pemetrexed",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Atezolizumab",
+        "label": "Atezolizumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Attention Control",
+        "label": "Attention Control",
+        "group": "drug",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "drug_Laboratory Biomarker Analysis",
+        "label": "Laboratory Biomarker Analysis",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Gefitinib",
+        "label": "Gefitinib",
+        "group": "drug",
+        "val": 2,
         "details": null
       },
       {
@@ -108,10 +122,10 @@
         "details": null
       },
       {
-        "id": "drug_Carboplatin",
-        "label": "Carboplatin",
+        "id": "drug_Osimertinib",
+        "label": "Osimertinib",
         "group": "drug",
-        "val": 7,
+        "val": 2,
         "details": null
       },
       {
@@ -122,8 +136,8 @@
         "details": null
       },
       {
-        "id": "drug_Ipilimumab",
-        "label": "Ipilimumab",
+        "id": "drug_Paclitaxel",
+        "label": "Paclitaxel",
         "group": "drug",
         "val": 2,
         "details": null
@@ -136,29 +150,15 @@
         "details": null
       },
       {
-        "id": "drug_Attention Control",
-        "label": "Attention Control",
+        "id": "drug_Carboplatin",
+        "label": "Carboplatin",
         "group": "drug",
-        "val": 1,
+        "val": 7,
         "details": null
       },
       {
-        "id": "drug_Nivolumab",
-        "label": "Nivolumab",
-        "group": "drug",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "drug_Gefitinib",
-        "label": "Gefitinib",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Trastuzumab",
-        "label": "Trastuzumab",
+        "id": "drug_Fludarabine",
+        "label": "Fludarabine",
         "group": "drug",
         "val": 2,
         "details": null
@@ -171,10 +171,10 @@
         "details": null
       },
       {
-        "id": "drug_Atezolizumab",
-        "label": "Atezolizumab",
+        "id": "drug_Computed Tomography",
+        "label": "Computed Tomography",
         "group": "drug",
-        "val": 4,
+        "val": 2,
         "details": null
       }
     ],
@@ -355,7 +355,7 @@
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 100,
-    "query_interpretation": "Parsed query as 'network_drug_drug' intent focusing on 'Lung Cancer'. Recommended visualization: network_graph.",
+    "query_interpretation": "This query is analyzing the co-occurrence of different drugs used in combination studies specifically targeting Lung Cancer.",
     "time_granularity": "none",
     "units": {
       "y": "trial_count"

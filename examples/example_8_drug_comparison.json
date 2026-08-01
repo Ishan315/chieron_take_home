@@ -314,7 +314,7 @@
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 400,
-    "query_interpretation": "Parsed query as 'comparison' intent focusing on 'Pembrolizumab vs. Nivolumab'. Recommended visualization: grouped_bar_chart.",
+    "query_interpretation": "The user wants to compare the phases of clinical trials involving the drugs Pembrolizumab and Nivolumab.",
     "time_granularity": "none",
     "units": {
       "y": "trial_count"

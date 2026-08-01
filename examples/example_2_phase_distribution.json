@@ -17,7 +17,7 @@
   },
   "visualization": {
     "type": "bar_chart",
-    "title": "Trial Distribution Across Phases for Melanoma",
+    "title": "Distribution of Melanoma Trials Across Phases",
     "subtitle": "Distribution of clinical trials across phases",
     "encoding": {
       "x": {
@@ -212,7 +212,7 @@
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 100,
-    "query_interpretation": "Parsed query as 'phase_distribution' intent focusing on 'Melanoma'. Recommended visualization: bar_chart.",
+    "query_interpretation": "The user is asking to see how many clinical trials for melanoma exist across different phases of testing (Phase 1, Phase 2, Phase 3, etc.).",
     "time_granularity": "none",
     "units": {
       "y": "trial_count"

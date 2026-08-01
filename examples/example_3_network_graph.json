@@ -17,7 +17,7 @@
   },
   "visualization": {
     "type": "network_graph",
-    "title": "Sponsor to Drug Network for Lung Cancer Trials",
+    "title": "Network of Sponsors for Lung Cancer Trials",
     "subtitle": "Network graph mapping lead sponsors to clinical interventions",
     "encoding": {
       "x": null,
@@ -38,24 +38,10 @@
     "data": [],
     "nodes": [
       {
-        "id": "spon_Sichuan University",
-        "label": "Sichuan University",
+        "id": "spon_Mayo Clinic",
+        "label": "Mayo Clinic",
         "group": "sponsor",
         "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Yonsei University",
-        "label": "Yonsei University",
-        "group": "sponsor",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Massachusetts General Hospital",
-        "label": "Massachusetts General Hospital",
-        "group": "sponsor",
-        "val": 3,
         "details": null
       },
       {
@@ -66,8 +52,22 @@
         "details": null
       },
       {
-        "id": "spon_Ralph G Zinner",
-        "label": "Ralph G Zinner",
+        "id": "spon_National Cancer Institute (NCI)",
+        "label": "National Cancer Institute (NCI)",
+        "group": "sponsor",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "spon_Sichuan University",
+        "label": "Sichuan University",
+        "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "spon_Anhui Medical University",
+        "label": "Anhui Medical University",
         "group": "sponsor",
         "val": 1,
         "details": null
@@ -87,8 +87,22 @@
         "details": null
       },
       {
-        "id": "spon_Mayo Clinic",
-        "label": "Mayo Clinic",
+        "id": "spon_Eastern Cooperative Oncology Group",
+        "label": "Eastern Cooperative Oncology Group",
+        "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "spon_Yonsei University",
+        "label": "Yonsei University",
+        "group": "sponsor",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "spon_Fondazione Ricerca Traslazionale",
+        "label": "Fondazione Ricerca Traslazionale",
         "group": "sponsor",
         "val": 2,
         "details": null
@@ -101,31 +115,10 @@
         "details": null
       },
       {
-        "id": "spon_National Cancer Institute (NCI)",
-        "label": "National Cancer Institute (NCI)",
+        "id": "spon_Massachusetts General Hospital",
+        "label": "Massachusetts General Hospital",
         "group": "sponsor",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "spon_Fondazione Ricerca Traslazionale",
-        "label": "Fondazione Ricerca Traslazionale",
-        "group": "sponsor",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Gachon University Gil Medical Center",
-        "label": "Gachon University Gil Medical Center",
-        "group": "sponsor",
-        "val": 1,
-        "details": null
-      },
-      {
-        "id": "spon_Anhui Medical University",
-        "label": "Anhui Medical University",
-        "group": "sponsor",
-        "val": 1,
+        "val": 3,
         "details": null
       },
       {
@@ -136,10 +129,17 @@
         "details": null
       },
       {
-        "id": "spon_Eastern Cooperative Oncology Group",
-        "label": "Eastern Cooperative Oncology Group",
+        "id": "spon_Gachon University Gil Medical Center",
+        "label": "Gachon University Gil Medical Center",
         "group": "sponsor",
-        "val": 2,
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "spon_Ralph G Zinner",
+        "label": "Ralph G Zinner",
+        "group": "sponsor",
+        "val": 1,
         "details": null
       },
       {
@@ -150,22 +150,8 @@
         "details": null
       },
       {
-        "id": "drug_Biospecimen Collection",
-        "label": "Biospecimen Collection",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Pemetrexed",
-        "label": "Pemetrexed",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Computed Tomography",
-        "label": "Computed Tomography",
+        "id": "drug_Paclitaxel",
+        "label": "Paclitaxel",
         "group": "drug",
         "val": 2,
         "details": null
@@ -185,8 +171,22 @@
         "details": null
       },
       {
+        "id": "drug_Laboratory Biomarker Analysis",
+        "label": "Laboratory Biomarker Analysis",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
         "id": "drug_Pembrolizumab",
         "label": "Pembrolizumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Nivolumab",
+        "label": "Nivolumab",
         "group": "drug",
         "val": 4,
         "details": null
@@ -199,8 +199,36 @@
         "details": null
       },
       {
-        "id": "drug_Paclitaxel",
-        "label": "Paclitaxel",
+        "id": "drug_Computed Tomography",
+        "label": "Computed Tomography",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Docetaxel",
+        "label": "Docetaxel",
+        "group": "drug",
+        "val": 3,
+        "details": null
+      },
+      {
+        "id": "drug_Osimertinib",
+        "label": "Osimertinib",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Pemetrexed",
+        "label": "Pemetrexed",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Biospecimen Collection",
+        "label": "Biospecimen Collection",
         "group": "drug",
         "val": 2,
         "details": null
@@ -213,38 +241,10 @@
         "details": null
       },
       {
-        "id": "drug_Osimertinib",
-        "label": "Osimertinib",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Laboratory Biomarker Analysis",
-        "label": "Laboratory Biomarker Analysis",
-        "group": "drug",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "drug_Nivolumab",
-        "label": "Nivolumab",
-        "group": "drug",
-        "val": 4,
-        "details": null
-      },
-      {
         "id": "drug_Carboplatin",
         "label": "Carboplatin",
         "group": "drug",
         "val": 8,
-        "details": null
-      },
-      {
-        "id": "drug_Docetaxel",
-        "label": "Docetaxel",
-        "group": "drug",
-        "val": 3,
         "details": null
       }
     ],
@@ -353,7 +353,7 @@
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 100,
-    "query_interpretation": "Parsed query as 'network_sponsors_drugs' intent focusing on 'Lung Cancer'. Recommended visualization: network_graph.",
+    "query_interpretation": "The request is to visualize the relationship between sponsors and the drugs involved in clinical trials related to Lung Cancer.",
     "time_granularity": "none",
     "units": {
       "y": "trial_count"

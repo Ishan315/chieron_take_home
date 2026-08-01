@@ -17,7 +17,7 @@
   },
   "visualization": {
     "type": "scatter_plot",
-    "title": "Sponsor to Drug Network for Immunotherapy Trials",
+    "title": "Relationship Between Trial Enrollment Count and Study Duration for Immunotherapy Trials",
     "subtitle": "Study enrollment size versus estimated duration in months",
     "encoding": {
       "x": {
@@ -1732,7 +1732,7 @@
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 100,
-    "query_interpretation": "Parsed query as 'network_sponsors_drugs' intent focusing on 'Immunotherapy'. Recommended visualization: network_graph.",
+    "query_interpretation": "The query seeks to understand the correlation between the number of participants enrolled in Immunotherapy trials and the duration of those trials.",
     "time_granularity": "none",
     "units": {
       "y": "trial_count"

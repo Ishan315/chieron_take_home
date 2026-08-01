@@ -17,7 +17,7 @@
   },
   "visualization": {
     "type": "time_series",
-    "title": "Trial Count Over Time for Pembrolizumab",
+    "title": "Trends in Clinical Trials for Pembrolizumab Over Time",
     "subtitle": "Annual count of clinical trial starts",
     "encoding": {
       "x": {
@@ -436,7 +436,7 @@
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 100,
-    "query_interpretation": "Parsed query as 'time_trend' intent focusing on 'Pembrolizumab'. Recommended visualization: time_series.",
+    "query_interpretation": "Analyzing the change in the number of clinical trials for the drug Pembrolizumab over the years.",
     "time_granularity": "year",
     "units": {
       "y": "trial_count"
