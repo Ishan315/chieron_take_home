@@ -56,6 +56,24 @@ EXAMPLES = [
             visualization_override="scatter_plot",
             max_trials_to_analyze=100
         )
+    },
+    {
+        "filename": "example_6_drug_drug_network.json",
+        "request": QueryRequest(
+            query="Which drugs frequently co-occur in combination studies for Lung Cancer?",
+            condition="Lung Cancer",
+            max_trials_to_analyze=100
+        )
+    },
+    {
+        "filename": "example_7_time_series_year_range.json",
+        "request": QueryRequest(
+            query="How has the number of trials for Pembrolizumab changed per year since 2018?",
+            drug_name="Pembrolizumab",
+            start_year=2018,
+            end_year=2023,
+            max_trials_to_analyze=200
+        )
     }
 ]
 
@@ -81,7 +99,9 @@ async def main():
             "term": analysis.search_term,
             "sponsor": analysis.sponsor,
             "location": analysis.location,
-            "status": analysis.status
+            "status": analysis.status,
+            "start_year": analysis.start_year,
+            "end_year": analysis.end_year
         }
         filters_applied = {k: v for k, v in filters_applied.items() if v is not None}
 
@@ -91,6 +111,8 @@ async def main():
             sponsor=analysis.sponsor,
             location=analysis.location,
             status=analysis.status,
+            start_year=analysis.start_year,
+            end_year=analysis.end_year,
             max_results=req.max_trials_to_analyze
         )
 
@@ -111,7 +133,7 @@ async def main():
 
         print(f"Saved {fname} (analyzed {len(studies)} studies, generated {len(citations)} citations)")
 
-    print("\nAll 5 example runs generated successfully!")
+    print(f"\nAll {len(EXAMPLES)} example runs generated successfully!")
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -14,7 +14,7 @@
   },
   "visualization": {
     "type": "network_graph",
-    "title": "Sponsor-Drug Network for Lung Cancer Trials",
+    "title": "Sponsor to Drug Network for Lung Cancer Trials",
     "subtitle": "Network graph mapping lead sponsors to clinical interventions",
     "encoding": {
       "x": null,
@@ -35,8 +35,15 @@
     "data": [],
     "nodes": [
       {
-        "id": "spon_M.D. Anderson Cancer Center",
-        "label": "M.D. Anderson Cancer Center",
+        "id": "spon_University of Alberta",
+        "label": "University of Alberta",
+        "group": "sponsor",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "spon_Mayo Clinic",
+        "label": "Mayo Clinic",
         "group": "sponsor",
         "val": 2,
         "details": null
@@ -49,8 +56,29 @@
         "details": null
       },
       {
-        "id": "spon_Hoffmann-La Roche",
-        "label": "Hoffmann-La Roche",
+        "id": "spon_Gachon University Gil Medical Center",
+        "label": "Gachon University Gil Medical Center",
+        "group": "sponsor",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "spon_M.D. Anderson Cancer Center",
+        "label": "M.D. Anderson Cancer Center",
+        "group": "sponsor",
+        "val": 6,
+        "details": null
+      },
+      {
+        "id": "spon_Anhui Medical University",
+        "label": "Anhui Medical University",
+        "group": "sponsor",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "spon_Pfizer",
+        "label": "Pfizer",
         "group": "sponsor",
         "val": 2,
         "details": null
@@ -59,33 +87,12 @@
         "id": "spon_Eastern Cooperative Oncology Group",
         "label": "Eastern Cooperative Oncology Group",
         "group": "sponsor",
-        "val": 3,
-        "details": null
-      },
-      {
-        "id": "spon_Akeso",
-        "label": "Akeso",
-        "group": "sponsor",
         "val": 2,
         "details": null
       },
       {
-        "id": "spon_Wake Forest University Health Sciences",
-        "label": "Wake Forest University Health Sciences",
-        "group": "sponsor",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Bristol-Myers Squibb",
-        "label": "Bristol-Myers Squibb",
-        "group": "sponsor",
-        "val": 2,
-        "details": null
-      },
-      {
-        "id": "spon_Allist Pharmaceuticals, Inc.",
-        "label": "Allist Pharmaceuticals, Inc.",
+        "id": "spon_Fondazione Ricerca Traslazionale",
+        "label": "Fondazione Ricerca Traslazionale",
         "group": "sponsor",
         "val": 2,
         "details": null
@@ -98,24 +105,24 @@
         "details": null
       },
       {
-        "id": "spon_Janssen Research & Development, LLC",
-        "label": "Janssen Research & Development, LLC",
+        "id": "spon_Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
+        "label": "Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
         "group": "sponsor",
         "val": 2,
         "details": null
       },
       {
-        "id": "spon_Mayo Clinic",
-        "label": "Mayo Clinic",
+        "id": "spon_Massachusetts General Hospital",
+        "label": "Massachusetts General Hospital",
         "group": "sponsor",
-        "val": 1,
+        "val": 3,
         "details": null
       },
       {
-        "id": "spon_Anhui Medical University",
-        "label": "Anhui Medical University",
+        "id": "spon_Yonsei University",
+        "label": "Yonsei University",
         "group": "sponsor",
-        "val": 1,
+        "val": 2,
         "details": null
       },
       {
@@ -126,36 +133,15 @@
         "details": null
       },
       {
-        "id": "spon_Merck Sharp & Dohme LLC",
-        "label": "Merck Sharp & Dohme LLC",
+        "id": "spon_VA Office of Research and Development",
+        "label": "VA Office of Research and Development",
         "group": "sponsor",
-        "val": 3,
+        "val": 2,
         "details": null
       },
       {
-        "id": "spon_Pfizer",
-        "label": "Pfizer",
-        "group": "sponsor",
-        "val": 3,
-        "details": null
-      },
-      {
-        "id": "drug_Osimertinib",
-        "label": "Osimertinib",
-        "group": "drug",
-        "val": 3,
-        "details": null
-      },
-      {
-        "id": "drug_Bevacizumab",
-        "label": "Bevacizumab",
-        "group": "drug",
-        "val": 3,
-        "details": null
-      },
-      {
-        "id": "drug_Nab-Paclitaxel",
-        "label": "Nab-Paclitaxel",
+        "id": "drug_Pemetrexed",
+        "label": "Pemetrexed",
         "group": "drug",
         "val": 2,
         "details": null
@@ -164,49 +150,21 @@
         "id": "drug_Cisplatin",
         "label": "Cisplatin",
         "group": "drug",
-        "val": 5,
+        "val": 4,
         "details": null
       },
       {
-        "id": "drug_Radiation Therapy",
-        "label": "Radiation Therapy",
+        "id": "drug_Docetaxel",
+        "label": "Docetaxel",
         "group": "drug",
         "val": 3,
         "details": null
       },
       {
-        "id": "drug_Atezolizumab",
-        "label": "Atezolizumab",
+        "id": "drug_Laboratory Biomarker Analysis",
+        "label": "Laboratory Biomarker Analysis",
         "group": "drug",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "drug_Paclitaxel",
-        "label": "Paclitaxel",
-        "group": "drug",
-        "val": 5,
-        "details": null
-      },
-      {
-        "id": "drug_Jab-21822",
-        "label": "Jab-21822",
-        "group": "drug",
-        "val": 4,
-        "details": null
-      },
-      {
-        "id": "drug_Pemetrexed",
-        "label": "Pemetrexed",
-        "group": "drug",
-        "val": 9,
-        "details": null
-      },
-      {
-        "id": "drug_Chemotherapy",
-        "label": "Chemotherapy",
-        "group": "drug",
-        "val": 3,
+        "val": 2,
         "details": null
       },
       {
@@ -217,17 +175,24 @@
         "details": null
       },
       {
-        "id": "drug_Gemcitabine Hydrochloride",
-        "label": "Gemcitabine Hydrochloride",
+        "id": "drug_Paclitaxel",
+        "label": "Paclitaxel",
         "group": "drug",
-        "val": 3,
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Atezolizumab",
+        "label": "Atezolizumab",
+        "group": "drug",
+        "val": 4,
         "details": null
       },
       {
         "id": "drug_Pembrolizumab",
         "label": "Pembrolizumab",
         "group": "drug",
-        "val": 3,
+        "val": 4,
         "details": null
       },
       {
@@ -238,14 +203,61 @@
         "details": null
       },
       {
+        "id": "drug_Osimertinib",
+        "label": "Osimertinib",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
         "id": "drug_Carboplatin",
         "label": "Carboplatin",
         "group": "drug",
-        "val": 12,
+        "val": 8,
+        "details": null
+      },
+      {
+        "id": "drug_Biospecimen Collection",
+        "label": "Biospecimen Collection",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Gemcitabine",
+        "label": "Gemcitabine",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Erlotinib",
+        "label": "Erlotinib",
+        "group": "drug",
+        "val": 3,
+        "details": null
+      },
+      {
+        "id": "drug_Computed Tomography",
+        "label": "Computed Tomography",
+        "group": "drug",
+        "val": 2,
         "details": null
       }
     ],
     "edges": [
+      {
+        "source": "spon_Mayo Clinic",
+        "target": "drug_Laboratory Biomarker Analysis",
+        "weight": 1,
+        "label": "1 trials"
+      },
+      {
+        "source": "spon_Mayo Clinic",
+        "target": "drug_Computed Tomography",
+        "weight": 1,
+        "label": "1 trials"
+      },
       {
         "source": "spon_Ralph G Zinner",
         "target": "drug_Nivolumab",
@@ -253,6 +265,36 @@
         "label": "1 trials"
       },
       {
+        "source": "spon_M.D. Anderson Cancer Center",
+        "target": "drug_Carboplatin",
+        "weight": 1,
+        "label": "1 trials"
+      },
+      {
+        "source": "spon_M.D. Anderson Cancer Center",
+        "target": "drug_Docetaxel",
+        "weight": 1,
+        "label": "1 trials"
+      },
+      {
+        "source": "spon_Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
+        "target": "drug_Erlotinib",
+        "weight": 1,
+        "label": "1 trials"
+      },
+      {
+        "source": "spon_Mayo Clinic",
+        "target": "drug_Biospecimen Collection",
+        "weight": 1,
+        "label": "1 trials"
+      },
+      {
+        "source": "spon_Fondazione Ricerca Traslazionale",
+        "target": "drug_Osimertinib",
+        "weight": 1,
+        "label": "1 trials"
+      },
+      {
         "source": "spon_Eastern Cooperative Oncology Group",
         "target": "drug_Trastuzumab",
         "weight": 1,
@@ -271,42 +313,6 @@
         "label": "1 trials"
       },
       {
-        "source": "spon_Merck Sharp & Dohme LLC",
-        "target": "drug_Pemetrexed",
-        "weight": 2,
-        "label": "2 trials"
-      },
-      {
-        "source": "spon_Merck Sharp & Dohme LLC",
-        "target": "drug_Cisplatin",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Merck Sharp & Dohme LLC",
-        "target": "drug_Carboplatin",
-        "weight": 2,
-        "label": "2 trials"
-      },
-      {
-        "source": "spon_Merck Sharp & Dohme LLC",
-        "target": "drug_Paclitaxel",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Merck Sharp & Dohme LLC",
-        "target": "drug_Nab-Paclitaxel",
-        "weight": 2,
-        "label": "2 trials"
-      },
-      {
-        "source": "spon_Merck Sharp & Dohme LLC",
-        "target": "drug_Pembrolizumab",
-        "weight": 2,
-        "label": "2 trials"
-      },
-      {
         "source": "spon_M.D. Anderson Cancer Center",
         "target": "drug_Trastuzumab",
         "weight": 1,
@@ -319,8 +325,14 @@
         "label": "1 trials"
       },
       {
-        "source": "spon_M.D. Anderson Cancer Center",
-        "target": "drug_Gemcitabine Hydrochloride",
+        "source": "spon_Daping Hospital and the Research Institute of Surgery of the Third Military Medical University",
+        "target": "drug_Osimertinib",
+        "weight": 1,
+        "label": "1 trials"
+      },
+      {
+        "source": "spon_Massachusetts General Hospital",
+        "target": "drug_Erlotinib",
         "weight": 1,
         "label": "1 trials"
       },
@@ -329,123 +341,42 @@
         "target": "drug_Nivolumab",
         "weight": 1,
         "label": "1 trials"
-      },
-      {
-        "source": "spon_Eastern Cooperative Oncology Group",
-        "target": "drug_Gemcitabine Hydrochloride",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Sichuan University",
-        "target": "drug_Chemotherapy",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Hoffmann-La Roche",
-        "target": "drug_Atezolizumab",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Eastern Cooperative Oncology Group",
-        "target": "drug_Radiation Therapy",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Wake Forest University Health Sciences",
-        "target": "drug_Carboplatin",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Wake Forest University Health Sciences",
-        "target": "drug_Paclitaxel",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Wake Forest University Health Sciences",
-        "target": "drug_Pembrolizumab",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Bristol-Myers Squibb",
-        "target": "drug_Nivolumab",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Wake Forest University Health Sciences",
-        "target": "drug_Gemcitabine Hydrochloride",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Allist Pharmaceuticals, Inc.",
-        "target": "drug_Jab-21822",
-        "weight": 4,
-        "label": "4 trials"
-      },
-      {
-        "source": "spon_Bristol-Myers Squibb",
-        "target": "drug_Paclitaxel",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Bristol-Myers Squibb",
-        "target": "drug_Carboplatin",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Bristol-Myers Squibb",
-        "target": "drug_Bevacizumab",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Akeso",
-        "target": "drug_Carboplatin",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Janssen Research & Development, LLC",
-        "target": "drug_Carboplatin",
-        "weight": 1,
-        "label": "1 trials"
-      },
-      {
-        "source": "spon_Janssen Research & Development, LLC",
-        "target": "drug_Pemetrexed",
-        "weight": 1,
-        "label": "1 trials"
       }
     ]
   },
   "meta": {
     "filters_applied": {
-      "condition": "Lung Cancer",
-      "term": "drugs"
+      "condition": "Lung Cancer"
     },
     "source": "clinicaltrials.gov",
     "total_trials_analyzed": 100,
-    "query_interpretation": "This query requests a network visualization to show the relationships between different sponsors and the drugs they are developing or testing specifically for Lung Cancer trials. The goal is to identify which sponsors are associated with which drugs within this disease area.",
+    "query_interpretation": "Parsed query as 'network_sponsors_drugs' intent focusing on 'Lung Cancer'. Recommended visualization: network_graph.",
     "time_granularity": "none",
     "units": {
       "y": "trial_count"
     },
     "notes": [
       "Aggregated 100 clinical trial records from ClinicalTrials.gov API v2.",
-      "Generated 36 deep source citations linking back to individual study NCT IDs."
+      "Generated 17 deep source citations linking back to individual study NCT IDs."
     ]
   },
   "citations": [
+    {
+      "nct_id": "NCT01503177",
+      "title": "Intrapleural Measles Virus Therapy in Patients With Malignant Pleural Mesothelioma",
+      "excerpt": "Sponsor 'Mayo Clinic' evaluated drug 'Laboratory Biomarker Analysis' in study 'Intrapleural Measles Virus Therapy in Patients With Malignant Pleural Mesothelioma' (NCT01503177)",
+      "url": "https://clinicaltrials.gov/study/NCT01503177",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Mayo Clinic <-> Laboratory Biomarker Analysis"
+    },
+    {
+      "nct_id": "NCT01503177",
+      "title": "Intrapleural Measles Virus Therapy in Patients With Malignant Pleural Mesothelioma",
+      "excerpt": "Sponsor 'Mayo Clinic' evaluated drug 'Computed Tomography' in study 'Intrapleural Measles Virus Therapy in Patients With Malignant Pleural Mesothelioma' (NCT01503177)",
+      "url": "https://clinicaltrials.gov/study/NCT01503177",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Mayo Clinic <-> Computed Tomography"
+    },
     {
       "nct_id": "NCT06003075",
       "title": "Induction Chemo-Nivo in Unresectable Stage III NSCLC",
@@ -453,6 +384,46 @@
       "url": "https://clinicaltrials.gov/study/NCT06003075",
       "field_name": "armsInterventionsModule",
       "data_bucket": "Ralph G Zinner <-> Nivolumab"
+    },
+    {
+      "nct_id": "NCT01562301",
+      "title": "Sublingual Anvirzel in Advance Non-Small Cell Lung Cancer (NSCLC)",
+      "excerpt": "Sponsor 'M.D. Anderson Cancer Center' evaluated drug 'Carboplatin' in study 'Sublingual Anvirzel in Advance Non-Small Cell Lung Cancer (NSCLC)' (NCT01562301)",
+      "url": "https://clinicaltrials.gov/study/NCT01562301",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "M.D. Anderson Cancer Center <-> Carboplatin"
+    },
+    {
+      "nct_id": "NCT01562301",
+      "title": "Sublingual Anvirzel in Advance Non-Small Cell Lung Cancer (NSCLC)",
+      "excerpt": "Sponsor 'M.D. Anderson Cancer Center' evaluated drug 'Docetaxel' in study 'Sublingual Anvirzel in Advance Non-Small Cell Lung Cancer (NSCLC)' (NCT01562301)",
+      "url": "https://clinicaltrials.gov/study/NCT01562301",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "M.D. Anderson Cancer Center <-> Docetaxel"
+    },
+    {
+      "nct_id": "NCT01887795",
+      "title": "Phase \u2162 Trial of WBRT Versus Erlotinib Concurrent Whole-brain Radiation Therapy as \ufb01rst-line Treatment for Patients With Multiple Brain Metastases From Non-small-cell Lung Cancer(ENTER): a Multicentre, Open-label, Randomised Study",
+      "excerpt": "Sponsor 'Daping Hospital and the Research Institute of Surgery of the Third Military Medical University' evaluated drug 'Erlotinib' in study 'Phase \u2162 Trial of WBRT Versus Erlotinib Concurrent Whole-brain Radiation Therapy as \ufb01rst-line Treatment for P...",
+      "url": "https://clinicaltrials.gov/study/NCT01887795",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Daping Hospital and the Research Institute of Surgery of the Third Military Medical University <-> Erlotinib"
+    },
+    {
+      "nct_id": "NCT05740501",
+      "title": "Pharmacokinetic Profiling of Pembrolizumab and Nivolumab in Patients With Melanoma and/or Non-Small Cell Lung Cancer",
+      "excerpt": "Sponsor 'Mayo Clinic' evaluated drug 'Biospecimen Collection' in study 'Pharmacokinetic Profiling of Pembrolizumab and Nivolumab in Patients With Melanoma and/or Non-Small Cell Lung Cancer' (NCT05740501)",
+      "url": "https://clinicaltrials.gov/study/NCT05740501",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Mayo Clinic <-> Biospecimen Collection"
+    },
+    {
+      "nct_id": "NCT04811001",
+      "title": "Best EGFR-TKI Sequence in NSCLC Harboring EGFR Mutations",
+      "excerpt": "Sponsor 'Fondazione Ricerca Traslazionale' evaluated drug 'Osimertinib' in study 'Best EGFR-TKI Sequence in NSCLC Harboring EGFR Mutations' (NCT04811001)",
+      "url": "https://clinicaltrials.gov/study/NCT04811001",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Fondazione Ricerca Traslazionale <-> Osimertinib"
     },
     {
       "nct_id": "NCT00003881",
@@ -487,84 +458,28 @@
       "data_bucket": "Eastern Cooperative Oncology Group <-> Paclitaxel"
     },
     {
-      "nct_id": "NCT06212752",
-      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Pemetrexed' in study 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell L...",
-      "url": "https://clinicaltrials.gov/study/NCT06212752",
+      "nct_id": "NCT00016367",
+      "title": "Cisplatin and Gemcitabine Plus Trastuzumab in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer",
+      "excerpt": "Sponsor 'M.D. Anderson Cancer Center' evaluated drug 'Trastuzumab' in study 'Cisplatin and Gemcitabine Plus Trastuzumab in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer' (NCT00016367)",
+      "url": "https://clinicaltrials.gov/study/NCT00016367",
       "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Pemetrexed"
+      "data_bucket": "M.D. Anderson Cancer Center <-> Trastuzumab"
     },
     {
-      "nct_id": "NCT03396445",
-      "title": "Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Pemetrexed' in study 'Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)' (NCT03396445)",
-      "url": "https://clinicaltrials.gov/study/NCT03396445",
+      "nct_id": "NCT00016367",
+      "title": "Cisplatin and Gemcitabine Plus Trastuzumab in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer",
+      "excerpt": "Sponsor 'M.D. Anderson Cancer Center' evaluated drug 'Cisplatin' in study 'Cisplatin and Gemcitabine Plus Trastuzumab in Treating Patients With Stage IIIB or Stage IV Non-Small Cell Lung Cancer' (NCT00016367)",
+      "url": "https://clinicaltrials.gov/study/NCT00016367",
       "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Pemetrexed"
+      "data_bucket": "M.D. Anderson Cancer Center <-> Cisplatin"
     },
     {
-      "nct_id": "NCT06212752",
-      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Cisplatin' in study 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lu...",
-      "url": "https://clinicaltrials.gov/study/NCT06212752",
+      "nct_id": "NCT06436144",
+      "title": "Osimertinib and Etoposide as First-Line Treatment in Osimertinib-Resistant Advanced EGFR-Mutant NSCLC",
+      "excerpt": "Sponsor 'Daping Hospital and the Research Institute of Surgery of the Third Military Medical University' evaluated drug 'Osimertinib' in study 'Osimertinib and Etoposide as First-Line Treatment in Osimertinib-Resistant Advanced EGFR-Mutant NSCLC' (NC...",
+      "url": "https://clinicaltrials.gov/study/NCT06436144",
       "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Cisplatin"
-    },
-    {
-      "nct_id": "NCT06212752",
-      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Carboplatin' in study 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell ...",
-      "url": "https://clinicaltrials.gov/study/NCT06212752",
-      "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Carboplatin"
-    },
-    {
-      "nct_id": "NCT03396445",
-      "title": "Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Carboplatin' in study 'Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)' (NCT03396445)",
-      "url": "https://clinicaltrials.gov/study/NCT03396445",
-      "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Carboplatin"
-    },
-    {
-      "nct_id": "NCT06212752",
-      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Paclitaxel' in study 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell L...",
-      "url": "https://clinicaltrials.gov/study/NCT06212752",
-      "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Paclitaxel"
-    },
-    {
-      "nct_id": "NCT06212752",
-      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Nab-Paclitaxel' in study 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Ce...",
-      "url": "https://clinicaltrials.gov/study/NCT06212752",
-      "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Nab-Paclitaxel"
-    },
-    {
-      "nct_id": "NCT03396445",
-      "title": "Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Nab-Paclitaxel' in study 'Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)' (NCT03396445)",
-      "url": "https://clinicaltrials.gov/study/NCT03396445",
-      "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Nab-Paclitaxel"
-    },
-    {
-      "nct_id": "NCT06212752",
-      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Pembrolizumab' in study 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cel...",
-      "url": "https://clinicaltrials.gov/study/NCT06212752",
-      "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Pembrolizumab"
-    },
-    {
-      "nct_id": "NCT03396445",
-      "title": "Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)",
-      "excerpt": "Sponsor 'Merck Sharp & Dohme LLC' evaluated drug 'Pembrolizumab' in study 'Study of Boserolimab (MK-5890) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Adults With Advanced Solid Tumors (MK-5890-001)' (NCT03396445)",
-      "url": "https://clinicaltrials.gov/study/NCT03396445",
-      "field_name": "armsInterventionsModule",
-      "data_bucket": "Merck Sharp & Dohme LLC <-> Pembrolizumab"
+      "data_bucket": "Daping Hospital and the Research Institute of Surgery of the Third Military Medical University <-> Osimertinib"
     }
   ]
 }

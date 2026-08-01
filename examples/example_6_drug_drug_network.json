@@ -1,0 +1,487 @@
+{
+  "request_input": {
+    "query": "Which drugs frequently co-occur in combination studies for Lung Cancer?",
+    "drug_name": null,
+    "condition": "Lung Cancer",
+    "trial_phase": null,
+    "sponsor": null,
+    "country": null,
+    "start_year": null,
+    "end_year": null,
+    "overall_status": null,
+    "visualization_override": null,
+    "max_trials_to_analyze": 100
+  },
+  "visualization": {
+    "type": "network_graph",
+    "title": "Drug-Drug Combination Network for Lung Cancer",
+    "subtitle": "Network graph of drugs that co-occur in combination studies",
+    "encoding": {
+      "x": null,
+      "y": null,
+      "group": null,
+      "color": null,
+      "size": null,
+      "network": {
+        "node_id": "id",
+        "node_label": "label",
+        "node_group": "group",
+        "node_val": "val",
+        "edge_source": "source",
+        "edge_target": "target",
+        "edge_weight": "weight"
+      }
+    },
+    "data": [],
+    "nodes": [
+      {
+        "id": "drug_Gemcitabine Hydrochloride",
+        "label": "Gemcitabine Hydrochloride",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Gefitinib",
+        "label": "Gefitinib",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Nivolumab",
+        "label": "Nivolumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Erlotinib",
+        "label": "Erlotinib",
+        "group": "drug",
+        "val": 3,
+        "details": null
+      },
+      {
+        "id": "drug_Attention Control",
+        "label": "Attention Control",
+        "group": "drug",
+        "val": 1,
+        "details": null
+      },
+      {
+        "id": "drug_Docetaxel",
+        "label": "Docetaxel",
+        "group": "drug",
+        "val": 3,
+        "details": null
+      },
+      {
+        "id": "drug_Paclitaxel",
+        "label": "Paclitaxel",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Osimertinib",
+        "label": "Osimertinib",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Trastuzumab",
+        "label": "Trastuzumab",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Atezolizumab",
+        "label": "Atezolizumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Carboplatin",
+        "label": "Carboplatin",
+        "group": "drug",
+        "val": 7,
+        "details": null
+      },
+      {
+        "id": "drug_Biospecimen Collection",
+        "label": "Biospecimen Collection",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Ipilimumab",
+        "label": "Ipilimumab",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Pemetrexed",
+        "label": "Pemetrexed",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Cisplatin",
+        "label": "Cisplatin",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Laboratory Biomarker Analysis",
+        "label": "Laboratory Biomarker Analysis",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Pembrolizumab",
+        "label": "Pembrolizumab",
+        "group": "drug",
+        "val": 4,
+        "details": null
+      },
+      {
+        "id": "drug_Fludarabine",
+        "label": "Fludarabine",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Gemcitabine",
+        "label": "Gemcitabine",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      },
+      {
+        "id": "drug_Computed Tomography",
+        "label": "Computed Tomography",
+        "group": "drug",
+        "val": 2,
+        "details": null
+      }
+    ],
+    "edges": [
+      {
+        "source": "drug_Computed Tomography",
+        "target": "drug_Laboratory Biomarker Analysis",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Docetaxel",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Atezolizumab",
+        "target": "drug_Carboplatin",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Atezolizumab",
+        "target": "drug_Cisplatin",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Atezolizumab",
+        "target": "drug_Pembrolizumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Atezolizumab",
+        "target": "drug_Pemetrexed",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Cisplatin",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Pembrolizumab",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Pemetrexed",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Cisplatin",
+        "target": "drug_Pembrolizumab",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Cisplatin",
+        "target": "drug_Pemetrexed",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Pembrolizumab",
+        "target": "drug_Pemetrexed",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Gemcitabine",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Docetaxel",
+        "target": "drug_Gemcitabine",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Paclitaxel",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Trastuzumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Paclitaxel",
+        "target": "drug_Trastuzumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Cisplatin",
+        "target": "drug_Paclitaxel",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Paclitaxel",
+        "target": "drug_Pembrolizumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Paclitaxel",
+        "target": "drug_Pemetrexed",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Cisplatin",
+        "target": "drug_Gemcitabine Hydrochloride",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Cisplatin",
+        "target": "drug_Trastuzumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Gemcitabine Hydrochloride",
+        "target": "drug_Trastuzumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Ipilimumab",
+        "target": "drug_Nivolumab",
+        "weight": 2,
+        "label": "2 co-occurring trials"
+      },
+      {
+        "source": "drug_Cisplatin",
+        "target": "drug_Gemcitabine",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Carboplatin",
+        "target": "drug_Gemcitabine Hydrochloride",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Fludarabine",
+        "target": "drug_Ipilimumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      },
+      {
+        "source": "drug_Fludarabine",
+        "target": "drug_Nivolumab",
+        "weight": 1,
+        "label": "1 co-occurring trials"
+      }
+    ]
+  },
+  "meta": {
+    "filters_applied": {
+      "condition": "Lung Cancer"
+    },
+    "source": "clinicaltrials.gov",
+    "total_trials_analyzed": 100,
+    "query_interpretation": "Parsed query as 'network_drug_drug' intent focusing on 'Lung Cancer'. Recommended visualization: network_graph.",
+    "time_granularity": "none",
+    "units": {
+      "y": "trial_count"
+    },
+    "notes": [
+      "Aggregated 100 clinical trial records from ClinicalTrials.gov API v2.",
+      "Generated 38 deep source citations linking back to individual study NCT IDs."
+    ]
+  },
+  "citations": [
+    {
+      "nct_id": "NCT01503177",
+      "title": "Intrapleural Measles Virus Therapy in Patients With Malignant Pleural Mesothelioma",
+      "excerpt": "Combination study evaluating 'Computed Tomography' and 'Laboratory Biomarker Analysis' together: 'Intrapleural Measles Virus Therapy in Patients With Malignant Pleural Mesothelioma' (NCT01503177)",
+      "url": "https://clinicaltrials.gov/study/NCT01503177",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Computed Tomography <-> Laboratory Biomarker Analysis"
+    },
+    {
+      "nct_id": "NCT01562301",
+      "title": "Sublingual Anvirzel in Advance Non-Small Cell Lung Cancer (NSCLC)",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Docetaxel' together: 'Sublingual Anvirzel in Advance Non-Small Cell Lung Cancer (NSCLC)' (NCT01562301)",
+      "url": "https://clinicaltrials.gov/study/NCT01562301",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Docetaxel"
+    },
+    {
+      "nct_id": "NCT00215930",
+      "title": "The 'MADe IT' Clinical Trial: Molecular Analyses Directed Individualized Therapy for Advanced Non-Small Cell Lung Cancer",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Docetaxel' together: 'The 'MADe IT' Clinical Trial: Molecular Analyses Directed Individualized Therapy for Advanced Non-Small Cell Lung Cancer' (NCT00215930)",
+      "url": "https://clinicaltrials.gov/study/NCT00215930",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Docetaxel"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Atezolizumab' and 'Carboplatin' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Atezolizumab <-> Carboplatin"
+    },
+    {
+      "nct_id": "NCT04776447",
+      "title": "Atezolizumab Plus Induction Chemotherapy Plus CT-radiotherapy. (APOLO)",
+      "excerpt": "Combination study evaluating 'Atezolizumab' and 'Carboplatin' together: 'Atezolizumab Plus Induction Chemotherapy Plus CT-radiotherapy. (APOLO)' (NCT04776447)",
+      "url": "https://clinicaltrials.gov/study/NCT04776447",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Atezolizumab <-> Carboplatin"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Atezolizumab' and 'Cisplatin' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Atezolizumab <-> Cisplatin"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Atezolizumab' and 'Pembrolizumab' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Atezolizumab <-> Pembrolizumab"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Atezolizumab' and 'Pemetrexed' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Atezolizumab <-> Pemetrexed"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Cisplatin' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Cisplatin"
+    },
+    {
+      "nct_id": "NCT06212752",
+      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Cisplatin' together: 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lun...",
+      "url": "https://clinicaltrials.gov/study/NCT06212752",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Cisplatin"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Pembrolizumab' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Pembrolizumab"
+    },
+    {
+      "nct_id": "NCT06212752",
+      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Pembrolizumab' together: 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell...",
+      "url": "https://clinicaltrials.gov/study/NCT06212752",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Pembrolizumab"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Pemetrexed' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Pemetrexed"
+    },
+    {
+      "nct_id": "NCT06212752",
+      "title": "A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lung Cancer (NSCLC) (MK-3475A-D77)-Japan Extension",
+      "excerpt": "Combination study evaluating 'Carboplatin' and 'Pemetrexed' together: 'A Study of Subcutaneous (SC) Pembrolizumab Coformulated With Berahyaluronidase Alfa (MK-3475A) vs Intravenous Pembrolizumab in Adult Participants With Metastatic Non-small Cell Lu...",
+      "url": "https://clinicaltrials.gov/study/NCT06212752",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Carboplatin <-> Pemetrexed"
+    },
+    {
+      "nct_id": "NCT05689671",
+      "title": "Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma",
+      "excerpt": "Combination study evaluating 'Cisplatin' and 'Pembrolizumab' together: 'Pemetrexed-free vs. Pemetrexed-based Immunochemotherapy in Metastatic TTF-1 Negative Lung Adenocarcinoma' (NCT05689671)",
+      "url": "https://clinicaltrials.gov/study/NCT05689671",
+      "field_name": "armsInterventionsModule",
+      "data_bucket": "Cisplatin <-> Pembrolizumab"
+    }
+  ]
+}
