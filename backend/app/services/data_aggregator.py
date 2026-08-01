@@ -1,4 +1,5 @@
 from collections import defaultdict, Counter
+from itertools import combinations
 from typing import List, Dict, Any, Tuple
 from app.models.clinical_trials import NormalizedStudy
 from app.models.schemas import (
@@ -28,7 +29,12 @@ class DataAggregator:
         elif viz_type == VisualizationType.CHOROPLETH_MAP:
             spec, citations = self._aggregate_geographic(studies, analysis)
         elif viz_type == VisualizationType.NETWORK_GRAPH:
-            spec, citations = self._aggregate_network_graph(studies, analysis)
+            if analysis.intent == "network_drug_drug":
+                spec, citations = self._aggregate_network_drug_drug(studies, analysis)
+            elif analysis.intent == "network_condition_sponsor":
+                spec, citations = self._aggregate_network_condition_sponsor(studies, analysis)
+            else:
+                spec, citations = self._aggregate_network_graph(studies, analysis)
         elif viz_type == VisualizationType.SCATTER_PLOT:
             spec, citations = self._aggregate_scatter_plot(studies, analysis)
         elif viz_type == VisualizationType.GROUPED_BAR_CHART:
@@ -398,6 +404,154 @@ class DataAggregator:
             type=VisualizationType.NETWORK_GRAPH,
             title=analysis.suggested_title,
             subtitle="Network graph mapping lead sponsors to clinical interventions",
+            encoding=EncodingSpec(
+                network=NetworkEncoding(
+                    node_id="id",
+                    node_label="label",
+                    node_group="group",
+                    edge_source="source",
+                    edge_target="target",
+                    edge_weight="weight"
+                )
+            ),
+            data=[],
+            nodes=nodes,
+            edges=edges
+        )
+        return spec, citations
+
+    def _aggregate_network_drug_drug(self, studies: List[NormalizedStudy], analysis: QueryIntentAnalysis) -> Tuple[VisualizationSpec, List[DeepCitation]]:
+        """
+        Builds a Drug-Drug Co-occurrence Network Graph:
+        - Nodes: Drugs/Interventions (group='drug')
+        - Edges: Connection when two drugs are evaluated together in the same combination study
+        """
+        drug_counts: Dict[str, int] = defaultdict(int)
+        edge_weights: Dict[Tuple[str, str], int] = defaultdict(int)
+        edge_studies: Dict[Tuple[str, str], List[NormalizedStudy]] = defaultdict(list)
+
+        for s in studies:
+            drug_names = sorted({
+                inter.name.strip().title() for inter in s.interventions
+                if len(inter.name.strip()) > 2 and inter.name.strip().lower() not in ["placebo", "other"]
+            })
+            for d in drug_names:
+                drug_counts[d] += 1
+            for d1, d2 in combinations(drug_names, 2):
+                pair = tuple(sorted((d1, d2)))
+                edge_weights[pair] += 1
+                edge_studies[pair].append(s)
+
+        top_drugs = set(dict(Counter(drug_counts).most_common(20)).keys())
+
+        nodes: List[NetworkNode] = [
+            NetworkNode(id=f"drug_{d}", label=d, group="drug", val=drug_counts[d])
+            for d in top_drugs
+        ]
+
+        edges: List[NetworkEdge] = []
+        citations: List[DeepCitation] = []
+        for (d1, d2), weight in edge_weights.items():
+            if d1 in top_drugs and d2 in top_drugs:
+                b_studies = edge_studies[(d1, d2)]
+                sample_cit = [
+                    self._make_citation(
+                        st,
+                        "armsInterventionsModule",
+                        f"Combination study evaluating '{d1}' and '{d2}' together: '{st.brief_title}' ({st.nct_id})",
+                        f"{d1} <-> {d2}"
+                    ) for st in b_studies[:2]
+                ]
+                citations.extend(sample_cit)
+                edges.append(NetworkEdge(
+                    source=f"drug_{d1}",
+                    target=f"drug_{d2}",
+                    weight=weight,
+                    label=f"{weight} co-occurring trials"
+                ))
+
+        spec = VisualizationSpec(
+            type=VisualizationType.NETWORK_GRAPH,
+            title=analysis.suggested_title,
+            subtitle="Network graph of drugs that co-occur in combination studies",
+            encoding=EncodingSpec(
+                network=NetworkEncoding(
+                    node_id="id",
+                    node_label="label",
+                    node_group="group",
+                    edge_source="source",
+                    edge_target="target",
+                    edge_weight="weight"
+                )
+            ),
+            data=[],
+            nodes=nodes,
+            edges=edges
+        )
+        return spec, citations
+
+    def _aggregate_network_condition_sponsor(self, studies: List[NormalizedStudy], analysis: QueryIntentAnalysis) -> Tuple[VisualizationSpec, List[DeepCitation]]:
+        """
+        Builds a Condition-Sponsor Network Graph:
+        - Nodes: Conditions (group='condition') and Lead Sponsors (group='sponsor')
+        - Edges: Connection when a sponsor runs a trial studying a given condition
+        """
+        condition_counts: Dict[str, int] = defaultdict(int)
+        sponsor_counts: Dict[str, int] = defaultdict(int)
+        edge_weights: Dict[Tuple[str, str], int] = defaultdict(int)
+        edge_studies: Dict[Tuple[str, str], List[NormalizedStudy]] = defaultdict(list)
+
+        for s in studies:
+            sp = s.lead_sponsor
+            if not sp or sp == "Unknown Sponsor":
+                continue
+            sponsor_counts[sp] += 1
+            for c in s.conditions:
+                c_name = c.strip()
+                if len(c_name) > 2:
+                    condition_counts[c_name] += 1
+                    pair = (f"cond_{c_name}", f"spon_{sp}")
+                    edge_weights[pair] += 1
+                    edge_studies[pair].append(s)
+
+        top_conditions = set(dict(Counter(condition_counts).most_common(15)).keys())
+        top_sponsors = set(dict(Counter(sponsor_counts).most_common(15)).keys())
+
+        nodes: List[NetworkNode] = [
+            NetworkNode(id=f"cond_{c}", label=c, group="condition", val=condition_counts[c])
+            for c in top_conditions
+        ] + [
+            NetworkNode(id=f"spon_{sp}", label=sp, group="sponsor", val=sponsor_counts[sp])
+            for sp in top_sponsors
+        ]
+
+        edges: List[NetworkEdge] = []
+        citations: List[DeepCitation] = []
+        for (src, tgt), weight in edge_weights.items():
+            c_name = src.replace("cond_", "")
+            sp_name = tgt.replace("spon_", "")
+            if c_name in top_conditions and sp_name in top_sponsors:
+                b_studies = edge_studies[(src, tgt)]
+                sample_cit = [
+                    self._make_citation(
+                        st,
+                        "conditionsModule",
+                        f"Sponsor '{sp_name}' ran a '{c_name}' trial: '{st.brief_title}' ({st.nct_id})",
+                        f"{c_name} <-> {sp_name}"
+                    ) for st in b_studies[:2]
+                ]
+                citations.extend(sample_cit)
+                edges.append(NetworkEdge(
+                    source=src,
+                    target=tgt,
+                    weight=weight,
+                    label=f"{weight} trials"
+                ))
+
+        spec = VisualizationSpec(
+            type=VisualizationType.NETWORK_GRAPH,
+            title=analysis.suggested_title,
+            subtitle="Network graph mapping conditions to lead sponsors",
             encoding=EncodingSpec(
                 network=NetworkEncoding(
                     node_id="id",

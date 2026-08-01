@@ -82,6 +82,58 @@ def test_network_graph_aggregation(sample_studies):
     assert "sponsor" in node_groups
     assert "drug" in node_groups
 
+def test_network_drug_drug_aggregation():
+    aggregator = DataAggregator()
+    studies = [
+        NormalizedStudy(
+            nct_id="NCT0010",
+            brief_title="Combo Study of Pembrolizumab and Lenvatinib",
+            lead_sponsor="Merck Sharp & Dohme",
+            lead_sponsor_class="INDUSTRY",
+            interventions=[
+                StudyIntervention(name="Pembrolizumab", type="DRUG"),
+                StudyIntervention(name="Lenvatinib", type="DRUG"),
+            ],
+        ),
+        NormalizedStudy(
+            nct_id="NCT0011",
+            brief_title="Single-Agent Pembrolizumab Study",
+            lead_sponsor="Merck Sharp & Dohme",
+            lead_sponsor_class="INDUSTRY",
+            interventions=[StudyIntervention(name="Pembrolizumab", type="DRUG")],
+        ),
+    ]
+    analysis = QueryIntentAnalysis(
+        intent="network_drug_drug",
+        recommended_visualization=VisualizationType.NETWORK_GRAPH,
+        suggested_title="Drug-Drug Network Test",
+        query_interpretation="Test"
+    )
+    spec, meta, citations = aggregator.process(studies, analysis, {})
+
+    node_groups = {n.group for n in spec.nodes}
+    assert node_groups == {"drug"}
+    assert len(spec.edges) == 1
+    assert {spec.edges[0].source, spec.edges[0].target} == {"drug_Pembrolizumab", "drug_Lenvatinib"}
+    assert len(citations) > 0
+
+
+def test_network_condition_sponsor_aggregation(sample_studies):
+    aggregator = DataAggregator()
+    analysis = QueryIntentAnalysis(
+        intent="network_condition_sponsor",
+        recommended_visualization=VisualizationType.NETWORK_GRAPH,
+        suggested_title="Condition-Sponsor Network Test",
+        query_interpretation="Test"
+    )
+    spec, meta, citations = aggregator.process(sample_studies, analysis, {})
+
+    node_groups = {n.group for n in spec.nodes}
+    assert node_groups == {"condition", "sponsor"}
+    assert len(spec.edges) > 0
+    assert len(citations) > 0
+
+
 def test_scatter_plot_aggregation(sample_studies):
     aggregator = DataAggregator()
     analysis = QueryIntentAnalysis(
