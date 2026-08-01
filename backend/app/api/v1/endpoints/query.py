@@ -76,7 +76,9 @@ async def process_query(request: QueryRequest) -> QueryResponse:
             "term": analysis.search_term,
             "sponsor": analysis.sponsor,
             "location": analysis.location,
-            "status": analysis.status
+            "status": analysis.status,
+            "start_year": analysis.start_year,
+            "end_year": analysis.end_year
         }
         # Clean null values
         filters_applied = {k: v for k, v in filters_applied.items() if v is not None}
@@ -88,6 +90,8 @@ async def process_query(request: QueryRequest) -> QueryResponse:
             sponsor=analysis.sponsor,
             location=analysis.location,
             status=analysis.status,
+            start_year=analysis.start_year,
+            end_year=analysis.end_year,
             max_results=request.max_trials_to_analyze
         )
 

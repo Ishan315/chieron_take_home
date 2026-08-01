@@ -132,6 +132,8 @@ class ClinicalTrialsClient:
         location: Optional[str] = None,
         sponsor: Optional[str] = None,
         status: Optional[str] = None,
+        start_year: Optional[int] = None,
+        end_year: Optional[int] = None,
         max_results: int = 100
     ) -> List[NormalizedStudy]:
         """
@@ -140,7 +142,7 @@ class ClinicalTrialsClient:
         params: Dict[str, Any] = {
             "pageSize": min(max_results, 100)
         }
-        
+
         if condition:
             params["query.cond"] = condition
         if term:
@@ -151,6 +153,10 @@ class ClinicalTrialsClient:
             params["query.spons"] = sponsor
         if status:
             params["filter.overallStatus"] = status.upper()
+        if start_year or end_year:
+            lower = f"{start_year}-01-01" if start_year else "MIN"
+            upper = f"{end_year}-12-31" if end_year else "MAX"
+            params["filter.advanced"] = f"AREA[StartDate]RANGE[{lower},{upper}]"
 
         studies: List[NormalizedStudy] = []
         page_token: Optional[str] = None

@@ -67,3 +67,14 @@ async def test_live_fetch_studies_smoke():
         s = studies[0]
         assert s.nct_id.startswith("NCT")
         assert len(s.brief_title) > 0
+
+@pytest.mark.asyncio
+async def test_live_fetch_studies_respects_year_range():
+    client = ClinicalTrialsClient()
+    studies = await client.fetch_studies(
+        term="Pembrolizumab", start_year=2020, end_year=2021, max_results=20
+    )
+    assert len(studies) > 0
+    for s in studies:
+        assert s.start_year is not None
+        assert 2020 <= s.start_year <= 2021
