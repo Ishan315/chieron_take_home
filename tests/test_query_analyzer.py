@@ -30,6 +30,25 @@ async def test_geographic_query():
     assert analysis.recommended_visualization == VisualizationType.CHOROPLETH_MAP
 
 @pytest.mark.asyncio
+async def test_condition_regex_does_not_swallow_trailing_verb():
+    agent = QueryAnalyzerAgent()
+    req = QueryRequest(query="How has the number of trials for Pembrolizumab changed per year since 2015?")
+    analysis = await agent.analyze(req)
+
+    assert analysis.search_term.lower() == "pembrolizumab"
+    # "condition" must not swallow the trailing verb ("changed") or be set
+    # to the drug name itself, since Pembrolizumab is a drug, not a condition.
+    assert analysis.condition is None
+
+@pytest.mark.asyncio
+async def test_condition_regex_stops_before_since_clause():
+    agent = QueryAnalyzerAgent()
+    req = QueryRequest(query="How many trials started each year for Melanoma since 2015?")
+    analysis = await agent.analyze(req)
+
+    assert analysis.condition == "Melanoma"
+
+@pytest.mark.asyncio
 async def test_explicit_overrides():
     agent = QueryAnalyzerAgent()
     req = QueryRequest(

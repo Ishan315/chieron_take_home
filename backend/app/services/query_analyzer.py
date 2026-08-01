@@ -149,20 +149,8 @@ class QueryAnalyzerAgent:
         if year_match:
             start_year = int(year_match.group(1))
 
-        # Extract condition/disease keywords
-        condition_patterns = [
-            r'for ([A-Za-z0-9\s\-]+?)(?:\s+trials|\s+studies|\s+per|\s+over|\s+since|\s+in\s+[A-Z]|\?|$)',
-            r'in ([A-Za-z0-9\s\-]+?)(?:\s+patients|\s+trials|\s+studies|\?|$)'
-        ]
-        for pattern in condition_patterns:
-            match = re.search(pattern, query, re.IGNORECASE)
-            if match:
-                candidate = match.group(1).strip()
-                if candidate.lower() not in ["this drug", "each year", "all countries", "different phases"]:
-                    condition = candidate
-                    break
-
-        # Common drugs check if query mentions specific drug
+        # Common drugs check if query mentions specific drug (checked before
+        # condition extraction so drug names never get misparsed as conditions)
         drug_keywords = [
             "pembrolizumab", "keytruda", "nivolumab", "opdivo", "rituximab", "trastuzumab",
             "bevacizumab", "atezolizumab", "durvalumab", "semaglutide", "metformin",
@@ -172,6 +160,27 @@ class QueryAnalyzerAgent:
             if d in q_lower:
                 search_term = d.capitalize()
                 break
+
+        # Extract condition/disease keywords. The boundary list includes common
+        # verbs/connectors (e.g. "changed", "increased") so the capture stops at
+        # the end of the noun phrase instead of swallowing the rest of the sentence.
+        boundary = (
+            r'trials|studies|patients|per|over|since|changed|increased|decreased|grown|risen|'
+            r'fallen|shifted|evolved|started|began|has|have|had|is|are|was|were|in\s+[A-Z]'
+        )
+        condition_patterns = [
+            rf'for ([A-Za-z0-9\s\-]+?)(?:\s+(?:{boundary})\b|\?|$)',
+            rf'in ([A-Za-z0-9\s\-]+?)(?:\s+(?:{boundary})\b|\?|$)'
+        ]
+        for pattern in condition_patterns:
+            match = re.search(pattern, query, re.IGNORECASE)
+            if match:
+                candidate = match.group(1).strip()
+                is_placeholder = candidate.lower() in ["this drug", "each year", "all countries", "different phases"]
+                is_drug = candidate.lower() in drug_keywords or (search_term and candidate.lower() == search_term.lower())
+                if not is_placeholder and not is_drug:
+                    condition = candidate
+                    break
 
         if not search_term and not condition:
             # Fallback search term from query words excluding generic words
