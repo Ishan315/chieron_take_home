@@ -42,6 +42,5 @@ async def root():
 async def health():
     return {
         "status": "healthy",
-        "has_openai_key": bool(settings.OPENAI_API_KEY),
-        "has_gemini_key": bool(settings.GEMINI_API_KEY)
+        "has_openai_key": bool(settings.OPENAI_API_KEY)
     }

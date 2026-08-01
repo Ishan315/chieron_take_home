@@ -9,11 +9,9 @@ class Settings(BaseSettings):
     # ClinicalTrials.gov API v2 Base URL
     CLINICAL_TRIALS_API_BASE: str = "https://clinicaltrials.gov/api/v2"
     
-    # OpenAI & Gemini API Keys (optional; system includes deterministic NLP fallback engine)
+    # OpenAI API Key (optional; system includes deterministic NLP fallback engine)
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
     OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-    
-    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
     
     # Default search settings
     DEFAULT_MAX_TRIALS: int = 200

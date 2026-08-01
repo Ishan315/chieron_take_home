@@ -27,13 +27,12 @@ class QueryIntentAnalysis(BaseModel):
 
 class QueryAnalyzerAgent:
     """
-    AI-Enabled Query Analyzer Agent with LLM (OpenAI / Gemini) and 
-    Deterministic Rule-Based NLP Fallback Engine.
+    AI-Enabled Query Analyzer Agent using OpenAI GPT-4o-mini structured outputs
+    with a Deterministic Rule-Based NLP Fallback Engine.
     """
 
     def __init__(self):
         self.openai_key = settings.OPENAI_API_KEY
-        self.gemini_key = settings.GEMINI_API_KEY
 
     async def analyze(self, request: QueryRequest) -> QueryIntentAnalysis:
         """
@@ -46,20 +45,13 @@ class QueryAnalyzerAgent:
             try:
                 analysis = await self._analyze_with_openai(request.query)
             except Exception as e:
-                logger.warning(f"OpenAI query analysis failed: {e}. Falling back...")
+                logger.warning(f"OpenAI query analysis failed: {e}. Falling back to rule-based engine...")
 
-        # 2. Try Gemini if key is configured and OpenAI wasn't used/failed
-        if not analysis and self.gemini_key:
-            try:
-                analysis = await self._analyze_with_gemini(request.query)
-            except Exception as e:
-                logger.warning(f"Gemini query analysis failed: {e}. Falling back...")
-
-        # 3. Fallback to Rule-Based Engine
+        # 2. Fallback to Rule-Based Engine if OpenAI key is missing or call failed
         if not analysis:
             analysis = self._analyze_with_rules(request.query)
 
-        # 4. Override with explicit structured fields if provided by caller
+        # 3. Override with explicit structured fields if provided by caller
         if request.drug_name:
             analysis.search_term = request.drug_name
         if request.condition:
@@ -105,29 +97,6 @@ class QueryAnalyzerAgent:
             response_format=QueryIntentAnalysis
         )
         return response.choices[0].message.parsed
-
-    async def _analyze_with_gemini(self, query: str) -> QueryIntentAnalysis:
-        from google import genai
-        client = genai.Client(api_key=self.gemini_key)
-        
-        prompt = (
-            f"Analyze this clinical trial query: '{query}'\n"
-            "Return a JSON object conforming to:\n"
-            "- intent (time_trend | phase_distribution | geographic_distribution | network_sponsors_drugs | network_drug_drug | scatter_enrollment_duration | status_breakdown)\n"
-            "- recommended_visualization (choropleth_map for countries/geography, network_graph for networks/relationships, time_series for time/trend/years, bar_chart for phases/counts, grouped_bar_chart for comparisons, scatter_plot for enrollment vs duration, pie_chart for status)\n"
-            "- search_term (drug or general query keyword)\n"
-            "- condition (disease or medical condition name)\n"
-            "- sponsor, location, status, start_year, end_year\n"
-            "- suggested_title\n"
-            "- query_interpretation"
-        )
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config={"response_mime_type": "application/json"}
-        )
-        data = json.loads(response.text)
-        return QueryIntentAnalysis(**data)
 
     def _analyze_with_rules(self, query: str) -> QueryIntentAnalysis:
         q_lower = query.lower()
