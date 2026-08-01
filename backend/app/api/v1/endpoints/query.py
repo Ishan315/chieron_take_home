@@ -1,6 +1,6 @@
 from typing import List, Dict, Any
 from fastapi import APIRouter, HTTPException
-from app.models.schemas import QueryRequest, QueryResponse
+from app.models.schemas import QueryRequest, QueryResponse, VisualizationType
 from app.services.query_analyzer import QueryAnalyzerAgent
 from app.services.clinical_trials_client import ClinicalTrialsClient
 from app.services.data_aggregator import DataAggregator
@@ -88,6 +88,32 @@ async def process_query(request: QueryRequest) -> QueryResponse:
 
         is_comparison = bool(analysis.search_term_b or analysis.condition_b or analysis.sponsor_b)
 
+        # A comparison where both sides resolve to the same entity (e.g. "compare
+        # Pembrolizumab vs Pembrolizumab") would fetch the same trials twice and
+        # emit two data points with an identical (phase, series) key per phase --
+        # indistinguishable to any standard grouped-bar renderer. Collapse it to a
+        # normal single-entity query instead of returning that duplicate output.
+        collapsed_self_comparison = False
+        if is_comparison:
+            same_entity = (
+                (analysis.search_term and analysis.search_term_b
+                 and analysis.search_term.strip().lower() == analysis.search_term_b.strip().lower())
+                or (analysis.condition and analysis.condition_b
+                    and analysis.condition.strip().lower() == analysis.condition_b.strip().lower())
+                or (analysis.sponsor and analysis.sponsor_b
+                    and analysis.sponsor.strip().lower() == analysis.sponsor_b.strip().lower())
+            )
+            if same_entity:
+                is_comparison = False
+                collapsed_self_comparison = True
+                analysis.search_term_b = None
+                analysis.condition_b = None
+                analysis.sponsor_b = None
+                analysis.recommended_visualization = VisualizationType.BAR_CHART
+                filters_applied.pop("term_b", None)
+                filters_applied.pop("condition_b", None)
+                filters_applied.pop("sponsor_b", None)
+
         if is_comparison:
             # Step 3 (comparison path): independently fetch each entity's trials so
             # neither one dilutes or shadows the other in a single merged result set.
@@ -139,6 +165,12 @@ async def process_query(request: QueryRequest) -> QueryResponse:
 
             # Step 4: Data Aggregation & Deep Citation Extraction
             spec, meta, citations = aggregator.process(studies, analysis, filters_applied)
+
+            if collapsed_self_comparison:
+                meta.notes.append(
+                    "Both sides of the requested comparison referred to the same entity; "
+                    "showing a single distribution instead of a duplicate comparison."
+                )
 
         return QueryResponse(
             visualization=spec,
