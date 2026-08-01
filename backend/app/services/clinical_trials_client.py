@@ -12,9 +12,29 @@ class ClinicalTrialsClient:
     Client for interacting with ClinicalTrials.gov API v2.
     Official Endpoint: https://clinicaltrials.gov/api/v2/studies
     """
-    
+
+    # No real drug/condition/sponsor name comes close to this. Query/NLP
+    # extraction (regex fallback or LLM) can occasionally produce a runaway
+    # capture from degenerate input; sending that straight through as a query
+    # param has been observed to trigger a live 414 Request-URI Too Large from
+    # the upstream API. Treat anything past this length as implausible and drop
+    # it rather than let a malformed filter value take down the whole request.
+    MAX_FILTER_VALUE_LENGTH = 150
+
     def __init__(self, base_url: str = settings.CLINICAL_TRIALS_API_BASE):
         self.base_url = base_url.rstrip("/")
+
+    def _clean_filter_value(self, value: Optional[str]) -> Optional[str]:
+        if not value:
+            return None
+        value = value.strip()
+        if not value or len(value) > self.MAX_FILTER_VALUE_LENGTH:
+            if value:
+                logger.warning(
+                    f"Dropping implausibly long filter value ({len(value)} chars): {value[:60]}..."
+                )
+            return None
+        return value
 
     def _extract_year(self, date_str: Optional[str]) -> Optional[int]:
         if not date_str:
@@ -138,6 +158,11 @@ class ClinicalTrialsClient:
         """
         Fetch studies from ClinicalTrials.gov API v2 matching parameters.
         """
+        condition = self._clean_filter_value(condition)
+        term = self._clean_filter_value(term)
+        location = self._clean_filter_value(location)
+        sponsor = self._clean_filter_value(sponsor)
+
         params: Dict[str, Any] = {
             "pageSize": min(max_results, 100)
         }

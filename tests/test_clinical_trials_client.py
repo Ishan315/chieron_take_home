@@ -9,6 +9,19 @@ def test_extract_year():
     assert client._extract_year(None) is None
     assert client._extract_year("Invalid") is None
 
+def test_clean_filter_value_drops_implausibly_long_values():
+    client = ClinicalTrialsClient()
+    # Confirmed live: a query.cond this long triggers 414 Request-URI Too Large
+    # from ClinicalTrials.gov -- must be dropped rather than sent as-is.
+    huge = "foobar " * 1400 + "condition"
+    assert client._clean_filter_value(huge) is None
+    assert client._clean_filter_value("Melanoma") == "Melanoma"
+    assert client._clean_filter_value("  Melanoma  ") == "Melanoma"
+    assert client._clean_filter_value("") is None
+    assert client._clean_filter_value(None) is None
+    assert client._clean_filter_value("x" * client.MAX_FILTER_VALUE_LENGTH) is not None
+    assert client._clean_filter_value("x" * (client.MAX_FILTER_VALUE_LENGTH + 1)) is None
+
 def test_normalize_phase():
     client = ClinicalTrialsClient()
     assert client._normalize_phase("PHASE1") == "Phase 1"
