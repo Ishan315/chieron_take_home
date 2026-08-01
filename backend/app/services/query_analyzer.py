@@ -18,6 +18,19 @@ KNOWN_DRUGS = [
     "remdesivir", "paxlovid", "car-t", "aspirin", "adalimumab", "imatinib"
 ]
 
+# Generic words that describe the query itself rather than a real drug/condition/
+# sponsor -- neither engine should ever treat these as an entity to filter on.
+# The rule-based fallback's stopword list already screens most of these out of
+# its own word-grab, but the LLM path has no equivalent guard: given
+# under-specified input (e.g. "Compare things" with only a condition_b
+# supplied), it can independently invent one of these as search_term. Applied
+# post-hoc to both engines' output so it acts as a single source of truth.
+GENERIC_FILLER_TERMS = {
+    "trials", "trial", "things", "thing", "studies", "study", "data",
+    "information", "results", "overview", "compare", "comparison", "clinical",
+    "patients", "general", "distribution", "query", "question"
+}
+
 class QueryIntentAnalysis(BaseModel):
     intent: str = Field(
         ...,
@@ -63,6 +76,10 @@ class QueryAnalyzerAgent:
         if not analysis:
             analysis = self._analyze_with_rules(request.query)
 
+        # 2b. Engine-agnostic cleanup: applies to whichever engine ran above, so
+        # the LLM path gets the same guardrails the rule-based path already had.
+        analysis = self._sanitize_analysis(analysis)
+
         # 3. Override with explicit structured fields if provided by caller
         if request.drug_name:
             analysis.search_term = request.drug_name
@@ -98,6 +115,36 @@ class QueryAnalyzerAgent:
 
         return analysis
 
+    def _sanitize_analysis(self, analysis: QueryIntentAnalysis) -> QueryIntentAnalysis:
+        """
+        Post-hoc cleanup applied to either engine's output, before request-field
+        overrides: drops entity values that are generic filler words rather than
+        real drugs/conditions/sponsors, and collapses a search_term that exactly
+        duplicates condition (both engines can independently produce this --
+        redundant filters sent to the API don't help and can only over-constrain
+        the result set).
+        """
+        def is_generic(value: Optional[str]) -> bool:
+            return bool(value) and value.strip().lower() in GENERIC_FILLER_TERMS
+
+        if is_generic(analysis.search_term):
+            analysis.search_term = None
+        if is_generic(analysis.condition):
+            analysis.condition = None
+        if is_generic(analysis.search_term_b):
+            analysis.search_term_b = None
+        if is_generic(analysis.condition_b):
+            analysis.condition_b = None
+
+        if analysis.search_term and analysis.condition \
+                and analysis.search_term.strip().lower() == analysis.condition.strip().lower():
+            analysis.condition = None
+        if analysis.search_term_b and analysis.condition_b \
+                and analysis.search_term_b.strip().lower() == analysis.condition_b.strip().lower():
+            analysis.condition_b = None
+
+        return analysis
+
     async def _analyze_with_openai(self, query: str) -> QueryIntentAnalysis:
         from openai import AsyncOpenAI
         client = AsyncOpenAI(api_key=self.openai_key)
@@ -116,7 +163,15 @@ class QueryAnalyzerAgent:
             "- If asking about enrollment size distribution / histogram -> histogram\n"
             "- If asking about enrollment vs duration / scatter -> scatter_plot\n"
             "- If asking about status/proportions -> pie_chart or bar_chart\n"
-            "- Default for phases/counts -> bar_chart"
+            "- Default for phases/counts -> bar_chart\n\n"
+            "Entity extraction constraints:\n"
+            "- search_term/condition/sponsor (and their '_b' counterparts) must each be a specific, real "
+            "drug name, medical condition, or sponsor organization actually named in the query. Never invent "
+            "one from a generic word in the query (e.g. 'trials', 'things', 'studies', 'data') -- leave the "
+            "field null instead if no specific entity is named.\n"
+            "- Never set both search_term and condition (or search_term_b and condition_b) to the same value -- "
+            "each field represents a different ClinicalTrials.gov filter, and populating both identically over-"
+            "constrains the query without adding information. Pick the single field that best fits."
         )
 
         response = await client.beta.chat.completions.parse(

@@ -120,6 +120,36 @@ async def test_explicit_condition_without_drug_name_clears_fallback_search_term(
     assert analysis.condition == "Melanoma"
     assert analysis.search_term is None
 
+def test_sanitize_analysis_drops_generic_filler_terms():
+    from app.services.query_analyzer import QueryIntentAnalysis
+    agent = QueryAnalyzerAgent()
+    analysis = QueryIntentAnalysis(
+        intent="comparison",
+        recommended_visualization=VisualizationType.GROUPED_BAR_CHART,
+        search_term="things",  # a generic word invented from underspecified input, not a real drug
+        condition_b="Melanoma",
+        suggested_title="x",
+        query_interpretation="x"
+    )
+    sanitized = agent._sanitize_analysis(analysis)
+    assert sanitized.search_term is None
+    assert sanitized.condition_b == "Melanoma"
+
+def test_sanitize_analysis_collapses_redundant_term_and_condition():
+    from app.services.query_analyzer import QueryIntentAnalysis
+    agent = QueryAnalyzerAgent()
+    analysis = QueryIntentAnalysis(
+        intent="phase_distribution",
+        recommended_visualization=VisualizationType.BAR_CHART,
+        search_term="foobar",
+        condition="foobar",  # same value in both fields -- redundant, over-constrains the API query
+        suggested_title="x",
+        query_interpretation="x"
+    )
+    sanitized = agent._sanitize_analysis(analysis)
+    assert sanitized.search_term == "foobar"
+    assert sanitized.condition is None
+
 @pytest.mark.asyncio
 @pytest.mark.skipif(not settings.OPENAI_API_KEY, reason="OPENAI_API_KEY not configured")
 async def test_live_openai_analysis_smoke():
