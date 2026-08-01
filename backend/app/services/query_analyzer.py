@@ -18,6 +18,9 @@ class QueryIntentAnalysis(BaseModel):
     search_term: Optional[str] = Field(None, description="Term for ClinicalTrials query.term")
     condition: Optional[str] = Field(None, description="Disease for ClinicalTrials query.cond")
     sponsor: Optional[str] = Field(None, description="Sponsor for ClinicalTrials query.spons")
+    search_term_b: Optional[str] = Field(None, description="Second drug/term for an A-vs-B comparison query (e.g. the 'Y' in 'compare X vs Y')")
+    condition_b: Optional[str] = Field(None, description="Second condition for an A-vs-B comparison query")
+    sponsor_b: Optional[str] = Field(None, description="Second sponsor for an A-vs-B comparison query")
     location: Optional[str] = Field(None, description="Location for ClinicalTrials query.locn")
     status: Optional[str] = Field(None, description="Status filter (e.g. RECRUITING)")
     start_year: Optional[int] = Field(None, description="Start year filter")
@@ -58,6 +61,12 @@ class QueryAnalyzerAgent:
             analysis.condition = request.condition
         if request.sponsor:
             analysis.sponsor = request.sponsor
+        if request.drug_name_b:
+            analysis.search_term_b = request.drug_name_b
+        if request.condition_b:
+            analysis.condition_b = request.condition_b
+        if request.sponsor_b:
+            analysis.sponsor_b = request.sponsor_b
         if request.country:
             analysis.location = request.country
         if request.overall_status:
@@ -82,7 +91,11 @@ class QueryAnalyzerAgent:
             "- If asking about countries/geography/locations -> choropleth_map\n"
             "- If asking about network/relationships/sponsors to drugs/co-occurrence -> network_graph\n"
             "- If asking about time/trends/years/over time -> time_series\n"
-            "- If comparing two things/drugs/sponsors -> grouped_bar_chart\n"
+            "- If comparing two named drugs, conditions, or sponsors (e.g. 'Drug A vs Drug B') -> grouped_bar_chart, "
+            "and populate BOTH the primary field (search_term/condition/sponsor) for the first entity AND the "
+            "matching '_b' field (search_term_b/condition_b/sponsor_b) for the second entity. Only fill '_b' fields "
+            "when the query names two distinct entities of the same type to compare against each other.\n"
+            "- If asking about enrollment size distribution / histogram -> histogram\n"
             "- If asking about enrollment vs duration / scatter -> scatter_plot\n"
             "- If asking about status/proportions -> pie_chart or bar_chart\n"
             "- Default for phases/counts -> bar_chart"
@@ -134,9 +147,9 @@ class QueryAnalyzerAgent:
             viz_type = VisualizationType.PIE_CHART
             intent = "status_breakdown"
 
-        elif any(w in q_lower for w in ["compare", "vs", "versus"]):
+        elif any(w in q_lower for w in ["compare", " vs ", " vs.", "versus"]):
             viz_type = VisualizationType.GROUPED_BAR_CHART
-            intent = "phase_distribution"
+            intent = "comparison"
 
         elif "phase" in q_lower:
             viz_type = VisualizationType.BAR_CHART
@@ -144,6 +157,7 @@ class QueryAnalyzerAgent:
 
         # 2. Entity Extraction via Regular Expressions & Keywords
         search_term: Optional[str] = None
+        search_term_b: Optional[str] = None
         condition: Optional[str] = None
         start_year: Optional[int] = None
         location: Optional[str] = None
@@ -154,16 +168,28 @@ class QueryAnalyzerAgent:
             start_year = int(year_match.group(1))
 
         # Common drugs check if query mentions specific drug (checked before
-        # condition extraction so drug names never get misparsed as conditions)
+        # condition extraction so drug names never get misparsed as conditions).
+        # For "Drug A vs Drug B" comparison queries, the first two drugs found
+        # (in order of appearance) become search_term / search_term_b. Free-text
+        # two-condition comparisons ("compare X and Y") are not reliably
+        # extractable by regex and are left to the LLM path or explicit
+        # condition_b/sponsor_b request fields instead of guessing.
         drug_keywords = [
             "pembrolizumab", "keytruda", "nivolumab", "opdivo", "rituximab", "trastuzumab",
             "bevacizumab", "atezolizumab", "durvalumab", "semaglutide", "metformin",
             "remdesivir", "paxlovid", "car-t", "aspirin", "adalimumab", "imatinib"
         ]
-        for d in drug_keywords:
-            if d in q_lower:
-                search_term = d.capitalize()
-                break
+        found_drugs = sorted(
+            ({"pos": q_lower.find(d), "name": d} for d in drug_keywords if d in q_lower),
+            key=lambda m: m["pos"]
+        )
+        if found_drugs:
+            search_term = found_drugs[0]["name"].capitalize()
+        if len(found_drugs) > 1:
+            search_term_b = found_drugs[1]["name"].capitalize()
+            if intent != "comparison":
+                intent = "comparison"
+                viz_type = VisualizationType.GROUPED_BAR_CHART
 
         # Extract condition/disease keywords. The boundary list includes common
         # verbs/connectors (e.g. "changed", "increased") so the capture stops at
@@ -181,7 +207,9 @@ class QueryAnalyzerAgent:
             if match:
                 candidate = match.group(1).strip()
                 is_placeholder = candidate.lower() in ["this drug", "each year", "all countries", "different phases"]
-                is_drug = candidate.lower() in drug_keywords or (search_term and candidate.lower() == search_term.lower())
+                is_drug = candidate.lower() in drug_keywords or candidate.lower() in {
+                    n.lower() for n in [search_term, search_term_b] if n
+                }
                 if not is_placeholder and not is_drug:
                     condition = candidate
                     break
@@ -206,10 +234,14 @@ class QueryAnalyzerAgent:
             "enrollment_histogram": f"Distribution of Enrollment Sizes for {subject} Trials",
             "status_breakdown": f"Overall Trial Status Breakdown for {subject}"
         }
-        title = intent_titles.get(intent, f"Clinical Trials Analysis for {subject}")
+        if intent == "comparison" and search_term_b:
+            title = f"Phase Distribution: {subject} vs. {search_term_b}"
+        else:
+            title = intent_titles.get(intent, f"Clinical Trials Analysis for {subject}")
 
         query_interpretation = (
-            f"Parsed query as '{intent}' intent focusing on '{subject}'. "
+            f"Parsed query as '{intent}' intent focusing on '{subject}"
+            f"{' vs. ' + search_term_b if search_term_b else ''}'. "
             f"Recommended visualization: {viz_type.value}."
         )
 
@@ -217,6 +249,7 @@ class QueryAnalyzerAgent:
             intent=intent,
             recommended_visualization=viz_type,
             search_term=search_term,
+            search_term_b=search_term_b,
             condition=condition,
             location=location,
             start_year=start_year,

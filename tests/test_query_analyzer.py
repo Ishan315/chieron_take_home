@@ -49,6 +49,25 @@ async def test_condition_regex_stops_before_since_clause():
     assert analysis.condition == "Melanoma"
 
 @pytest.mark.asyncio
+async def test_two_drug_comparison_detection():
+    agent = QueryAnalyzerAgent()
+    req = QueryRequest(query="Compare phases for trials involving pembrolizumab vs nivolumab")
+    analysis = await agent.analyze(req)
+
+    assert analysis.intent == "comparison"
+    assert analysis.search_term.lower() == "pembrolizumab"
+    assert analysis.search_term_b.lower() == "nivolumab"
+    assert analysis.recommended_visualization == VisualizationType.GROUPED_BAR_CHART
+
+@pytest.mark.asyncio
+async def test_single_drug_query_has_no_comparison_entity():
+    agent = QueryAnalyzerAgent()
+    req = QueryRequest(query="How has the number of trials for Pembrolizumab changed over time?")
+    analysis = await agent.analyze(req)
+
+    assert analysis.search_term_b is None
+
+@pytest.mark.asyncio
 async def test_explicit_overrides():
     agent = QueryAnalyzerAgent()
     req = QueryRequest(
@@ -60,3 +79,16 @@ async def test_explicit_overrides():
     
     assert analysis.search_term == "Keytruda"
     assert analysis.recommended_visualization == VisualizationType.PIE_CHART
+
+@pytest.mark.asyncio
+async def test_explicit_comparison_field_override():
+    agent = QueryAnalyzerAgent()
+    req = QueryRequest(
+        query="Compare sponsor categories across two conditions",
+        condition="Melanoma",
+        condition_b="Lung Cancer"
+    )
+    analysis = await agent.analyze(req)
+
+    assert analysis.condition == "Melanoma"
+    assert analysis.condition_b == "Lung Cancer"
