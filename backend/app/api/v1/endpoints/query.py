@@ -75,6 +75,9 @@ async def process_query(request: QueryRequest) -> QueryResponse:
             "condition": analysis.condition,
             "term": analysis.search_term,
             "sponsor": analysis.sponsor,
+            "condition_b": analysis.condition_b,
+            "term_b": analysis.search_term_b,
+            "sponsor_b": analysis.sponsor_b,
             "location": analysis.location,
             "status": analysis.status,
             "start_year": analysis.start_year,
@@ -83,25 +86,59 @@ async def process_query(request: QueryRequest) -> QueryResponse:
         # Clean null values
         filters_applied = {k: v for k, v in filters_applied.items() if v is not None}
 
-        # Step 3: Fetch Studies from ClinicalTrials.gov API
-        studies = await ct_client.fetch_studies(
-            condition=analysis.condition,
-            term=analysis.search_term,
-            sponsor=analysis.sponsor,
-            location=analysis.location,
-            status=analysis.status,
-            start_year=analysis.start_year,
-            end_year=analysis.end_year,
-            max_results=request.max_trials_to_analyze
-        )
+        is_comparison = bool(analysis.search_term_b or analysis.condition_b or analysis.sponsor_b)
 
-        if not studies:
-            # Retry with broader search term if specific condition produced 0 results
-            if analysis.search_term:
-                studies = await ct_client.fetch_studies(term=analysis.search_term, max_results=request.max_trials_to_analyze)
+        if is_comparison:
+            # Step 3 (comparison path): independently fetch each entity's trials so
+            # neither one dilutes or shadows the other in a single merged result set.
+            label_a = analysis.search_term or analysis.condition or analysis.sponsor or "Group A"
+            label_b = analysis.search_term_b or analysis.condition_b or analysis.sponsor_b or "Group B"
 
-        # Step 4: Data Aggregation & Deep Citation Extraction
-        spec, meta, citations = aggregator.process(studies, analysis, filters_applied)
+            studies_a = await ct_client.fetch_studies(
+                condition=analysis.condition,
+                term=analysis.search_term,
+                sponsor=analysis.sponsor,
+                location=analysis.location,
+                status=analysis.status,
+                start_year=analysis.start_year,
+                end_year=analysis.end_year,
+                max_results=request.max_trials_to_analyze
+            )
+            studies_b = await ct_client.fetch_studies(
+                condition=analysis.condition_b,
+                term=analysis.search_term_b,
+                sponsor=analysis.sponsor_b,
+                location=analysis.location,
+                status=analysis.status,
+                start_year=analysis.start_year,
+                end_year=analysis.end_year,
+                max_results=request.max_trials_to_analyze
+            )
+
+            # Step 4 (comparison path): build the grouped comparison spec + citations
+            spec, meta, citations = aggregator.process_comparison(
+                studies_a, label_a, studies_b, label_b, analysis, filters_applied
+            )
+        else:
+            # Step 3: Fetch Studies from ClinicalTrials.gov API
+            studies = await ct_client.fetch_studies(
+                condition=analysis.condition,
+                term=analysis.search_term,
+                sponsor=analysis.sponsor,
+                location=analysis.location,
+                status=analysis.status,
+                start_year=analysis.start_year,
+                end_year=analysis.end_year,
+                max_results=request.max_trials_to_analyze
+            )
+
+            if not studies:
+                # Retry with broader search term if specific condition produced 0 results
+                if analysis.search_term:
+                    studies = await ct_client.fetch_studies(term=analysis.search_term, max_results=request.max_trials_to_analyze)
+
+            # Step 4: Data Aggregation & Deep Citation Extraction
+            spec, meta, citations = aggregator.process(studies, analysis, filters_applied)
 
         return QueryResponse(
             visualization=spec,

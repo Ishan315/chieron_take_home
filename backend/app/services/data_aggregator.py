@@ -63,6 +63,38 @@ class DataAggregator:
 
         return spec, meta, all_citations
 
+    def process_comparison(
+        self,
+        studies_a: List[NormalizedStudy],
+        label_a: str,
+        studies_b: List[NormalizedStudy],
+        label_b: str,
+        analysis: QueryIntentAnalysis,
+        filters_applied: Dict[str, Any]
+    ) -> Tuple[VisualizationSpec, MetadataSpec, List[DeepCitation]]:
+        """
+        Builds a grouped bar chart comparing phase distributions between two
+        independently-fetched entities (e.g. Drug A vs Drug B, or Condition A
+        vs Condition B), each entity's trials kept in their own fetch so
+        neither shadows or dilutes the other.
+        """
+        spec, citations = self._aggregate_comparison(studies_a, label_a, studies_b, label_b)
+
+        total = len(studies_a) + len(studies_b)
+        meta = MetadataSpec(
+            filters_applied=filters_applied,
+            source="clinicaltrials.gov",
+            total_trials_analyzed=total,
+            query_interpretation=analysis.query_interpretation,
+            time_granularity="none",
+            units={"y": "trial_count"},
+            notes=[
+                f"Compared {len(studies_a)} trials for '{label_a}' against {len(studies_b)} trials for '{label_b}'.",
+                f"Generated {len(citations)} deep source citations linking back to individual study NCT IDs."
+            ]
+        )
+        return spec, meta, citations
+
     def _make_citation(self, study: NormalizedStudy, field_name: str, excerpt: str, bucket: str) -> DeepCitation:
         return DeepCitation(
             nct_id=study.nct_id,
@@ -72,6 +104,69 @@ class DataAggregator:
             field_name=field_name,
             data_bucket=bucket
         )
+
+    def _aggregate_comparison(
+        self,
+        studies_a: List[NormalizedStudy],
+        label_a: str,
+        studies_b: List[NormalizedStudy],
+        label_b: str
+    ) -> Tuple[VisualizationSpec, List[DeepCitation]]:
+        preferred_order = ["Early Phase 1", "Phase 1", "Phase 2", "Phase 3", "Phase 4", "Not Applicable"]
+
+        def bucket_by_phase(studies: List[NormalizedStudy]) -> Tuple[Dict[str, int], Dict[str, List[NormalizedStudy]]]:
+            counts: Dict[str, int] = defaultdict(int)
+            study_map: Dict[str, List[NormalizedStudy]] = defaultdict(list)
+            for s in studies:
+                for p in (s.phases or ["Not Applicable"]):
+                    counts[p] += 1
+                    study_map[p].append(s)
+            return counts, study_map
+
+        counts_a, study_map_a = bucket_by_phase(studies_a)
+        counts_b, study_map_b = bucket_by_phase(studies_b)
+
+        all_phases = set(counts_a.keys()) | set(counts_b.keys())
+        sorted_phases = sorted(all_phases, key=lambda p: preferred_order.index(p) if p in preferred_order else 99)
+
+        data_points = []
+        citations: List[DeepCitation] = []
+
+        for phase in sorted_phases:
+            for label, counts, study_map in [(label_a, counts_a, study_map_a), (label_b, counts_b, study_map_b)]:
+                count = counts.get(phase, 0)
+                if count == 0:
+                    continue
+                bucket_studies = study_map[phase]
+                sample_citations = [
+                    self._make_citation(
+                        st,
+                        "designModule.phases",
+                        f"{phase} study of '{label}': '{st.brief_title}' ({st.nct_id})",
+                        f"{phase} - {label}"
+                    ) for st in bucket_studies[:2]
+                ]
+                citations.extend(sample_citations)
+
+                data_points.append({
+                    "phase": phase,
+                    "series": label,
+                    "trial_count": count,
+                    "citations": [c.model_dump() for c in sample_citations]
+                })
+
+        spec = VisualizationSpec(
+            type=VisualizationType.GROUPED_BAR_CHART,
+            title=f"Phase Distribution: {label_a} vs. {label_b}",
+            subtitle=f"Comparing clinical trial phase distribution between '{label_a}' and '{label_b}'",
+            encoding=EncodingSpec(
+                x=AxisEncoding(field="phase", label="Trial Phase", type="nominal"),
+                y=AxisEncoding(field="trial_count", label="Number of Trials", type="quantitative", unit="trials"),
+                group=AxisEncoding(field="series", label="Comparison Group", type="nominal")
+            ),
+            data=data_points
+        )
+        return spec, citations
 
     def _aggregate_time_series(self, studies: List[NormalizedStudy], analysis: QueryIntentAnalysis) -> Tuple[VisualizationSpec, List[DeepCitation]]:
         year_counts: Dict[int, int] = defaultdict(int)

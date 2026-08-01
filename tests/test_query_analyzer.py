@@ -92,3 +92,16 @@ async def test_explicit_comparison_field_override():
 
     assert analysis.condition == "Melanoma"
     assert analysis.condition_b == "Lung Cancer"
+    # "Compare" must not leak through as a fallback search_term: the caller told
+    # us the entities are conditions (not drugs), so a lingering search_term would
+    # both mislabel a comparison series and double-filter the live API query.
+    assert analysis.search_term is None
+
+@pytest.mark.asyncio
+async def test_explicit_condition_without_drug_name_clears_fallback_search_term():
+    agent = QueryAnalyzerAgent()
+    req = QueryRequest(query="Show me trial data", condition="Melanoma")
+    analysis = await agent.analyze(req)
+
+    assert analysis.condition == "Melanoma"
+    assert analysis.search_term is None

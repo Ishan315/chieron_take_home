@@ -166,3 +166,32 @@ def test_histogram_aggregation(sample_studies):
     assert ranges == {"251-500", "101-250", "0-50"}
     assert sum(d["trial_count"] for d in spec.data) == 3
     assert len(citations) > 0
+
+
+def test_comparison_aggregation(sample_studies):
+    aggregator = DataAggregator()
+    # Split the shared fixture into two independently-fetched entity groups,
+    # mirroring how the endpoint would run two separate fetch_studies() calls.
+    studies_a = [s for s in sample_studies if s.nct_id in ("NCT0001", "NCT0002")]  # Pembrolizumab, phases 3 & 2
+    studies_b = [s for s in sample_studies if s.nct_id == "NCT0003"]  # Carboplatin, phase 1
+
+    analysis = QueryIntentAnalysis(
+        intent="comparison",
+        recommended_visualization=VisualizationType.GROUPED_BAR_CHART,
+        suggested_title="Comparison Test",
+        query_interpretation="Test"
+    )
+    spec, meta, citations = aggregator.process_comparison(
+        studies_a, "Pembrolizumab", studies_b, "Carboplatin", analysis, {}
+    )
+
+    assert spec.type == VisualizationType.GROUPED_BAR_CHART
+    series_seen = {d["series"] for d in spec.data}
+    assert series_seen == {"Pembrolizumab", "Carboplatin"}
+    # Each entity's phase counts must stay isolated to its own series, not merged.
+    pembro_phase_3 = next(d for d in spec.data if d["series"] == "Pembrolizumab" and d["phase"] == "Phase 3")
+    assert pembro_phase_3["trial_count"] == 1
+    carbo_phase_1 = next(d for d in spec.data if d["series"] == "Carboplatin" and d["phase"] == "Phase 1")
+    assert carbo_phase_1["trial_count"] == 1
+    assert meta.total_trials_analyzed == 3
+    assert len(citations) > 0

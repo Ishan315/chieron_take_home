@@ -9,6 +9,16 @@ from app.models.schemas import QueryRequest, VisualizationType
 
 logger = logging.getLogger(__name__)
 
+# Known drugs the rule-based fallback can recognize by name. Hoisted to module
+# level so both entity extraction and the request-override merge in
+# QueryAnalyzerAgent.analyze() can tell a real drug detection apart from
+# generic-word fallback noise.
+KNOWN_DRUGS = [
+    "pembrolizumab", "keytruda", "nivolumab", "opdivo", "rituximab", "trastuzumab",
+    "bevacizumab", "atezolizumab", "durvalumab", "semaglutide", "metformin",
+    "remdesivir", "paxlovid", "car-t", "aspirin", "adalimumab", "imatinib"
+]
+
 class QueryIntentAnalysis(BaseModel):
     intent: str = Field(
         ...,
@@ -57,6 +67,15 @@ class QueryAnalyzerAgent:
         # 3. Override with explicit structured fields if provided by caller
         if request.drug_name:
             analysis.search_term = request.drug_name
+        elif (request.condition or request.sponsor) and analysis.search_term \
+                and analysis.search_term.lower() not in KNOWN_DRUGS:
+            # Caller explicitly identified the entity as a condition/sponsor and did
+            # NOT give a drug_name, so any search_term still on the analysis is
+            # generic-word fallback noise (e.g. "Compare" from a query the rule
+            # engine couldn't otherwise parse), not a deliberate drug detection.
+            # Keeping it would send a second, contradictory filter to the live API
+            # and would win the label/series-name pick ahead of the real condition.
+            analysis.search_term = None
         if request.condition:
             analysis.condition = request.condition
         if request.sponsor:
@@ -174,13 +193,8 @@ class QueryAnalyzerAgent:
         # two-condition comparisons ("compare X and Y") are not reliably
         # extractable by regex and are left to the LLM path or explicit
         # condition_b/sponsor_b request fields instead of guessing.
-        drug_keywords = [
-            "pembrolizumab", "keytruda", "nivolumab", "opdivo", "rituximab", "trastuzumab",
-            "bevacizumab", "atezolizumab", "durvalumab", "semaglutide", "metformin",
-            "remdesivir", "paxlovid", "car-t", "aspirin", "adalimumab", "imatinib"
-        ]
         found_drugs = sorted(
-            ({"pos": q_lower.find(d), "name": d} for d in drug_keywords if d in q_lower),
+            ({"pos": q_lower.find(d), "name": d} for d in KNOWN_DRUGS if d in q_lower),
             key=lambda m: m["pos"]
         )
         if found_drugs:
@@ -202,17 +216,24 @@ class QueryAnalyzerAgent:
             rf'for ([A-Za-z0-9\s\-]+?)(?:\s+(?:{boundary})\b|\?|$)',
             rf'in ([A-Za-z0-9\s\-]+?)(?:\s+(?:{boundary})\b|\?|$)'
         ]
-        for pattern in condition_patterns:
-            match = re.search(pattern, query, re.IGNORECASE)
-            if match:
-                candidate = match.group(1).strip()
-                is_placeholder = candidate.lower() in ["this drug", "each year", "all countries", "different phases"]
-                is_drug = candidate.lower() in drug_keywords or candidate.lower() in {
-                    n.lower() for n in [search_term, search_term_b] if n
-                }
-                if not is_placeholder and not is_drug:
-                    condition = candidate
-                    break
+        # Skip condition extraction entirely once a two-drug comparison is already
+        # resolved via the known-drug list: both entities are already captured in
+        # search_term/search_term_b, and comparison sentences ("phases for trials
+        # involving X vs Y") don't have a clean single noun-phrase boundary for this
+        # regex to anchor on, so running it here only risks capturing a garbage
+        # phrase that would get sent to the live API as an extra query.cond filter.
+        if not search_term_b:
+            for pattern in condition_patterns:
+                match = re.search(pattern, query, re.IGNORECASE)
+                if match:
+                    candidate = match.group(1).strip()
+                    is_placeholder = candidate.lower() in ["this drug", "each year", "all countries", "different phases"]
+                    is_drug = candidate.lower() in KNOWN_DRUGS or candidate.lower() in {
+                        n.lower() for n in [search_term, search_term_b] if n
+                    }
+                    if not is_placeholder and not is_drug:
+                        condition = candidate
+                        break
 
         if not search_term and not condition:
             # Fallback search term from query words excluding generic words
