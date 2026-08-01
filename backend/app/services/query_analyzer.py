@@ -84,11 +84,16 @@ class QueryAnalyzerAgent:
         client = AsyncOpenAI(api_key=self.openai_key)
         
         system_prompt = (
-            "You are an expert Clinical Trials Data Analyst Agent. "
-            "Analyze the user's question about clinical trials and map it to ClinicalTrials.gov search parameters "
-            "and visualization format.\n"
-            "Supported visualization types: bar_chart, grouped_bar_chart, time_series, scatter_plot, histogram, choropleth_map, network_graph, pie_chart.\n"
-            "Intent categories: time_trend, phase_distribution, geographic_distribution, network_sponsors_drugs, network_drug_drug, network_condition_sponsor, scatter_enrollment_duration, status_breakdown, sponsor_breakdown."
+            "You are an expert Clinical Trials Data Analyst Agent.\n"
+            "Analyze the user's question about clinical trials and map it to ClinicalTrials.gov search parameters and visualization format.\n"
+            "Rules for recommended_visualization:\n"
+            "- If asking about countries/geography/locations -> choropleth_map\n"
+            "- If asking about network/relationships/sponsors to drugs/co-occurrence -> network_graph\n"
+            "- If asking about time/trends/years/over time -> time_series\n"
+            "- If comparing two things/drugs/sponsors -> grouped_bar_chart\n"
+            "- If asking about enrollment vs duration / scatter -> scatter_plot\n"
+            "- If asking about status/proportions -> pie_chart or bar_chart\n"
+            "- Default for phases/counts -> bar_chart"
         )
 
         response = await client.beta.chat.completions.parse(
@@ -109,7 +114,7 @@ class QueryAnalyzerAgent:
             f"Analyze this clinical trial query: '{query}'\n"
             "Return a JSON object conforming to:\n"
             "- intent (time_trend | phase_distribution | geographic_distribution | network_sponsors_drugs | network_drug_drug | scatter_enrollment_duration | status_breakdown)\n"
-            "- recommended_visualization (time_series | bar_chart | choropleth_map | network_graph | scatter_plot | pie_chart)\n"
+            "- recommended_visualization (choropleth_map for countries/geography, network_graph for networks/relationships, time_series for time/trend/years, bar_chart for phases/counts, grouped_bar_chart for comparisons, scatter_plot for enrollment vs duration, pie_chart for status)\n"
             "- search_term (drug or general query keyword)\n"
             "- condition (disease or medical condition name)\n"
             "- sponsor, location, status, start_year, end_year\n"
