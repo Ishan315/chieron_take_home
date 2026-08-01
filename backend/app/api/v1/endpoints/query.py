@@ -1,5 +1,5 @@
 from typing import List, Dict, Any
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from app.models.schemas import QueryRequest, QueryResponse
 from app.services.query_analyzer import QueryAnalyzerAgent
 from app.services.clinical_trials_client import ClinicalTrialsClient

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Dict, Any, Optional, Union
+from typing import List, Dict, Any, Optional
 from pydantic import BaseModel, Field
 
 class VisualizationType(str, Enum):
@@ -75,12 +75,6 @@ class DeepCitation(BaseModel):
     url: str
     field_name: Optional[str] = None
     data_bucket: Optional[str] = None
-
-class DataPoint(BaseModel):
-    # Flexible container for tabular data points (bar charts, time series, scatter, maps)
-    # Allows dynamic keys while keeping strict typing where possible
-    data: Dict[str, Any]
-    citations: List[DeepCitation] = Field(default_factory=list)
 
 class VisualizationSpec(BaseModel):
     type: VisualizationType

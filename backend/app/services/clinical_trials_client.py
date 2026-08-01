@@ -121,8 +121,7 @@ class ClinicalTrialsClient:
             interventions=interventions,
             phases=phases,
             countries=countries,
-            enrollment=enrollment,
-            raw_protocol=protocol
+            enrollment=enrollment
         )
 
     async def fetch_studies(

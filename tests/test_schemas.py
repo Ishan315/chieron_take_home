@@ -1,7 +1,6 @@
-import pytest
 from app.models.schemas import (
     QueryRequest, QueryResponse, VisualizationSpec, VisualizationType,
-    EncodingSpec, AxisEncoding, MetadataSpec, DeepCitation, NetworkNode, NetworkEdge
+    EncodingSpec, AxisEncoding, MetadataSpec, DeepCitation
 )
 
 def test_query_request_defaults():
